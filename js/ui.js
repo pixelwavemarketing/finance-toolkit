@@ -999,16 +999,24 @@ function getEducationalContent(calculatorId) {
     'compound-interest': {
       howTo: [
         {
-          title: "Enter Your Starting Amount",
-          content: "Input your initial investment or savings balance. This could be money you already have saved, an inheritance, or your first deposit into an investment account."
+          title: "Starting Amount (Principal)",
+          content: "Enter what you already have saved or will deposit at the start. If you’re starting from $0, leave this as 0."
         },
         {
-          title: "Set Your Monthly Contributions",
-          content: "Enter how much you plan to add each month. Even small, consistent amounts like $50-100/month can grow significantly over time due to compound interest."
+          title: "Monthly Contribution",
+          content: "How much you add each month. Automating this as a recurring transfer helps you stay consistent."
         },
         {
-          title: "Choose a Realistic Return Rate",
-          content: "Use 6-8% for diversified stock market investments, 3-4% for bonds, or 1-2% for savings accounts. Historical S&P 500 average is around 10%, but it's safer to be conservative."
+          title: "Expected Annual Return",
+          content: "A conservative long‑term estimate is 6–7% for a diversified stock portfolio, 3–4% for bonds, and 1–2% for cash. Pick a rate that matches your risk mix."
+        },
+        {
+          title: "Years & Compounding",
+          content: "Choose a time horizon and compounding frequency (monthly is common). Longer horizons and higher compounding frequencies generally increase growth."
+        },
+        {
+          title: "Tip: Think Real (After‑Inflation)",
+          content: "For planning, consider subtracting ~2–3% from your return to estimate purchasing‑power growth after inflation."
         }
       ],
       math: `
@@ -1029,16 +1037,24 @@ function getEducationalContent(calculatorId) {
     'debt-payoff': {
       howTo: [
         {
-          title: "List All Your Debts",
-          content: "Enter each debt separately with current balance, minimum payment, and interest rate. Include credit cards, student loans, car loans, and personal loans."
+          title: "Add Each Debt Correctly",
+          content: "For every loan/card, enter Balance, APR, and Minimum. Use the current statement numbers."
         },
         {
-          title: "Choose Your Strategy",
-          content: "Avalanche method pays highest interest rate first (saves more money). Snowball method pays smallest balance first (builds momentum). Pick what motivates you most."
+          title: "Pick a Strategy",
+          content: "Snowball (smallest balance first) builds motivation. Avalanche (highest APR first) minimizes interest. Both work—choose what you’ll stick to."
         },
         {
-          title: "Add Extra Payments",
-          content: "Any extra money goes to your target debt while paying minimums on others. Even an extra $25-50/month can cut years off your payoff timeline."
+          title: "Extra Payment",
+          content: "Any extra goes to the current target debt. Even $25–$100/mo can remove years and thousands in interest."
+        },
+        {
+          title: "Reality Check",
+          content: "If cash flow varies, plan a lower guaranteed extra, then add one‑time lump sums (tax refunds/bonuses) when they arrive."
+        },
+        {
+          title: "Don’t Forget Behavioral Wins",
+          content: "If motivation is an issue, Snowball’s quick wins often beat a perfect plan you can’t follow."
         }
       ],
       math: `
@@ -1059,16 +1075,20 @@ function getEducationalContent(calculatorId) {
     'emergency-fund': {
       howTo: [
         {
-          title: "Calculate Your Monthly Expenses",
-          content: "Add up rent/mortgage, food, utilities, insurance, debt payments, and other essentials. Don't include discretionary spending like entertainment or dining out."
+          title: "Estimate True Essentials",
+          content: "Include housing, utilities, food, insurance, transportation, and minimum debt payments. Exclude wants."
         },
         {
-          title: "Choose Your Safety Buffer",
-          content: "3 months for stable jobs and dual incomes. 6 months for single income or variable work. 12 months for self-employed or high-risk industries."
+          title: "Pick a Buffer",
+          content: "Stable dual income: 3 months. Single or variable income: 6 months. Self‑employed/high‑risk: 9–12 months."
         },
         {
-          title: "Set Your Monthly Savings Goal",
-          content: "Divide your target amount by a realistic timeline. Start with what you can afford, even $25/month. Automate transfers to a separate high-yield savings account."
+          title: "Choose a Savings Plan",
+          content: "Set a monthly auto‑transfer to a high‑yield savings account. Start small if needed—consistency matters most."
+        },
+        {
+          title: "Use Milestones",
+          content: "First $1,000 → 1 month → full target. Celebrate progress to stay motivated."
         }
       ],
       math: `
@@ -1089,16 +1109,20 @@ function getEducationalContent(calculatorId) {
     'savings-rate': {
       howTo: [
         {
-          title: "Track Your Net Income",
-          content: "Use your take-home pay after taxes, health insurance, and 401k contributions. This is the money that actually hits your bank account each month."
+          title: "Net Income vs. Expenses",
+          content: "Net Income = take‑home after taxes/benefits. Expenses = everything you pay monthly (be honest). Savings = Net Income − Expenses."
         },
         {
-          title: "Calculate True Expenses",
-          content: "Include rent, food, utilities, transportation, insurance, and minimum debt payments. Be honest about your spending to get an accurate savings rate."
+          title: "Current Investments",
+          content: "Enter today’s portfolio value (brokerage + retirement). This anchors the FI timeline."
         },
         {
-          title: "Set Your FI Target",
-          content: "Financial Independence typically requires 25x your annual expenses (4% withdrawal rate). Adjust the withdrawal rate based on your risk tolerance and retirement plans."
+          title: "Return & Withdrawal Rate",
+          content: "Use ~6% long‑term return as a conservative default. Withdrawal rate 4% is common; 3–3.5% is more conservative."
+        },
+        {
+          title: "Levers to Pull",
+          content: "Your FI time drops fastest by (1) increasing savings, (2) reducing expenses, (3) raising income."
         }
       ],
       math: `
@@ -1119,16 +1143,20 @@ function getEducationalContent(calculatorId) {
     'goal-timeline': {
       howTo: [
         {
-          title: "Set a Specific Target",
-          content: "Define your goal amount clearly - house down payment, emergency fund, vacation, or major purchase. Having a specific number makes it easier to stay motivated."
+          title: "Define the Goal",
+          content: "Choose a clear amount and purpose (e.g., down payment, wedding, car). Specificity drives commitment."
         },
         {
-          title: "Enter Your Starting Point",
-          content: "Include any money you've already saved toward this goal. Every dollar counts, and seeing progress from day one helps maintain momentum."
+          title: "Starting Amount",
+          content: "Enter what you already have saved for this goal."
         },
         {
-          title: "Plan Your Contributions",
-          content: "Set a realistic monthly amount you can consistently save. Consider using step-ups (increasing contributions annually) to account for raises and lifestyle inflation."
+          title: "Monthly Contribution & Return",
+          content: "Pick a realistic monthly savings and expected annual return (use low estimates for short timelines)."
+        },
+        {
+          title: "Step‑Up Savings",
+          content: "If you expect raises, enable step‑ups to increase contributions every X months."
         }
       ],
       math: `
@@ -1150,16 +1178,16 @@ function getEducationalContent(calculatorId) {
     'refinance-breakeven': {
       howTo: [
         {
-          title: "Gather Your Current Loan Details",
-          content: "Find your current balance, interest rate, and remaining months on your loan statement. Also note your current monthly payment amount."
+          title: "Current vs. New Loan",
+          content: "Enter current balance, APR, remaining months. Then the new APR and term you’re considering."
         },
         {
-          title: "Get New Loan Quotes",
-          content: "Shop around with 3-5 lenders for new rates and terms. Get quotes within a 14-day window to minimize credit score impact from multiple inquiries."
+          title: "Closing Costs",
+          content: "Include all fees (origination, appraisal, title, points). These determine the break‑even time."
         },
         {
-          title: "Include All Closing Costs",
-          content: "Add origination fees, appraisal costs, title insurance, and other closing expenses. These can range from $2,000-$5,000+ depending on loan size."
+          title: "Interpret Results",
+          content: "If break‑even months > how long you’ll keep the loan, refinancing may not be worth it."
         }
       ],
       math: `
@@ -1181,16 +1209,20 @@ function getEducationalContent(calculatorId) {
     'budget-splitter': {
       howTo: [
         {
-          title: "Use Your Take-Home Pay",
-          content: "Enter your after-tax income that actually hits your bank account. Include salary, bonuses, side income, but subtract taxes, health insurance, and 401k contributions."
+          title: "Start with Take‑Home Pay",
+          content: "Use after‑tax income (what lands in your bank). Include any regular side income."
         },
         {
-          title: "Adjust the Percentages",
-          content: "50/30/20 is a starting point. High cost-of-living areas might need 60% for needs. High earners might save 30%+. Adjust based on your priorities and circumstances."
+          title: "Tune the Ratios",
+          content: "50/30/20 is a guide. High COL areas may push Needs higher; aggressive savers push Savings higher."
         },
         {
-          title: "Define Your Categories",
-          content: "Needs: rent, utilities, groceries, insurance, minimum debt payments. Wants: dining out, entertainment, hobbies. Savings: emergency fund, retirement, debt payoff above minimums."
+          title: "Define Categories Clearly",
+          content: "Needs: essentials and minimum debt payments. Wants: discretionary. Savings: emergency fund, investing, extra debt payoff."
+        },
+        {
+          title: "Match Pay Frequency",
+          content: "If paid weekly/biweekly, use the frequency field to see realistic monthly equivalents."
         }
       ],
       math: `
@@ -1212,16 +1244,16 @@ function getEducationalContent(calculatorId) {
     'extra-payment': {
       howTo: [
         {
-          title: "Enter Your Current Loan Details",
-          content: "Find your current balance, APR, and remaining payment count on your loan statement. This works for mortgages, car loans, student loans, and personal loans."
+          title: "Loan Inputs",
+          content: "Balance = today’s principal. APR = interest rate. Remaining Months = months left on current schedule."
         },
         {
-          title: "Choose Your Extra Payment Type",
-          content: "One-time: tax refund, bonus, inheritance. Monthly: consistent extra amount each month. Annual: yearly bonus or raise applied to principal."
+          title: "Extra Type",
+          content: "Monthly adds every month. Annual adds once per year. One‑time is a single lump sum."
         },
         {
-          title: "Follow the 1% Rule",
-          content: "If your loan rate is higher than what you could earn investing (after taxes), prioritize paying it off. If it's lower, consider investing the extra money instead."
+          title: "Which to Choose?",
+          content: "If APR > expected investment return, extra payments usually win. If APR is low, consider investing extras."
         }
       ],
       math: `
@@ -1242,16 +1274,16 @@ function getEducationalContent(calculatorId) {
     'credit-card-minimum': {
       howTo: [
         {
-          title: "Find Your Minimum Payment Rule",
-          content: "Check your statement for minimum payment calculation - usually 2-3% of balance or $25-35, whichever is higher. Some cards use 1% + interest + fees."
+          title: "Know Your Issuer’s Rule",
+          content: "Common: 2–3% of balance or a fixed $25–35 (whichever is higher), or 1% + interest + fees."
         },
         {
-          title: "Understand the True Cost",
-          content: "Minimum payments are designed to maximize interest profits. On a $5,000 balance at 20% APR, minimums could take 20+ years and cost $8,000+ in interest."
+          title: "Minimums Cost You",
+          content: "Paying only minimums can take decades and cost thousands in interest. Use the output to see the true timeline."
         },
         {
-          title: "Set Your Own Floor",
-          content: "Never pay just the minimum. Set a personal minimum that's 2-3x higher, or aim to pay off the balance in 2-3 years maximum. Even $25-50 extra makes a huge difference."
+          title: "Create a Personal Minimum",
+          content: "Commit to a fixed amount 2–3× the required minimum or target a 24–36 month payoff."
         }
       ],
       math: `
@@ -1271,16 +1303,16 @@ function getEducationalContent(calculatorId) {
     'debt-to-income': {
       howTo: [
         {
-          title: "Calculate Your Gross Monthly Income",
-          content: "Include salary, bonuses, side income, alimony, and other regular income before taxes. Use your annual gross income divided by 12 for the monthly amount."
+          title: "Gross Income",
+          content: "Use pre‑tax monthly income (salary ÷ 12). Include regular side income if dependable."
         },
         {
-          title: "List All Monthly Debt Payments",
-          content: "Include housing (rent/mortgage), car loans, credit cards, student loans, personal loans, and other recurring debt obligations. Use minimum required payments."
+          title: "Monthly Debts",
+          content: "Include rent/mortgage, auto, student loans, credit card minimums, and other required payments."
         },
         {
-          title: "Understand the Ratios",
-          content: "Front-end (housing only): Keep under 28%. Back-end (all debts): Keep under 36%. Above 43% is considered high-risk by most lenders and can limit borrowing options."
+          title: "Interpretation",
+          content: "Front‑end (housing only) <28%. Back‑end (all debts) <36% is ideal. >43% is high‑risk for many lenders."
         }
       ],
       math: `
