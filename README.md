@@ -145,3 +145,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ---
 
 **Note**: This tool is for educational purposes only. Always consult with qualified financial professionals before making financial decisions.
+# finance-toolkit
