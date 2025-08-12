@@ -1,0 +1,31 @@
+{
+  "id": "debt-payoff",
+  "title": "Debt Payoff Planner",
+  "description": "Build a month‑by‑month plan using snowball or avalanche and optional extra payments.",
+  "explainer": "Two proven debt payoff strategies: Snowball (smallest balance first) builds motivation, Avalanche (highest rate first) saves more money. Choose based on your personality and situation.",
+  "inputs": [
+    { "name": "strategy", "label": "Strategy", "type": "select", "options": [
+      {"value": "snowball", "label": "Snowball (smallest balance first)"},
+      {"value": "avalanche", "label": "Avalanche (highest rate first)"}
+    ], "default": "snowball" },
+    { "name": "extra", "label": "Extra Payment / month", "type": "currency", "min": 0, "step": 25, "default": 100 },
+    { "name": "debts", "label": "Debts", "type": "repeater", "of": [
+      { "name": "name", "label": "Name", "type": "text", "default": "Card" },
+      { "name": "balance", "label": "Balance", "type": "currency", "min": 0, "step": 50, "default": 1500 },
+      { "name": "apr", "label": "APR (%)", "type": "percent", "min": 0, "max": 80, "step": 0.1, "default": 19.99 },
+      { "name": "min", "label": "Min Payment", "type": "currency", "min": 0, "step": 10, "default": 50 }
+    ], "defaultRows": [
+      { "name": "Card A", "balance": 1500, "apr": 19.99, "min": 50 },
+      { "name": "Loan B", "balance": 5000, "apr": 7.0, "min": 120 }
+    ] }
+  ],
+  "compute": "computeDebtPayoff",
+  "outputs": [
+    { "name": "months", "label": "Months to Debt‑Free", "format": "number" },
+    { "name": "totalInterest", "label": "Total Interest Paid", "format": "currency" },
+    { "name": "debtFreeDate", "label": "Debt‑Free Date", "format": "text" }
+  ],
+  "chart": { "x": "month", "series": [{"key": "totalBalance", "label": "Total Balance"}] }
+}
+
+

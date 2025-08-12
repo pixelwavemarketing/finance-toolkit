@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Calculators - Finance Toolkit</title>
+  <meta name="description" content="Professional-grade financial calculators with detailed educational content. Compound interest, debt payoff, emergency fund, savings rate, and more. Free, no signup required." />
+  <meta name="keywords" content="financial calculator, compound interest calculator, debt payoff calculator, emergency fund calculator, savings rate calculator, financial independence calculator, budget calculator, refinance calculator" />
+  <meta name="author" content="Finance Toolkit" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://openfinancecalculators.com/calculator" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Financial Calculators - Finance Toolkit" />
+  <meta property="og:description" content="Professional-grade financial calculators with detailed educational content. Free, no signup required." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://openfinancecalculators.com/calculator" />
+  <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Finance Toolkit" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Financial Calculators - Finance Toolkit" />
+  <meta name="twitter:description" content="Professional-grade financial calculators with detailed educational content. Free, no signup required." />
+  <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="msapplication-TileColor" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Finance Toolkit" />
+  
+  <!-- Search Console Verification -->
+  <meta name="google-site-verification" content="VVqCTIGRuiSsoa137qyNR19sfFDTVOQJTXKCpTS9K1E" />
+  <meta name="msvalidate.01" content="D74B24FADC0EA14BCD046E165FE7ED9B" />
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div data-shared-header></div>
+
+  <main class="container" role="main">
+    <!-- Ad Placeholder - Top of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <div class="grid">
+      <section class="card" id="form" aria-label="Calculator Input Form"></section>
+      <section class="card" id="results" aria-label="Calculation Results"></section>
+    </div>
+    
+    <!-- Ad Placeholder - Middle of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 20px 0; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
+      <h2>Chart</h2>
+      <div class="chart-area">
+        <canvas id="chart" aria-label="Financial calculation results chart"></canvas>
+      </div>
+    </section>
+    <section class="card" style="margin-top:16px;" aria-label="Calculator Explanation">
+      <h2>What this means</h2>
+      <div id="explainer">Select a calculator to begin.</div>
+    </section>
+    
+    <!-- Educational Sections -->
+    <div class="educational-sections" id="educationalSections" style="display:none;">
+      <!-- How to Use Section -->
+      <div class="card" style="margin-top:16px;">
+        <h2>📖 How to Use This Calculator</h2>
+        <div class="how-to-grid" id="howToGrid">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+      
+      <!-- Math Section -->
+      <div class="card" style="margin-top:16px;">
+        <h2 class="math-toggle" id="mathToggle" style="cursor:pointer; user-select:none;">
+          🧮 Showing the Math
+          <svg class="math-arrow" style="width:16px; height:16px; display:inline; margin-left:8px; transition:transform 0.3s ease;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </h2>
+        <div class="math-content" id="mathContent" style="display:none; margin-top:16px;">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container">
+    <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="./privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">pixelwave marketing</a> <span id="shareTarget"></span></div>
+  </footer>
+
+  <!-- Load the modular JavaScript -->
+  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="./js/app.js"></script>
+
+  <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Finance Toolkit",
+      "alternateName": "Financial Calculator Suite",
+      "description": "Professional-grade financial calculators with educational content including compound interest, debt payoff, emergency fund, savings rate, and budget planning tools.",
+      "url": "https://openfinancecalculators.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "permissions": "No permissions required",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Compound Interest Calculator with timeline visualization",
+        "Debt Payoff Calculator (Snowball & Avalanche methods)", 
+        "Emergency Fund Calculator with goal tracking",
+        "Savings Rate & Financial Independence Calculator",
+        "Goal Timeline Calculator with step-up contributions",
+        "Refinance Break-even Calculator with closing costs",
+        "Budget Splitter (50/30/20 and custom ratios)",
+        "Extra Payment Impact Calculator",
+        "Credit Card Minimum Payment Cost Calculator",
+        "Debt-to-Income Ratio Calculator"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Finance Toolkit",
+        "url": "https://financetoolkit.com"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Finance Toolkit",
+        "url": "https://financetoolkit.com"
+      }
+    }
+  </script>
+  
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Finance Toolkit",
+      "url": "https://openfinancecalculators.com",
+      "logo": "https://openfinancecalculators.com/images/open-finance-calculators-logo.png",
+      "description": "Free financial calculators and educational content to help everyone make better financial decisions.",
+      "foundingDate": "2024",
+      "sameAs": [
+        "https://twitter.com/FinanceToolkit"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "hello@financetoolkit.com",
+        "availableLanguage": "English"
+      }
+    }
+  </script>
+  
+  <!-- WebSite Schema with Sitelinks SearchAction -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Finance Toolkit",
+      "url": "https://financetoolkit.com",
+      "description": "Free financial calculators and educational content for personal finance planning.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://openfinancecalculators.com/calculators.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Finance Toolkit"
+      }
+    }
+  </script>
+  
+  <!-- SoftwareApplication Schema for each calculator -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Compound Interest Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "url": "https://openfinancecalculators.com/#calc=compound-interest",
+      "description": "Calculate compound interest with timeline visualization and multiple contribution types.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Compound interest calculation",
+        "Timeline visualization",
+        "Multiple contribution types",
+        "Educational content",
+        "Mobile responsive"
+      ]
+    }
+  </script>
+</body>
+</html>

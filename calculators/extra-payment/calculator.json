@@ -1,0 +1,25 @@
+{
+  "id": "extra-payment",
+  "title": "Extra Payment Impact",
+  "description": "See how extra payments can dramatically reduce your loan term and interest costs.",
+  "explainer": "Extra payments go directly to principal, reducing interest dramatically. Rule of thumb: if loan rate > expected investment return, pay extra. Otherwise, invest the difference. Early payments have bigger impact.",
+  "inputs": [
+    { "name": "loanBalance", "label": "Current Loan Balance", "type": "currency", "min": 0, "step": 1000, "default": 200000 },
+    { "name": "apr", "label": "APR (%)", "type": "percent", "min": 0, "max": 30, "step": 0.01, "default": 5.5 },
+    { "name": "remainingMonths", "label": "Remaining Months", "type": "number", "min": 1, "max": 480, "step": 1, "default": 300 },
+    { "name": "extraPayment", "label": "Extra Monthly Payment", "type": "currency", "min": 0, "step": 25, "default": 200 },
+    { "name": "paymentType", "label": "Payment Type", "type": "select", "options": [
+      { "value": "monthly", "label": "Monthly Extra Payment" },
+      { "value": "annual", "label": "Annual Extra Payment" },
+      { "value": "onetime", "label": "One-Time Extra Payment" }
+    ], "default": "monthly" }
+  ],
+  "compute": "computeExtraPayment",
+  "outputs": [
+    { "name": "monthsSaved", "label": "Months Saved", "format": "number" },
+    { "name": "interestSaved", "label": "Interest Saved", "format": "currency" },
+    { "name": "newPayoffDate", "label": "New Payoff Date", "format": "text" },
+    { "name": "totalSavings", "label": "Total Savings", "format": "currency" }
+  ],
+  "chart": { "x": "month", "series": [{"key": "balance", "label": "Remaining Balance"}] }
+}

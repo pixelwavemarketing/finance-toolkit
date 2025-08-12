@@ -1,0 +1,27 @@
+{
+  "id": "budget-splitter",
+  "title": "50/30/20 Budget Splitter",
+  "description": "Split your take-home pay using the popular 50/30/20 rule or create custom budget percentages.",
+  "explainer": "Popular budget rules: 50/30/20 (needs/wants/savings), 70/20/10 (expenses/savings/fun), or 80/20 (expenses/savings). Adjust percentages based on your debt level, income, and goals.",
+  "inputs": [
+    { "name": "takeHomePay", "label": "Monthly Take-Home Pay", "type": "currency", "min": 0, "step": 100, "default": 5000 },
+    { "name": "needsPercent", "label": "Needs (%)", "type": "percent", "min": 0, "max": 100, "step": 1, "default": 50 },
+    { "name": "wantsPercent", "label": "Wants (%)", "type": "percent", "min": 0, "max": 100, "step": 1, "default": 30 },
+    { "name": "savingsPercent", "label": "Savings (%)", "type": "percent", "min": 0, "max": 100, "step": 1, "default": 20 },
+    { "name": "payFrequency", "label": "Pay Frequency", "type": "select", "options": [
+      { "value": "monthly", "label": "Monthly" },
+      { "value": "biweekly", "label": "Bi-weekly" },
+      { "value": "weekly", "label": "Weekly" }
+    ], "default": "monthly" }
+  ],
+  "compute": "computeBudgetSplitter",
+  "outputs": [
+    { "name": "needsAmount", "label": "Needs Budget", "format": "currency" },
+    { "name": "wantsAmount", "label": "Wants Budget", "format": "currency" },
+    { "name": "savingsAmount", "label": "Savings Budget", "format": "currency" },
+    { "name": "totalPercent", "label": "Total Percentage", "format": "percent" }
+  ],
+  "chart": { "x": "category", "series": [{"key": "amount", "label": "Budget Amount"}] }
+}
+
+

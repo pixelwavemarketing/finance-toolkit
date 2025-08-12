@@ -1,0 +1,22 @@
+{
+  "id": "debt-to-income",
+  "title": "Debt-to-Income Ratio",
+  "description": "Calculate your debt-to-income ratio to understand your financial health and borrowing capacity.",
+  "explainer": "DTI is a key metric lenders use. Total DTI includes all monthly debt payments ÷ gross monthly income. Good: <36%, Acceptable: 36-41%, High risk: >41%. Housing alone should be <28%.",
+  "inputs": [
+    { "name": "grossIncome", "label": "Monthly Gross Income", "type": "currency", "min": 0, "step": 100, "default": 6000 },
+    { "name": "housingPayment", "label": "Housing Payment (rent/mortgage)", "type": "currency", "min": 0, "step": 50, "default": 1500 },
+    { "name": "carPayments", "label": "Car Payments", "type": "currency", "min": 0, "step": 25, "default": 400 },
+    { "name": "creditCards", "label": "Credit Card Minimums", "type": "currency", "min": 0, "step": 25, "default": 150 },
+    { "name": "studentLoans", "label": "Student Loan Payments", "type": "currency", "min": 0, "step": 25, "default": 200 },
+    { "name": "otherDebts", "label": "Other Monthly Debt Payments", "type": "currency", "min": 0, "step": 25, "default": 0 }
+  ],
+  "compute": "computeDebtToIncome",
+  "outputs": [
+    { "name": "totalDTI", "label": "Total Debt-to-Income", "format": "percent" },
+    { "name": "housingDTI", "label": "Housing DTI", "format": "percent" },
+    { "name": "riskLevel", "label": "Risk Assessment", "format": "text" },
+    { "name": "maxAdditionalDebt", "label": "Max Additional Monthly Debt", "format": "currency" }
+  ],
+  "chart": { "x": "category", "series": [{"key": "amount", "label": "Monthly Payment"}] }
+}

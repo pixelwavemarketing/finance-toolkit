@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../finance-toolkit-fav/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../../finance-toolkit-fav/favicon.svg" />
+  <link rel="shortcut icon" href="../../finance-toolkit-fav/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../finance-toolkit-fav/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="FinanceTool" />
+  <link rel="manifest" href="../../finance-toolkit-fav/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Debt-to-Income Ratio Calculator - Open Finance Calculators</title>
+  <meta name="description" content="Calculate your debt-to-income ratio to assess your financial health and borrowing capacity." />
+  <meta name="keywords" content="debt to income ratio calculator, DTI calculator, financial health calculator, borrowing capacity calculator" />
+  <meta name="author" content="Open Finance Calculators" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://openfinancecalculators.com/calculators/debt-to-income/" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Debt-to-Income Ratio Calculator - Open Finance Calculators" />
+  <meta property="og:description" content="Calculate your debt-to-income ratio to assess your financial health and borrowing capacity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://openfinancecalculators.com/calculators/debt-to-income/" />
+  <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Open Finance Calculators" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Debt-to-Income Ratio Calculator - Open Finance Calculators" />
+  <meta name="twitter:description" content="Calculate your debt-to-income ratio to assess your financial health and borrowing capacity." />
+  <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="msapplication-TileColor" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Open Finance Calculators" />
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div data-shared-header></div>
+
+  <main class="container" role="main">
+    <!-- Calculator Header -->
+    <div class="card">
+      <h1>Debt-to-Income Ratio Calculator</h1>
+      <p>Calculate your debt-to-income ratio to assess your financial health and borrowing capacity.</p>
+    </div>
+
+    <!-- Ad Placeholder - Top of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <div class="grid">
+      <section class="card" id="form" aria-label="Calculator Input Form"></section>
+      <section class="card" id="results" aria-label="Calculation Results"></section>
+    </div>
+    
+    <!-- Ad Placeholder - Middle of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 20px 0; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
+      <h2>Debt Breakdown</h2>
+      <div class="chart-container">
+        <canvas id="chart" width="400" height="200"></canvas>
+      </div>
+    </section>
+    
+    <!-- Educational Content -->
+    <section class="card">
+      <h2>Understanding Debt-to-Income Ratio</h2>
+      <p>Your debt-to-income (DTI) ratio is one of the most important metrics lenders use to evaluate your creditworthiness. It measures how much of your monthly income goes toward debt payments.</p>
+      
+      <h3>How DTI is Calculated</h3>
+      <p>DTI = (Total Monthly Debt Payments ÷ Gross Monthly Income) × 100</p>
+      
+      <h3>DTI Categories and What They Mean</h3>
+      <ul>
+        <li><strong>Excellent (0-20%):</strong> You have plenty of room for additional debt. Lenders will offer you the best rates and terms.</li>
+        <li><strong>Good (21-35%):</strong> You're in a healthy range. Most lenders will approve you for loans with competitive rates.</li>
+        <li><strong>Fair (36-43%):</strong> You're approaching the limit. Lenders may approve you but with higher rates or stricter terms.</li>
+        <li><strong>Poor (44-50%):</strong> You're at risk. Lenders may deny applications or require significant down payments.</li>
+        <li><strong>Very Poor (50%+):</strong> You're overextended. Focus on reducing debt before taking on more.</li>
+      </ul>
+      
+      <h3>What Counts as Debt?</h3>
+      <ul>
+        <li><strong>Housing:</strong> Mortgage or rent payments</li>
+        <li><strong>Auto Loans:</strong> Car payments</li>
+        <li><strong>Credit Cards:</strong> Minimum monthly payments</li>
+        <li><strong>Student Loans:</strong> Monthly payments</li>
+        <li><strong>Personal Loans:</strong> Monthly payments</li>
+        <li><strong>Other Debts:</strong> Any recurring debt obligations</li>
+      </ul>
+      
+      <h3>Improving Your DTI Ratio</h3>
+      <ul>
+        <li><strong>Increase Income:</strong> Ask for raises, take on side gigs, or find higher-paying jobs.</li>
+        <li><strong>Reduce Debt:</strong> Pay off high-interest debt first, consolidate loans, or negotiate lower rates.</li>
+        <li><strong>Delay New Debt:</strong> Avoid taking on new loans until your DTI improves.</li>
+        <li><strong>Budget Better:</strong> Track spending and cut unnecessary expenses to free up money for debt payments.</li>
+      </ul>
+      
+      <h3>DTI Requirements by Loan Type</h3>
+      <ul>
+        <li><strong>Conventional Mortgages:</strong> Typically require DTI below 43%</li>
+        <li><strong>FHA Loans:</strong> Allow DTI up to 43% with compensating factors</li>
+        <li><strong>VA Loans:</strong> Generally require DTI below 41%</li>
+        <li><strong>Auto Loans:</strong> Usually require DTI below 45%</li>
+        <li><strong>Personal Loans:</strong> Often require DTI below 40%</li>
+      </ul>
+    </section>
+    
+    <!-- Ad Placeholder - Bottom of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 20px 0; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+  </main>
+
+  <footer class="container">
+    <div>© 2024 Open Finance Calculators. All rights reserved. <a href="../../privacy-policy.html" class="link">Privacy Policy</a> | <a href="../../terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+  </footer>
+
+  <!-- Calculator Configuration -->
+  <script>
+    window.calculatorConfig = {
+      "id": "debt-to-income",
+      "title": "Debt-to-Income Ratio",
+      "description": "Calculate your debt-to-income ratio to understand your financial health and borrowing capacity.",
+      "explainer": "DTI is a key metric lenders use. Total DTI includes all monthly debt payments ÷ gross monthly income. Good: <36%, Acceptable: 36-41%, High risk: >41%. Housing alone should be <28%.",
+      "inputs": [
+        { "name": "grossIncome", "label": "Monthly Gross Income", "type": "currency", "min": 0, "step": 100, "default": 6000 },
+        { "name": "housingPayment", "label": "Housing Payment (rent/mortgage)", "type": "currency", "min": 0, "step": 50, "default": 1500 },
+        { "name": "carPayments", "label": "Car Payments", "type": "currency", "min": 0, "step": 25, "default": 400 },
+        { "name": "creditCards", "label": "Credit Card Minimums", "type": "currency", "min": 0, "step": 25, "default": 150 },
+        { "name": "studentLoans", "label": "Student Loan Payments", "type": "currency", "min": 0, "step": 25, "default": 200 },
+        { "name": "otherDebts", "label": "Other Monthly Debt Payments", "type": "currency", "min": 0, "step": 25, "default": 0 }
+      ],
+      "compute": "computeDebtToIncome",
+      "outputs": [
+        { "name": "totalDTI", "label": "Total Debt-to-Income", "format": "percent" },
+        { "name": "housingDTI", "label": "Housing DTI", "format": "percent" },
+        { "name": "riskLevel", "label": "Risk Assessment", "format": "text" },
+        { "name": "maxAdditionalDebt", "label": "Max Additional Monthly Debt", "format": "currency" }
+      ],
+      "chart": { "x": "category", "series": [{"key": "amount", "label": "Monthly Payment"}] }
+    };
+  </script>
+
+  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="/js/app.js"></script>
+  
+  <script type="module">
+    import { renderNav } from '/js/ui.js';
+    
+    // Initialize navigation on debt-to-income calculator page
+    fetch('/config/calculators.json')
+      .then(response => response.json())
+      .then(calculators => {
+        renderNav(calculators, 'debt-to-income');
+      })
+      .catch(error => {
+        console.error('Error loading calculators:', error);
+      });
+  </script>
+</body>
+</html>

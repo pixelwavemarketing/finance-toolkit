@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./finance-toolkit-fav/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./finance-toolkit-fav/favicon.svg" />
+  <link rel="shortcut icon" href="./finance-toolkit-fav/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./finance-toolkit-fav/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="FinanceTool" />
+  <link rel="manifest" href="./finance-toolkit-fav/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Calculators - Open Finance Calculators</title>
+  <meta name="description" content="Free financial calculators for compound interest, debt payoff, emergency fund, savings rate, budget planning, and more. Professional-grade tools with educational content." />
+  <meta name="keywords" content="financial calculator, compound interest calculator, debt payoff calculator, emergency fund calculator, savings rate calculator, budget calculator, refinance calculator" />
+  <meta name="author" content="Open Finance Calculators" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://openfinancecalculators.com/calculators" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Financial Calculators - Open Finance Calculators" />
+  <meta property="og:description" content="Free financial calculators for compound interest, debt payoff, emergency fund, savings rate, budget planning, and more. Professional-grade tools with educational content." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://openfinancecalculators.com/calculators" />
+  <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Open Finance Calculators" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Financial Calculators - Open Finance Calculators" />
+  <meta name="twitter:description" content="Free financial calculators for compound interest, debt payoff, emergency fund, savings rate, budget planning, and more." />
+  <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
+  <meta name="twitter:creator" content="@OpenFinanceCalc" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="msapplication-TileColor" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Open Finance Calculators" />
+  
+  <!-- Search Console Verification -->
+  <meta name="google-site-verification" content="VVqCTIGRuiSsoa137qyNR19sfFDTVOQJTXKCpTS9K1E" />
+  <meta name="msvalidate.01" content="D74B24FADC0EA14BCD046E165FE7ED9B" />
+  
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div data-shared-header></div>
+
+  <main class="container" role="main">
+    <!-- Ad Placeholder - Top of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <div class="card">
+      <h1>Financial Calculators</h1>
+      <p>Professional-grade financial calculators with detailed educational content. All tools run in your browser for complete privacy.</p>
+    </div>
+
+    <div id="calculators-grid" class="calculators-grid">
+      <!-- Calculators will be populated by JavaScript -->
+    </div>
+  </main>
+
+  <footer class="container">
+    <div>© 2024 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+  </footer>
+
+  <script type="module">
+    import { injectHeader } from './js/header.js';
+    await injectHeader();
+    import { renderNav } from './js/ui.js';
+    
+    // Function to render calculators grid
+    function renderCalculatorsGrid(calculators) {
+      const grid = document.getElementById('calculators-grid');
+      if (!grid) return;
+      
+      const calculatorCards = Object.values(calculators).map(calc => `
+        <div class="calculator-card">
+          <div class="calculator-content">
+            <h3>${calc.title}</h3>
+            <p>${calc.description}</p>
+            <div class="calculator-actions">
+              <a href="./calculators/${calc.id}/" class="btn">Use Calculator</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      
+      grid.innerHTML = calculatorCards;
+    }
+    
+    // Initialize navigation and calculators grid
+    fetch('./config/calculators.json')
+      .then(response => response.json())
+      .then(calculators => {
+        renderNav(calculators);
+        renderCalculatorsGrid(calculators);
+      })
+      .catch(error => {
+        console.error('Error loading calculators:', error);
+      });
+  </script>
+</body>
+</html>

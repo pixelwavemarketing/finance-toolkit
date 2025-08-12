@@ -1,0 +1,26 @@
+{
+  "id": "credit-card-minimum",
+  "title": "Credit Card Minimum Cost",
+  "description": "See the true cost of paying only minimum payments on credit card debt.",
+  "explainer": "Minimum payments are designed to maximize bank profits, not help you. Typical minimums: 2-3% of balance or $25 minimum. Paying minimums on $5,000 at 19.99% takes 18+ years and costs $7,000+ in interest.",
+  "inputs": [
+    { "name": "balance", "label": "Credit Card Balance", "type": "currency", "min": 0, "step": 100, "default": 5000 },
+    { "name": "apr", "label": "APR (%)", "type": "percent", "min": 0, "max": 50, "step": 0.01, "default": 19.99 },
+    { "name": "minimumType", "label": "Minimum Payment Rule", "type": "select", "options": [
+      { "value": "percent", "label": "Percentage of Balance" },
+      { "value": "fixed", "label": "Fixed Minimum Amount" }
+    ], "default": "percent" },
+    { "name": "minimumPercent", "label": "Minimum Payment (%)", "type": "percent", "min": 1, "max": 10, "step": 0.1, "default": 2 },
+    { "name": "minimumFixed", "label": "Minimum Payment ($)", "type": "currency", "min": 10, "step": 5, "default": 25 }
+  ],
+  "compute": "computeCreditCardMinimum",
+  "outputs": [
+    { "name": "monthsToPayoff", "label": "Months to Pay Off", "format": "number" },
+    { "name": "totalInterest", "label": "Total Interest Paid", "format": "currency" },
+    { "name": "totalPaid", "label": "Total Amount Paid", "format": "currency" },
+    { "name": "payoffDate", "label": "Payoff Date", "format": "text" }
+  ],
+  "chart": { "x": "month", "series": [{"key": "balance", "label": "Remaining Balance"}] }
+}
+
+

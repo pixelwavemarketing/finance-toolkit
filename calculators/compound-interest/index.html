@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../finance-toolkit-fav/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../../finance-toolkit-fav/favicon.svg" />
+  <link rel="shortcut icon" href="../../finance-toolkit-fav/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../finance-toolkit-fav/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="FinanceTool" />
+  <link rel="manifest" href="../../finance-toolkit-fav/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compound Interest Calculator - Open Finance Calculators</title>
+  <meta name="description" content="Free compound interest calculator with timeline visualization. Calculate how your money grows over time with compound interest, multiple contribution types, and detailed results." />
+  <meta name="keywords" content="compound interest calculator, compound interest formula, investment calculator, savings calculator, interest calculator, compound growth calculator" />
+  <meta name="author" content="Open Finance Calculators" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://openfinancecalculators.com/calculators/compound-interest/" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Compound Interest Calculator - Open Finance Calculators" />
+  <meta property="og:description" content="Free compound interest calculator with timeline visualization. Calculate how your money grows over time." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://openfinancecalculators.com/calculators/compound-interest/" />
+  <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Open Finance Calculators" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Compound Interest Calculator - Open Finance Calculators" />
+  <meta name="twitter:description" content="Free compound interest calculator with timeline visualization." />
+  <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="msapplication-TileColor" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Open Finance Calculators" />
+  
+  <!-- Search Console Verification -->
+  <meta name="google-site-verification" content="VVqCTIGRuiSsoa137qyNR19sfFDTVOQJTXKCpTS9K1E" />
+  <meta name="msvalidate.01" content="D74B24FADC0EA14BCD046E165FE7ED9B" />
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div data-shared-header></div>
+
+  <main class="container" role="main">
+    <!-- Calculator Header -->
+    <div class="card">
+      <h1>Compound Interest Calculator</h1>
+      <p>See how your money grows over time with compound interest. This calculator shows the power of compound growth with timeline visualization and multiple contribution types.</p>
+    </div>
+
+    <!-- Ad Placeholder - Top of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <div class="grid">
+      <section class="card" id="form" aria-label="Calculator Input Form"></section>
+      <section class="card" id="results" aria-label="Calculation Results"></section>
+    </div>
+    
+    <!-- Ad Placeholder - Middle of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 20px 0; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
+      <h2>Chart</h2>
+      <div class="chart-area">
+        <canvas id="chart" aria-label="Compound interest growth chart"></canvas>
+      </div>
+    </section>
+    <section class="card" style="margin-top:16px;" aria-label="Calculator Explanation">
+      <h2>What this means</h2>
+      <div id="explainer">Enter your details above to see how compound interest can grow your money over time.</div>
+    </section>
+    
+    <!-- Educational Sections -->
+    <div class="educational-sections" id="educationalSections" style="display:none;">
+      <!-- How to Use Section -->
+      <div class="card" style="margin-top:16px;">
+        <h2>📖 How to Use This Calculator</h2>
+        <div class="how-to-grid" id="howToGrid">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+      
+      <!-- Math Section -->
+      <div class="card" style="margin-top:16px;">
+        <h2 class="math-toggle" id="mathToggle" style="cursor:pointer; user-select:none;">
+          🧮 Showing the Math
+          <svg class="math-arrow" style="width:16px; height:16px; display:inline; margin-left:8px; transition:transform 0.3s ease;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </h2>
+        <div class="math-content" id="mathContent" style="display:none; margin-top:16px;">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container">
+    <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="/privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a> <span id="shareTarget"></span></div>
+  </footer>
+
+  <!-- Calculator-specific initialization -->
+  <script>
+    // Set the calculator ID for this page
+    window.calculatorId = 'compound-interest';
+    
+    // Test if JavaScript is loading
+    console.log('Calculator page script loaded');
+    console.log('Calculator ID set to:', window.calculatorId);
+    
+    // Add calculator config directly to avoid path issues
+    window.calculatorConfig = {
+      "id": "compound-interest",
+      "title": "Compound Interest",
+      "description": "Estimate growth of an investment with recurring contributions and compounding.",
+      "explainer": "This calculator shows how your money grows through compound interest over time. Conservative estimates: 3-4% (bonds/savings), moderate: 6-7% (diversified portfolio), aggressive: 8-10% (stocks). Always consider inflation and taxes.",
+      "inputs": [
+        { 
+          "name": "principal", 
+          "label": "Starting Amount", 
+          "type": "currency", 
+          "min": 0, 
+          "step": 100, 
+          "default": 10000 
+        },
+        { 
+          "name": "contrib", 
+          "label": "Monthly Contribution", 
+          "type": "currency", 
+          "min": 0, 
+          "step": 50, 
+          "default": 200 
+        },
+        { 
+          "name": "rate", 
+          "label": "Expected Annual Return (%)", 
+          "type": "percent", 
+          "min": 0, 
+          "max": 25, 
+          "step": 0.1, 
+          "default": 6 
+        },
+        { 
+          "name": "years", 
+          "label": "Years", 
+          "type": "number", 
+          "min": 1, 
+          "max": 60, 
+          "step": 1, 
+          "default": 10 
+        },
+        { 
+          "name": "compound", 
+          "label": "Compounding", 
+          "type": "select", 
+          "options": [
+            { "value": "annual", "label": "Annual" },
+            { "value": "quarterly", "label": "Quarterly" },
+            { "value": "monthly", "label": "Monthly" },
+            { "value": "daily", "label": "Daily (approx)" }
+          ], 
+          "default": "monthly" 
+        }
+      ],
+      "compute": "computeCompoundInterest",
+      "outputs": [
+        { "name": "finalBalance", "label": "Final Balance", "format": "currency" },
+        { "name": "totalContrib", "label": "Total Contributions", "format": "currency" },
+        { "name": "totalGrowth", "label": "Total Growth", "format": "currency" }
+      ],
+      "chart": { 
+        "x": "year", 
+        "series": [{"key": "balance", "label": "Balance"}] 
+      }
+    };
+    
+    console.log('Calculator config loaded:', window.calculatorConfig);
+  </script>
+
+  <!-- Load the modular JavaScript -->
+  <script type="module" src="../../js/app.js"></script>
+  <script type="module" src="/js/header.js"></script>
+
+  <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Compound Interest Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "url": "https://openfinancecalculators.com/calculators/compound-interest/",
+      "description": "Calculate compound interest with timeline visualization and multiple contribution types.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Compound interest calculation",
+        "Timeline visualization",
+        "Multiple contribution types",
+        "Educational content",
+        "Mobile responsive"
+      ]
+    }
+  </script>
+</body>
+</html>

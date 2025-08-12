@@ -1,0 +1,832 @@
+{
+  "compound-interest": {
+    "id": "compound-interest",
+    "title": "Compound Interest",
+    "description": "Estimate growth of an investment with recurring contributions and compounding.",
+    "explainer": "This calculator shows how your money grows through compound interest over time. Conservative estimates: 3-4% (bonds/savings), moderate: 6-7% (diversified portfolio), aggressive: 8-10% (stocks). Always consider inflation and taxes.",
+    "inputs": [
+      { 
+        "name": "principal", 
+        "label": "Starting Amount", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 10000 
+      },
+      { 
+        "name": "contrib", 
+        "label": "Monthly Contribution", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 50, 
+        "default": 200 
+      },
+      { 
+        "name": "rate", 
+        "label": "Expected Annual Return (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 25, 
+        "step": 0.1, 
+        "default": 6 
+      },
+      { 
+        "name": "years", 
+        "label": "Years", 
+        "type": "number", 
+        "min": 1, 
+        "max": 60, 
+        "step": 1, 
+        "default": 10 
+      },
+      { 
+        "name": "compound", 
+        "label": "Compounding", 
+        "type": "select", 
+        "options": [
+          { "value": "annual", "label": "Annual" },
+          { "value": "quarterly", "label": "Quarterly" },
+          { "value": "monthly", "label": "Monthly" },
+          { "value": "daily", "label": "Daily (approx)" }
+        ], 
+        "default": "monthly" 
+      }
+    ],
+    "compute": "computeCompoundInterest",
+    "outputs": [
+      { "name": "finalBalance", "label": "Final Balance", "format": "currency" },
+      { "name": "totalContrib", "label": "Total Contributions", "format": "currency" },
+      { "name": "totalGrowth", "label": "Total Growth", "format": "currency" }
+    ],
+    "chart": { 
+      "x": "year", 
+      "series": [{"key": "balance", "label": "Balance"}] 
+    },
+    "guides": [
+      {
+        "title": "How to Use the Compound Interest Calculator",
+        "description": "Master the power of compound growth with this step-by-step guide to the calculator features.",
+        "link": "#"
+      },
+      {
+        "title": "Monthly vs Annual Compounding: What's the Difference?",
+        "description": "Understand how compounding frequency affects your returns and which option to choose.",
+        "link": "#"
+      },
+      {
+        "title": "Setting Realistic Return Expectations",
+        "description": "Historical market returns: US stocks (10%), bonds (5%), inflation (3%). Use conservative estimates for planning.",
+        "link": "#"
+      }
+    ]
+  },
+  "debt-payoff": {
+    "id": "debt-payoff",
+    "title": "Debt Payoff Planner",
+    "description": "Build a month‑by‑month plan using snowball or avalanche and optional extra payments.",
+    "explainer": "Two proven debt payoff strategies: Snowball (smallest balance first) builds motivation, Avalanche (highest rate first) saves more money. Choose based on your personality and situation.",
+    "inputs": [
+      { 
+        "name": "strategy", 
+        "label": "Strategy", 
+        "type": "select", 
+        "options": [
+          {"value": "snowball", "label": "Snowball (smallest balance first)"},
+          {"value": "avalanche", "label": "Avalanche (highest rate first)"}
+        ], 
+        "default": "snowball" 
+      },
+      { 
+        "name": "extra", 
+        "label": "Extra Payment / month", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 100 
+      },
+      { 
+        "name": "debts", 
+        "label": "Debts", 
+        "type": "repeater", 
+        "of": [
+          { "name": "name", "label": "Name", "type": "text", "default": "Card" },
+          { "name": "balance", "label": "Balance", "type": "currency", "min": 0, "step": 50, "default": 1500 },
+          { "name": "apr", "label": "APR (%)", "type": "percent", "min": 0, "max": 80, "step": 0.1, "default": 19.99 },
+          { "name": "min", "label": "Min Payment", "type": "currency", "min": 0, "step": 10, "default": 50 }
+        ], 
+        "defaultRows": [
+          { "name": "Card A", "balance": 1500, "apr": 19.99, "min": 50 },
+          { "name": "Loan B", "balance": 5000, "apr": 7.0, "min": 120 }
+        ]
+      }
+    ],
+    "compute": "computeDebtPayoff",
+    "outputs": [
+      { "name": "months", "label": "Months to Debt‑Free", "format": "number" },
+      { "name": "totalInterest", "label": "Total Interest Paid", "format": "currency" },
+      { "name": "debtFreeDate", "label": "Debt‑Free Date", "format": "text" }
+    ],
+    "chart": { 
+      "x": "month", 
+      "series": [{"key": "totalBalance", "label": "Total Balance"}] 
+    },
+    "guides": [
+      {
+        "title": "How to Use the Debt Payoff Planner",
+        "description": "Step-by-step guide to plan your debt freedom journey with snowball vs avalanche strategies.",
+        "link": "#"
+      },
+      {
+        "title": "Snowball vs Avalanche: Which Strategy Wins?",
+        "description": "Compare the psychological benefits of snowball method vs the mathematical efficiency of avalanche.",
+        "link": "#"
+      },
+      {
+        "title": "Common Debt Payoff Mistakes to Avoid",
+        "description": "Avoid these pitfalls that keep people in debt longer than necessary.",
+        "link": "#"
+      }
+    ]
+  },
+  "emergency-fund": {
+    "id": "emergency-fund",
+    "title": "Emergency Fund Planner",
+    "description": "Calculate your ideal emergency fund target and timeline based on monthly expenses and risk tolerance.",
+    "explainer": "Emergency fund basics: 3 months for stable jobs, 6 months for variable income, 9+ months for single-income families. Start with $1,000, then build to 1 month, then your full target.",
+    "inputs": [
+      { 
+        "name": "monthlyExpenses", 
+        "label": "Monthly Expenses", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 4000 
+      },
+      { 
+        "name": "monthsBuffer", 
+        "label": "Months of Expenses to Save", 
+        "type": "number", 
+        "min": 1, 
+        "max": 12, 
+        "step": 0.5, 
+        "default": 3 
+      },
+      { 
+        "name": "currentSaved", 
+        "label": "Already Saved", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 2000 
+      },
+      { 
+        "name": "monthlySavings", 
+        "label": "Monthly Savings Goal", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 300 
+      },
+      { 
+        "name": "interestRate", 
+        "label": "Savings Account APY (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 10, 
+        "step": 0.1, 
+        "default": 4.5 
+      },
+      {
+        "name": "categories",
+        "label": "Sinking Fund Categories",
+        "type": "repeater",
+        "of": [
+          { "name": "name", "label": "Category", "type": "text", "default": "Car Repairs" },
+          { "name": "target", "label": "Target Amount", "type": "currency", "min": 0, "step": 100, "default": 2000 },
+          { "name": "monthly", "label": "Monthly Savings", "type": "currency", "min": 0, "step": 25, "default": 100 }
+        ],
+        "defaultRows": [
+          { "name": "Car Repairs", "target": 2000, "monthly": 100 },
+          { "name": "Medical/Dental", "target": 1500, "monthly": 75 }
+        ]
+      }
+    ],
+    "compute": "computeEmergencyFund",
+    "outputs": [
+      { "name": "targetAmount", "label": "Emergency Fund Target", "format": "currency" },
+      { "name": "stillNeeded", "label": "Still Need to Save", "format": "currency" },
+      { "name": "monthsToGoal", "label": "Months to Goal", "format": "number" },
+      { "name": "totalSinkingFunds", "label": "Total Sinking Funds", "format": "currency" }
+    ],
+    "chart": { 
+      "x": "month", 
+      "series": [{"key": "emergencyBalance", "label": "Emergency Fund"}] 
+    },
+    "guides": [
+      {
+        "title": "Emergency Fund Size Guide",
+        "description": "3 months: stable job, dual income. 6 months: commission/variable income. 9+ months: single income, self-employed, or unstable industry.",
+        "link": "#"
+      },
+      {
+        "title": "Emergency Fund vs Sinking Funds Explained",
+        "description": "Learn the difference between emergency funds and targeted sinking funds for planned expenses.",
+        "link": "#"
+      },
+      {
+        "title": "Where to Keep Your Emergency Fund",
+        "description": "Best accounts for emergency funds: high-yield savings, money market, or short-term CDs.",
+        "link": "#"
+      }
+    ]
+  },
+  "savings-rate": {
+    "id": "savings-rate",
+    "title": "Savings Rate & FI Date",
+    "description": "Calculate your savings rate and estimate when you can achieve financial independence.",
+    "explainer": "Financial Independence = having 25x your annual expenses invested (4% rule). Higher savings rates dramatically reduce time to FI: 10% savings = 51 years, 25% = 32 years, 50% = 17 years.",
+    "inputs": [
+      { 
+        "name": "netIncome", 
+        "label": "Monthly Net Income", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 6000 
+      },
+      { 
+        "name": "monthlyExpenses", 
+        "label": "Monthly Expenses", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 3500 
+      },
+      { 
+        "name": "currentInvestments", 
+        "label": "Current Investments", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 1000, 
+        "default": 50000 
+      },
+      { 
+        "name": "annualReturn", 
+        "label": "Expected Annual Return (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 15, 
+        "step": 0.1, 
+        "default": 6 
+      },
+      { 
+        "name": "withdrawalRate", 
+        "label": "Safe Withdrawal Rate (%)", 
+        "type": "percent", 
+        "min": 2.5, 
+        "max": 5, 
+        "step": 0.25, 
+        "default": 4 
+      }
+    ],
+    "compute": "computeSavingsRate",
+    "outputs": [
+      { "name": "savingsRate", "label": "Savings Rate", "format": "percent" },
+      { "name": "yearsToFI", "label": "Years to FI", "format": "number" },
+      { "name": "targetPortfolio", "label": "Target Portfolio", "format": "currency" },
+      { "name": "monthlySavings", "label": "Monthly Savings", "format": "currency" }
+    ],
+    "chart": { 
+      "x": "year", 
+      "series": [{"key": "portfolio", "label": "Portfolio Value"}] 
+    },
+    "guides": [
+      {
+        "title": "What's a Safe Withdrawal Rate?",
+        "description": "Understand the 4% rule and how different withdrawal rates affect your FI timeline.",
+        "link": "#"
+      },
+      {
+        "title": "5% vs 7% Return Scenarios",
+        "description": "Compare conservative vs optimistic return assumptions and their impact on your FI date.",
+        "link": "#"
+      },
+      {
+        "title": "How to Increase Your Savings Rate",
+        "description": "Practical strategies to boost your savings rate and accelerate your path to FI.",
+        "link": "#"
+      }
+    ]
+  },
+  "goal-timeline": {
+    "id": "goal-timeline",
+    "title": "Goal Timeline Planner",
+    "description": "Plan when you'll reach your savings goal with regular contributions and optional step-ups.",
+    "explainer": "This calculator shows how long it will take to reach your savings goal and breaks down the contributions vs growth. You can model step-up scenarios where you increase your savings over time.",
+    "inputs": [
+      { 
+        "name": "targetAmount", 
+        "label": "Target Goal Amount", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 1000, 
+        "default": 50000 
+      },
+      { 
+        "name": "startAmount", 
+        "label": "Starting Amount", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 5000 
+      },
+      { 
+        "name": "monthlyContribution", 
+        "label": "Monthly Contribution", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 500 
+      },
+      { 
+        "name": "annualReturn", 
+        "label": "Expected Annual Return (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 20, 
+        "step": 0.1, 
+        "default": 6 
+      },
+      { 
+        "name": "stepUpEnabled", 
+        "label": "Enable Step-Up Savings", 
+        "type": "select", 
+        "options": [
+          { "value": "false", "label": "No - Fixed Amount" },
+          { "value": "true", "label": "Yes - Increase Over Time" }
+        ], 
+        "default": "false" 
+      },
+      { 
+        "name": "stepUpAmount", 
+        "label": "Annual Increase Amount", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 100 
+      },
+      { 
+        "name": "stepUpFrequency", 
+        "label": "Increase Every (months)", 
+        "type": "number", 
+        "min": 1, 
+        "max": 36, 
+        "step": 1, 
+        "default": 12 
+      }
+    ],
+    "compute": "computeGoalTimeline",
+    "outputs": [
+      { "name": "monthsToGoal", "label": "Months to Goal", "format": "number" },
+      { "name": "goalDate", "label": "Goal Date", "format": "text" },
+      { "name": "totalContributions", "label": "Total Contributions", "format": "currency" },
+      { "name": "totalGrowth", "label": "Growth from Returns", "format": "currency" }
+    ],
+    "chart": { 
+      "x": "month", 
+      "series": [{"key": "balance", "label": "Account Balance"}] 
+    },
+    "guides": [
+      {
+        "title": "Lump Sum vs Monthly Saving",
+        "description": "Compare the effectiveness of making a large initial investment vs consistent monthly contributions.",
+        "link": "#"
+      },
+      {
+        "title": "Step-Up Savings Plans",
+        "description": "How gradually increasing your contributions can dramatically shorten your timeline to goals.",
+        "link": "#"
+      },
+      {
+        "title": "Setting Realistic Timeline Goals",
+        "description": "How to balance aggressive savings goals with sustainable lifestyle choices.",
+        "link": "#"
+      }
+    ]
+  },
+  "refinance-breakeven": {
+    "id": "refinance-breakeven",
+    "title": "Refinance Break-Even",
+    "description": "Calculate when refinancing pays off by comparing closing costs to monthly savings.",
+    "explainer": "This calculator shows how long it takes to break even on refinancing costs and your total interest savings over the loan term. Consider refinancing when you'll stay in the loan longer than the break-even period.",
+    "inputs": [
+      { 
+        "name": "currentBalance", 
+        "label": "Current Loan Balance", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 1000, 
+        "default": 250000 
+      },
+      { 
+        "name": "currentAPR", 
+        "label": "Current APR (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 30, 
+        "step": 0.01, 
+        "default": 6.5 
+      },
+      { 
+        "name": "currentTermMonths", 
+        "label": "Remaining Months", 
+        "type": "number", 
+        "min": 1, 
+        "max": 480, 
+        "step": 1, 
+        "default": 300 
+      },
+      { 
+        "name": "newAPR", 
+        "label": "New APR (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 30, 
+        "step": 0.01, 
+        "default": 5.25 
+      },
+      { 
+        "name": "newTermMonths", 
+        "label": "New Term (months)", 
+        "type": "number", 
+        "min": 1, 
+        "max": 480, 
+        "step": 1, 
+        "default": 360 
+      },
+      { 
+        "name": "closingCosts", 
+        "label": "Closing Costs & Fees", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 3500 
+      }
+    ],
+    "compute": "computeRefinanceBreakeven",
+    "outputs": [
+      { "name": "breakevenMonths", "label": "Break-Even (months)", "format": "number" },
+      { "name": "monthlySavings", "label": "Monthly Savings", "format": "currency" },
+      { "name": "lifetimeInterestSaved", "label": "Lifetime Interest Saved", "format": "currency" },
+      { "name": "netBenefit", "label": "Net Benefit", "format": "currency" }
+    ],
+    "chart": { 
+      "x": "month", 
+      "series": [{"key": "cumulativeSavings", "label": "Cumulative Savings"}] 
+    },
+    "guides": [
+      {
+        "title": "When NOT to Refinance",
+        "description": "Learn the scenarios where refinancing might not make financial sense despite lower rates.",
+        "link": "#"
+      },
+      {
+        "title": "Rate Drop vs Fees Tradeoffs",
+        "description": "How to weigh interest rate savings against upfront refinancing costs.",
+        "link": "#"
+      },
+      {
+        "title": "Refinancing Timeline Guide",
+        "description": "Step-by-step process and timeline for refinancing your mortgage or loan.",
+        "link": "#"
+      }
+    ]
+  },
+  "budget-splitter": {
+    "id": "budget-splitter",
+    "title": "50/30/20 Budget Splitter",
+    "description": "Split your take-home pay using the popular 50/30/20 rule or create custom budget percentages.",
+    "explainer": "Popular budget rules: 50/30/20 (needs/wants/savings), 70/20/10 (expenses/savings/fun), or 80/20 (expenses/savings). Adjust percentages based on your debt level, income, and goals.",
+    "inputs": [
+      { 
+        "name": "takeHomePay", 
+        "label": "Monthly Take-Home Pay", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 5000 
+      },
+      { 
+        "name": "needsPercent", 
+        "label": "Needs (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 100, 
+        "step": 1, 
+        "default": 50 
+      },
+      { 
+        "name": "wantsPercent", 
+        "label": "Wants (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 100, 
+        "step": 1, 
+        "default": 30 
+      },
+      { 
+        "name": "savingsPercent", 
+        "label": "Savings (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 100, 
+        "step": 1, 
+        "default": 20 
+      },
+      { 
+        "name": "payFrequency", 
+        "label": "Pay Frequency", 
+        "type": "select", 
+        "options": [
+          { "value": "monthly", "label": "Monthly" },
+          { "value": "biweekly", "label": "Bi-weekly" },
+          { "value": "weekly", "label": "Weekly" }
+        ], 
+        "default": "monthly" 
+      }
+    ],
+    "compute": "computeBudgetSplitter",
+    "outputs": [
+      { "name": "needsAmount", "label": "Needs Budget", "format": "currency" },
+      { "name": "wantsAmount", "label": "Wants Budget", "format": "currency" },
+      { "name": "savingsAmount", "label": "Savings Budget", "format": "currency" },
+      { "name": "totalPercent", "label": "Total Percentage", "format": "percent" }
+    ],
+    "chart": { 
+      "x": "category", 
+      "series": [{"key": "amount", "label": "Budget Amount"}] 
+    },
+    "guides": [
+      {
+        "title": "Which Budget Rule is Right for You?",
+        "description": "50/30/20: balanced approach. 70/20/10: aggressive savings. 80/20: debt payoff mode. Adjust based on your phase of life.",
+        "link": "#"
+      },
+      {
+        "title": "How to Adjust for Irregular Income",
+        "description": "Budgeting strategies for freelancers, contractors, and variable income earners.",
+        "link": "#"
+      },
+      {
+        "title": "Needs vs Wants: The Reality Check",
+        "description": "Needs: housing, utilities, groceries, minimum debt payments, insurance. Wants: dining out, entertainment, upgrades. Gray areas require honest assessment.",
+        "link": "#"
+      }
+    ]
+  },
+  "extra-payment": {
+    "id": "extra-payment",
+    "title": "Extra Payment Impact",
+    "description": "See how extra payments can dramatically reduce your loan term and interest costs.",
+    "explainer": "Extra payments go directly to principal, reducing interest dramatically. Rule of thumb: if loan rate > expected investment return, pay extra. Otherwise, invest the difference. Early payments have bigger impact.",
+    "inputs": [
+      { 
+        "name": "loanBalance", 
+        "label": "Current Loan Balance", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 1000, 
+        "default": 200000 
+      },
+      { 
+        "name": "apr", 
+        "label": "APR (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 30, 
+        "step": 0.01, 
+        "default": 5.5 
+      },
+      { 
+        "name": "remainingMonths", 
+        "label": "Remaining Months", 
+        "type": "number", 
+        "min": 1, 
+        "max": 480, 
+        "step": 1, 
+        "default": 300 
+      },
+      { 
+        "name": "extraPayment", 
+        "label": "Extra Monthly Payment", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 200 
+      },
+      { 
+        "name": "paymentType", 
+        "label": "Payment Type", 
+        "type": "select", 
+        "options": [
+          { "value": "monthly", "label": "Monthly Extra Payment" },
+          { "value": "annual", "label": "Annual Extra Payment" },
+          { "value": "onetime", "label": "One-Time Extra Payment" }
+        ], 
+        "default": "monthly" 
+      }
+    ],
+    "compute": "computeExtraPayment",
+    "outputs": [
+      { "name": "monthsSaved", "label": "Months Saved", "format": "number" },
+      { "name": "interestSaved", "label": "Interest Saved", "format": "currency" },
+      { "name": "newPayoffDate", "label": "New Payoff Date", "format": "text" },
+      { "name": "totalSavings", "label": "Total Savings", "format": "currency" }
+    ],
+    "chart": { 
+      "x": "month", 
+      "series": [{"key": "balance", "label": "Remaining Balance"}] 
+    },
+    "guides": [
+      {
+        "title": "Best Time to Add Extra Payments",
+        "description": "When in your loan term extra payments have the biggest impact on interest savings.",
+        "link": "#"
+      },
+      {
+        "title": "One-Time vs Recurring Extra Payments",
+        "description": "Compare the benefits of lump sum payments vs consistent monthly extra payments.",
+        "link": "#"
+      },
+      {
+        "title": "Extra Payments vs Investing",
+        "description": "When to pay down debt vs invest the extra money in the market.",
+        "link": "#"
+      }
+    ]
+  },
+  "credit-card-minimum": {
+    "id": "credit-card-minimum",
+    "title": "Credit Card Minimum Cost",
+    "description": "See the true cost of paying only minimum payments on credit card debt.",
+    "explainer": "Minimum payments are designed to maximize bank profits, not help you. Typical minimums: 2-3% of balance or $25 minimum. Paying minimums on $5,000 at 19.99% takes 18+ years and costs $7,000+ in interest.",
+    "inputs": [
+      { 
+        "name": "balance", 
+        "label": "Credit Card Balance", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 5000 
+      },
+      { 
+        "name": "apr", 
+        "label": "APR (%)", 
+        "type": "percent", 
+        "min": 0, 
+        "max": 50, 
+        "step": 0.01, 
+        "default": 19.99 
+      },
+      { 
+        "name": "minimumType", 
+        "label": "Minimum Payment Rule", 
+        "type": "select", 
+        "options": [
+          { "value": "percent", "label": "Percentage of Balance" },
+          { "value": "fixed", "label": "Fixed Minimum Amount" }
+        ], 
+        "default": "percent" 
+      },
+      { 
+        "name": "minimumPercent", 
+        "label": "Minimum Payment (%)", 
+        "type": "percent", 
+        "min": 1, 
+        "max": 10, 
+        "step": 0.1, 
+        "default": 2 
+      },
+      { 
+        "name": "minimumFixed", 
+        "label": "Minimum Payment ($)", 
+        "type": "currency", 
+        "min": 10, 
+        "step": 5, 
+        "default": 25 
+      }
+    ],
+    "compute": "computeCreditCardMinimum",
+    "outputs": [
+      { "name": "monthsToPayoff", "label": "Months to Pay Off", "format": "number" },
+      { "name": "totalInterest", "label": "Total Interest Paid", "format": "currency" },
+      { "name": "totalPaid", "label": "Total Amount Paid", "format": "currency" },
+      { "name": "payoffDate", "label": "Payoff Date", "format": "text" }
+    ],
+    "chart": { 
+      "x": "month", 
+      "series": [{"key": "balance", "label": "Remaining Balance"}] 
+    },
+    "guides": [
+      {
+        "title": "Why Minimums are Dangerous",
+        "description": "How credit card companies design minimum payments to maximize their profits.",
+        "link": "#"
+      },
+      {
+        "title": "Set Your Own Floor Payment",
+        "description": "Strategies for setting higher baseline payments to escape the minimum payment trap.",
+        "link": "#"
+      },
+      {
+        "title": "Minimum Payment Alternatives",
+        "description": "Better payment strategies: avalanche, snowball, and percentage-based approaches.",
+        "link": "#"
+      }
+    ]
+  },
+  "debt-to-income": {
+    "id": "debt-to-income",
+    "title": "Debt-to-Income Ratio",
+    "description": "Calculate your debt-to-income ratio to understand your financial health and borrowing capacity.",
+    "explainer": "DTI is a key metric lenders use. Total DTI includes all monthly debt payments ÷ gross monthly income. Good: <36%, Acceptable: 36-41%, High risk: >41%. Housing alone should be <28%.",
+    "inputs": [
+      { 
+        "name": "grossIncome", 
+        "label": "Monthly Gross Income", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 100, 
+        "default": 6000 
+      },
+      { 
+        "name": "housingPayment", 
+        "label": "Housing Payment (rent/mortgage)", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 50, 
+        "default": 1500 
+      },
+      { 
+        "name": "carPayments", 
+        "label": "Car Payments", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 400 
+      },
+      { 
+        "name": "creditCards", 
+        "label": "Credit Card Minimums", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 150 
+      },
+      { 
+        "name": "studentLoans", 
+        "label": "Student Loan Payments", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 200 
+      },
+      { 
+        "name": "otherDebts", 
+        "label": "Other Monthly Debt Payments", 
+        "type": "currency", 
+        "min": 0, 
+        "step": 25, 
+        "default": 0 
+      }
+    ],
+    "compute": "computeDebtToIncome",
+    "outputs": [
+      { "name": "totalDTI", "label": "Total Debt-to-Income", "format": "percent" },
+      { "name": "housingDTI", "label": "Housing DTI", "format": "percent" },
+      { "name": "riskLevel", "label": "Risk Assessment", "format": "text" },
+      { "name": "maxAdditionalDebt", "label": "Max Additional Monthly Debt", "format": "currency" }
+    ],
+    "chart": { 
+      "x": "category", 
+      "series": [{"key": "amount", "label": "Monthly Payment"}] 
+    },
+    "guides": [
+      {
+        "title": "Understanding DTI Ratios",
+        "description": "How lenders use debt-to-income ratios and what different levels mean for your financial health.",
+        "link": "#"
+      },
+      {
+        "title": "Improving Your DTI Ratio",
+        "description": "Strategies to reduce debt payments and increase income to improve your borrowing power.",
+        "link": "#"
+      },
+      {
+        "title": "DTI for Different Loan Types",
+        "description": "DTI requirements vary: conventional mortgages (43%), FHA (57%), auto loans (10-15%), credit cards (varies).",
+        "link": "#"
+      }
+    ]
+  }
+}

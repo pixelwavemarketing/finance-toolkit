@@ -1,0 +1,27 @@
+{
+  "id": "compound-interest",
+  "title": "Compound Interest",
+  "description": "Estimate growth of an investment with recurring contributions and compounding.",
+  "explainer": "This calculator shows how your money grows through compound interest over time. Conservative estimates: 3-4% (bonds/savings), moderate: 6-7% (diversified portfolio), aggressive: 8-10% (stocks). Always consider inflation and taxes.",
+  "inputs": [
+    { "name": "principal", "label": "Starting Amount", "type": "currency", "min": 0, "step": 100, "default": 10000 },
+    { "name": "contrib", "label": "Monthly Contribution", "type": "currency", "min": 0, "step": 50, "default": 200 },
+    { "name": "rate", "label": "Expected Annual Return (%)", "type": "percent", "min": 0, "max": 25, "step": 0.1, "default": 6 },
+    { "name": "years", "label": "Years", "type": "number", "min": 1, "max": 60, "step": 1, "default": 10 },
+    { "name": "compound", "label": "Compounding", "type": "select", "options": [
+      { "value": "annual", "label": "Annual" },
+      { "value": "quarterly", "label": "Quarterly" },
+      { "value": "monthly", "label": "Monthly" },
+      { "value": "daily", "label": "Daily (approx)" }
+    ], "default": "monthly" }
+  ],
+  "compute": "computeCompoundInterest",
+  "outputs": [
+    { "name": "finalBalance", "label": "Final Balance", "format": "currency" },
+    { "name": "totalContrib", "label": "Total Contributions", "format": "currency" },
+    { "name": "totalGrowth", "label": "Total Growth", "format": "currency" }
+  ],
+  "chart": { "x": "year", "series": [{"key": "balance", "label": "Balance"}] }
+}
+
+

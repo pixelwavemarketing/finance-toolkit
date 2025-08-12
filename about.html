@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./finance-toolkit-fav/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./finance-toolkit-fav/favicon.svg" />
+  <link rel="shortcut icon" href="./finance-toolkit-fav/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./finance-toolkit-fav/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="FinanceTool" />
+  <link rel="manifest" href="./finance-toolkit-fav/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Open Finance Calculators</title>
+  <meta name="description" content="Learn about Open Finance Calculators - our mission to provide free, professional-grade financial tools and educational content for everyone." />
+  <meta name="keywords" content="about, financial calculators, mission, privacy, education, personal finance" />
+  <meta name="author" content="Open Finance Calculators" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://openfinancecalculators.com/about" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="About - Open Finance Calculators" />
+  <meta property="og:description" content="Learn about Open Finance Calculators - our mission to provide free, professional-grade financial tools and educational content for everyone." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://openfinancecalculators.com/about" />
+  <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Open Finance Calculators" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About - Open Finance Calculators" />
+  <meta name="twitter:description" content="Learn about Open Finance Calculators - our mission to provide free, professional-grade financial tools and educational content for everyone." />
+  <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
+  <meta name="twitter:creator" content="@OpenFinanceCalc" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="msapplication-TileColor" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Open Finance Calculators" />
+  
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div data-shared-header></div>
+
+  <main class="container" role="main">
+    <!-- Ad Placeholder - Top of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <div class="card">
+      <h1>About Open Finance Calculators</h1>
+      <p>We believe everyone deserves access to professional-grade financial tools and educational content, regardless of their financial situation.</p>
+      
+      <h2>Our Mission</h2>
+      <p>To democratize financial planning by providing free, accurate, and educational financial calculators that help people make informed decisions about their money.</p>
+      
+      <h2>Our Values</h2>
+      <ul>
+        <li><strong>Privacy First:</strong> All calculations run in your browser. We never see your financial data.</li>
+        <li><strong>Educational Focus:</strong> We don't just calculate - we teach you the math and concepts behind each calculation.</li>
+        <li><strong>Professional Quality:</strong> Our tools meet the same standards used by financial professionals.</li>
+        <li><strong>Accessibility:</strong> Free tools that work on any device, anywhere, anytime.</li>
+      </ul>
+      
+      <h2>Why We're Different</h2>
+      <p>Unlike many financial websites that require signups, subscriptions, or bombard you with ads, we focus purely on providing valuable tools and education. Our calculators are designed to be:</p>
+      <ul>
+        <li><strong>Comprehensive:</strong> Cover all major personal finance scenarios</li>
+        <li><strong>Accurate:</strong> Use industry-standard formulas and calculations</li>
+        <li><strong>Educational:</strong> Include detailed explanations and math breakdowns</li>
+        <li><strong>Mobile-First:</strong> Optimized for all devices and screen sizes</li>
+        <li><strong>Offline-Capable:</strong> Work even without internet after first visit</li>
+      </ul>
+      
+      <h2>Our Story</h2>
+      <p>Open Finance Calculators was created by a team passionate about financial literacy and technology. We recognized that while there are many financial calculators online, most either lack educational content, require personal information, or are buried in ads.</p>
+      <p>We set out to create something different - a comprehensive suite of financial tools that not only calculate but also educate, all while respecting user privacy and maintaining professional standards.</p>
+      
+      <h2>Get Started</h2>
+      <p>Ready to take control of your financial future? Explore our calculators and start planning today. Remember, all tools are completely free with no signup required.</p>
+      
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="./calculators.html" class="btn" style="font-size: 18px; padding: 16px 24px;">
+          Explore Our Calculators
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container">
+    <div>© 2024 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+  </footer>
+
+  <script type="module">
+    import { injectHeader } from './js/header.js';
+    await injectHeader();
+    import { renderNav } from './js/ui.js';
+    
+    // Initialize navigation on about page
+    fetch('./config/calculators.json')
+      .then(response => response.json())
+      .then(calculators => {
+        renderNav(calculators);
+      })
+      .catch(error => {
+        console.error('Error loading calculators:', error);
+      });
+  </script>
+</body>
+</html>

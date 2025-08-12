@@ -1,0 +1,31 @@
+{
+  "id": "emergency-fund",
+  "title": "Emergency Fund Planner",
+  "description": "Calculate your ideal emergency fund target and timeline based on monthly expenses and risk tolerance.",
+  "explainer": "Emergency fund basics: 3 months for stable jobs, 6 months for variable income, 9+ months for single-income families. Start with $1,000, then build to 1 month, then your full target.",
+  "inputs": [
+    { "name": "monthlyExpenses", "label": "Monthly Expenses", "type": "currency", "min": 0, "step": 100, "default": 4000 },
+    { "name": "monthsBuffer", "label": "Months of Expenses to Save", "type": "number", "min": 1, "max": 12, "step": 0.5, "default": 3 },
+    { "name": "currentSaved", "label": "Already Saved", "type": "currency", "min": 0, "step": 100, "default": 2000 },
+    { "name": "monthlySavings", "label": "Monthly Savings Goal", "type": "currency", "min": 0, "step": 25, "default": 300 },
+    { "name": "interestRate", "label": "Savings Account APY (%)", "type": "percent", "min": 0, "max": 10, "step": 0.1, "default": 4.5 },
+    { "name": "categories", "label": "Sinking Fund Categories", "type": "repeater", "of": [
+      { "name": "name", "label": "Category", "type": "text", "default": "Car Repairs" },
+      { "name": "target", "label": "Target Amount", "type": "currency", "min": 0, "step": 100, "default": 2000 },
+      { "name": "monthly", "label": "Monthly Savings", "type": "currency", "min": 0, "step": 25, "default": 100 }
+    ], "defaultRows": [
+      { "name": "Car Repairs", "target": 2000, "monthly": 100 },
+      { "name": "Medical/Dental", "target": 1500, "monthly": 75 }
+    ] }
+  ],
+  "compute": "computeEmergencyFund",
+  "outputs": [
+    { "name": "targetAmount", "label": "Emergency Fund Target", "format": "currency" },
+    { "name": "stillNeeded", "label": "Still Need to Save", "format": "currency" },
+    { "name": "monthsToGoal", "label": "Months to Goal", "format": "number" },
+    { "name": "totalSinkingFunds", "label": "Total Sinking Funds", "format": "currency" }
+  ],
+  "chart": { "x": "month", "series": [{"key": "emergencyBalance", "label": "Emergency Fund"}] }
+}
+
+

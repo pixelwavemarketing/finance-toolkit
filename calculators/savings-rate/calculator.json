@@ -1,0 +1,23 @@
+{
+  "id": "savings-rate",
+  "title": "Savings Rate & FI Date",
+  "description": "Calculate your savings rate and estimate when you can achieve financial independence.",
+  "explainer": "Financial Independence = having 25x your annual expenses invested (4% rule). Higher savings rates dramatically reduce time to FI: 10% savings = 51 years, 25% = 32 years, 50% = 17 years.",
+  "inputs": [
+    { "name": "netIncome", "label": "Monthly Net Income", "type": "currency", "min": 0, "step": 100, "default": 6000 },
+    { "name": "monthlyExpenses", "label": "Monthly Expenses", "type": "currency", "min": 0, "step": 100, "default": 3500 },
+    { "name": "currentInvestments", "label": "Current Investments", "type": "currency", "min": 0, "step": 1000, "default": 50000 },
+    { "name": "annualReturn", "label": "Expected Annual Return (%)", "type": "percent", "min": 0, "max": 15, "step": 0.1, "default": 6 },
+    { "name": "withdrawalRate", "label": "Safe Withdrawal Rate (%)", "type": "percent", "min": 2.5, "max": 5, "step": 0.25, "default": 4 }
+  ],
+  "compute": "computeSavingsRate",
+  "outputs": [
+    { "name": "savingsRate", "label": "Savings Rate", "format": "percent" },
+    { "name": "yearsToFI", "label": "Years to FI", "format": "number" },
+    { "name": "targetPortfolio", "label": "Target Portfolio", "format": "currency" },
+    { "name": "monthlySavings", "label": "Monthly Savings", "format": "currency" }
+  ],
+  "chart": { "x": "year", "series": [{"key": "portfolio", "label": "Portfolio Value"}] }
+}
+
+

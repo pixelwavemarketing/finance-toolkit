@@ -1,0 +1,28 @@
+{
+  "id": "goal-timeline",
+  "title": "Goal Timeline Planner",
+  "description": "Plan when you'll reach your savings goal with regular contributions and optional step-ups.",
+  "explainer": "This calculator shows how long it will take to reach your savings goal and breaks down the contributions vs growth. You can model step-up scenarios where you increase your savings over time.",
+  "inputs": [
+    { "name": "targetAmount", "label": "Target Goal Amount", "type": "currency", "min": 0, "step": 1000, "default": 50000 },
+    { "name": "startAmount", "label": "Starting Amount", "type": "currency", "min": 0, "step": 100, "default": 5000 },
+    { "name": "monthlyContribution", "label": "Monthly Contribution", "type": "currency", "min": 0, "step": 25, "default": 500 },
+    { "name": "annualReturn", "label": "Expected Annual Return (%)", "type": "percent", "min": 0, "max": 20, "step": 0.1, "default": 6 },
+    { "name": "stepUpEnabled", "label": "Enable Step-Up Savings", "type": "select", "options": [
+      { "value": "false", "label": "No - Fixed Amount" },
+      { "value": "true", "label": "Yes - Increase Over Time" }
+    ], "default": "false" },
+    { "name": "stepUpAmount", "label": "Annual Increase Amount", "type": "currency", "min": 0, "step": 25, "default": 100 },
+    { "name": "stepUpFrequency", "label": "Increase Every (months)", "type": "number", "min": 1, "max": 36, "step": 1, "default": 12 }
+  ],
+  "compute": "computeGoalTimeline",
+  "outputs": [
+    { "name": "monthsToGoal", "label": "Months to Goal", "format": "number" },
+    { "name": "goalDate", "label": "Goal Date", "format": "text" },
+    { "name": "totalContributions", "label": "Total Contributions", "format": "currency" },
+    { "name": "totalGrowth", "label": "Growth from Returns", "format": "currency" }
+  ],
+  "chart": { "x": "month", "series": [{"key": "balance", "label": "Account Balance"}] }
+}
+
+

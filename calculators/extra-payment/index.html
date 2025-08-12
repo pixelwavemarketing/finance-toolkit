@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../finance-toolkit-fav/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../../finance-toolkit-fav/favicon.svg" />
+  <link rel="shortcut icon" href="../../finance-toolkit-fav/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../finance-toolkit-fav/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="FinanceTool" />
+  <link rel="manifest" href="../../finance-toolkit-fav/site.webmanifest" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Extra Payment Calculator - Open Finance Calculators</title>
+  <meta name="description" content="See the impact of additional payments on your loans. Calculate interest savings and payoff acceleration." />
+  <meta name="keywords" content="extra payment calculator, loan payoff calculator, interest savings calculator, early payoff calculator" />
+  <meta name="author" content="Open Finance Calculators" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://openfinancecalculators.com/calculators/extra-payment/" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Extra Payment Calculator - Open Finance Calculators" />
+  <meta property="og:description" content="See the impact of additional payments on your loans. Calculate interest savings and payoff acceleration." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://openfinancecalculators.com/calculators/extra-payment/" />
+  <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Open Finance Calculators" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Extra Payment Calculator - Open Finance Calculators" />
+  <meta name="twitter:description" content="See the impact of additional payments on your loans. Calculate interest savings and payoff acceleration." />
+  <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="msapplication-TileColor" content="#0b1020" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Open Finance Calculators" />
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div data-shared-header></div>
+
+  <main class="container" role="main">
+    <!-- Calculator Header -->
+    <div class="card">
+      <h1>Extra Payment Calculator</h1>
+      <p>See the impact of additional payments on your loans. Calculate interest savings and payoff acceleration.</p>
+    </div>
+
+    <!-- Ad Placeholder - Top of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <div class="grid">
+      <section class="card" id="form" aria-label="Calculator Input Form"></section>
+      <section class="card" id="results" aria-label="Calculation Results"></section>
+    </div>
+    
+    <!-- Ad Placeholder - Middle of Page -->
+    <div class="ad-placeholder" style="height: 90px; background: rgba(96,165,250,0.1); border: 1px dashed var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 20px 0; color: var(--muted); font-size: 12px;">
+      Ad Space (Coming Soon)
+    </div>
+    
+    <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
+      <h2>Chart</h2>
+      <div class="chart-area">
+        <canvas id="chart" aria-label="extra payment calculator results chart"></canvas>
+      </div>
+    </section>
+    <section class="card" style="margin-top:16px;" aria-label="Calculator Explanation">
+      <h2>What this means</h2>
+      <div id="explainer">Enter your details above to see the results and understand what they mean for your financial planning.</div>
+    </section>
+    
+    <!-- Educational Sections -->
+    <div class="educational-sections" id="educationalSections" style="display:none;">
+      <!-- How to Use Section -->
+      <div class="card" style="margin-top:16px;">
+        <h2>📖 How to Use This Calculator</h2>
+        <div class="how-to-grid" id="howToGrid">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+      
+      <!-- Math Section -->
+      <div class="card" style="margin-top:16px;">
+        <h2 class="math-toggle" id="mathToggle" style="cursor:pointer; user-select:none;">
+          🧮 Showing the Math
+          <svg class="math-arrow" style="width:16px; height:16px; display:inline; margin-left:8px; transition:transform 0.3s ease;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </h2>
+        <div class="math-content" id="mathContent" style="display:none; margin-top:16px;">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container">
+    <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="../../privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">pixelwave marketing</a> <span id="shareTarget"></span></div>
+  </footer>
+
+  <!-- Calculator-specific initialization -->
+  <script>
+    // Set the calculator ID for this page
+    window.calculatorId = 'extra-payment';
+
+    // Add calculator config directly to avoid path issues
+    window.calculatorConfig = {
+      "id": "extra-payment",
+      "title": "Extra Payment Impact",
+      "description": "See how extra payments can dramatically reduce your loan term and interest costs.",
+      "explainer": "Extra payments go directly to principal, reducing interest dramatically. Rule of thumb: if loan rate > expected investment return, pay extra. Otherwise, invest the difference. Early payments have bigger impact.",
+      "inputs": [
+        { 
+          "name": "loanBalance", 
+          "label": "Current Loan Balance", 
+          "type": "currency", 
+          "min": 0, 
+          "step": 1000, 
+          "default": 200000 
+        },
+        { 
+          "name": "apr", 
+          "label": "APR (%)", 
+          "type": "percent", 
+          "min": 0, 
+          "max": 30, 
+          "step": 0.01, 
+          "default": 5.5 
+        },
+        { 
+          "name": "remainingMonths", 
+          "label": "Remaining Months", 
+          "type": "number", 
+          "min": 1, 
+          "max": 480, 
+          "step": 1, 
+          "default": 300 
+        },
+        { 
+          "name": "extraPayment", 
+          "label": "Extra Monthly Payment", 
+          "type": "currency", 
+          "min": 0, 
+          "step": 25, 
+          "default": 200 
+        },
+        { 
+          "name": "paymentType", 
+          "label": "Payment Type", 
+          "type": "select", 
+          "options": [
+            { "value": "monthly", "label": "Monthly Extra Payment" },
+            { "value": "annual", "label": "Annual Extra Payment" },
+            { "value": "onetime", "label": "One-Time Extra Payment" }
+          ], 
+          "default": "monthly" 
+        }
+      ],
+      "compute": "computeExtraPayment",
+      "outputs": [
+        { "name": "monthsSaved", "label": "Months Saved", "format": "number" },
+        { "name": "interestSaved", "label": "Interest Saved", "format": "currency" },
+        { "name": "newPayoffDate", "label": "New Payoff Date", "format": "text" },
+        { "name": "totalSavings", "label": "Total Savings", "format": "currency" }
+      ],
+      "chart": { 
+        "x": "month", 
+        "series": [{"key": "balance", "label": "Remaining Balance"}] 
+      }
+    };
+  </script>
+
+  <!-- Load the modular JavaScript -->
+  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="../../js/app.js"></script>
+
+  <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Extra Payment Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "url": "https://openfinancecalculators.com/calculators/extra-payment/",
+      "description": "See the impact of additional payments on your loans. Calculate interest savings and payoff acceleration.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": ["Payment analysis","Interest savings","Payoff acceleration","Loan optimization"]
+    }
+  </script>
+</body>
+</html>

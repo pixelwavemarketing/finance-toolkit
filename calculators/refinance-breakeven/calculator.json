@@ -1,0 +1,24 @@
+{
+  "id": "refinance-breakeven",
+  "title": "Refinance Break-Even",
+  "description": "Calculate when refinancing pays off by comparing closing costs to monthly savings.",
+  "explainer": "This calculator shows how long it takes to break even on refinancing costs and your total interest savings over the loan term. Consider refinancing when you'll stay in the loan longer than the break-even period.",
+  "inputs": [
+    { "name": "currentBalance", "label": "Current Loan Balance", "type": "currency", "min": 0, "step": 1000, "default": 250000 },
+    { "name": "currentAPR", "label": "Current APR (%)", "type": "percent", "min": 0, "max": 30, "step": 0.01, "default": 6.5 },
+    { "name": "currentTermMonths", "label": "Remaining Months", "type": "number", "min": 1, "max": 480, "step": 1, "default": 300 },
+    { "name": "newAPR", "label": "New APR (%)", "type": "percent", "min": 0, "max": 30, "step": 0.01, "default": 5.25 },
+    { "name": "newTermMonths", "label": "New Term (months)", "type": "number", "min": 1, "max": 480, "step": 1, "default": 360 },
+    { "name": "closingCosts", "label": "Closing Costs & Fees", "type": "currency", "min": 0, "step": 100, "default": 3500 }
+  ],
+  "compute": "computeRefinanceBreakeven",
+  "outputs": [
+    { "name": "breakevenMonths", "label": "Break-Even (months)", "format": "number" },
+    { "name": "monthlySavings", "label": "Monthly Savings", "format": "currency" },
+    { "name": "lifetimeInterestSaved", "label": "Lifetime Interest Saved", "format": "currency" },
+    { "name": "netBenefit", "label": "Net Benefit", "format": "currency" }
+  ],
+  "chart": { "x": "month", "series": [{"key": "cumulativeSavings", "label": "Cumulative Savings"}] }
+}
+
+

@@ -1,0 +1,21 @@
+{
+  "name": "Open Finance Calculators",
+  "short_name": "FinanceCalc",
+  "description": "Free financial calculators and educational content",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": [
+    {
+      "src": "/finance-toolkit-fav/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/finance-toolkit-fav/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
