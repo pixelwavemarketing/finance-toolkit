@@ -60,6 +60,24 @@
       <h1>Budget Splitter</h1>
       <p>Manage shared expenses and split bills fairly. Use 50/30/20 rule or create custom budget allocations.</p>
     </div>
+    
+    <!-- SEO Content: Overview & FAQs -->
+    <section class="card" style="margin-top:16px;" aria-label="Overview">
+      <h2>Split a budget fairly and simply</h2>
+      <p>This calculator helps allocate take‑home pay using popular rules like the <strong>50/30/20</strong> framework (needs/wants/savings) or your own custom percentages. It’s useful for personal budgeting and for splitting shared expenses with roommates or partners.</p>
+      <p>Enter your monthly income, adjust the category percentages, and choose pay frequency if needed. The results break down dollars per category so you can set targets for bills, discretionary spending, and savings goals. Revisit each month and tweak based on real spending.</p>
+      <p>Combine this with the <a href="/calculators/extra-payment/" class="link">Extra Payment</a> and <a href="/calculators/savings-rate/" class="link">Savings Rate</a> calculators to see how budget changes accelerate debt payoff and long‑term goals.</p>
+    </section>
+    
+    <section class="card" style="margin-top:16px;" aria-label="FAQs">
+      <h2>FAQs</h2>
+      <h3>Is 50/30/20 the best rule?</h3>
+      <p>It’s a useful starting point, not a rule. If you have high‑interest debt, shift more to savings/debt. If housing costs are high, reduce wants temporarily.</p>
+      <h3>How do we split shared expenses?</h3>
+      <p>Common approaches: 50/50, proportional to income, or per‑category splits. Agree on a method, then track and reconcile monthly.</p>
+      <h3>How often should I adjust my budget?</h3>
+      <p>Review monthly and after any income or expense changes. Small, frequent adjustments keep budgets realistic and sustainable.</p>
+    </section>
 
     
     
@@ -105,6 +123,24 @@
       </div>
     </div>
   </main>
+  
+  <!-- Embed this calculator -->
+  <div class="container" role="complementary">
+    <div class="card" style="margin-top:16px;">
+      <h2>Embed this calculator</h2>
+      <p>Copy and paste this snippet into your site or blog:</p>
+      <textarea id="embedCode-budget-splitter" readonly style="width:100%; min-height:140px; padding:12px; background:#0f162e; color:var(--text); border:1px solid var(--border); border-radius:10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size:12px;"><iframe src="https://openfinancecalculators.com/calculators/budget-splitter/" width="100%" height="700" style="border:1px solid #ddd;border-radius:8px" loading="lazy"></iframe>
+<p style="font:14px system-ui;margin:.5rem 0 0">Powered by <a href="https://openfinancecalculators.com/" rel="noopener">Open Finance Calculators</a></p></textarea>
+      <p class="muted">Please retain attribution. The calculator runs entirely client‑side.</p>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const ta = document.getElementById('embedCode-budget-splitter');
+      if (ta) ta.addEventListener('focus', e => e.target.select());
+    })();
+  </script>
 
   <footer class="container">
     <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="../../privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a> <span id="shareTarget"></span></div>

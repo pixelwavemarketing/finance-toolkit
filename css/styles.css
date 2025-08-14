@@ -39,7 +39,7 @@ header {
   
   /* Tighter header */
   header .container:first-child { padding-bottom:0; }
-  .brand h1 { font-size:18px; }
+  .brand .site-title { font-size:18px; }
   
   /* Better mobile grid */
   .grid { grid-template-columns:1fr; gap:12px; }
@@ -125,7 +125,7 @@ header {
   }
 }
 .brand { display:flex; align-items:center; gap:10px; }
-.brand h1 { margin:0; font-size:20px; letter-spacing:.2px; }
+.brand .site-title { margin:0; font-size:20px; letter-spacing:.2px; }
 
 /* Desktop Navigation */
 nav { display:flex; gap:10px; flex-wrap:wrap; padding:10px 0; }
@@ -941,7 +941,7 @@ li {
     background: var(--bg);
   }
   
-  .brand h1 {
+  .brand .site-title {
     font-size: 18px;
   }
   

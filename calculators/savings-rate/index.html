@@ -60,6 +60,8 @@
       <h1>Savings Rate Calculator</h1>
       <p>Calculate your path to financial independence. Determine your FI number, years to FI, and withdrawal strategies.</p>
     </div>
+    
+    
 
     
     
@@ -81,6 +83,24 @@
       <div id="explainer">Enter your details above to see the results and understand what they mean for your financial planning.</div>
     </section>
     
+    <!-- SEO Content: Overview & FAQs -->
+    <section class="card" style="margin-top:16px;" aria-label="Overview">
+      <h2>Plan your path to financial independence</h2>
+      <p>Your savings rate—how much of your take‑home pay you keep—drives time to financial independence (FI). This calculator estimates your FI number (target portfolio), years to FI, and monthly savings needed. Assumptions use the 4% rule as a planning baseline (25× annual expenses), but you can adjust the withdrawal rate.</p>
+      <p>Try multiple scenarios: increase savings a little each year, change expected returns, or reduce expenses. Small improvements compound over time. For a full picture, ensure you keep an emergency buffer and pay down high‑interest debt before pursuing aggressive investing targets.</p>
+      <p>Pair this with the <a href="/calculators/compound-interest/" class="link">Compound Interest</a> and <a href="/calculators/goal-timeline/" class="link">Goal Timeline</a> calculators to see how contributions and returns affect your timeline.</p>
+    </section>
+    
+    <section class="card" style="margin-top:16px;" aria-label="FAQs">
+      <h2>FAQs</h2>
+      <h3>What’s a good savings rate?</h3>
+      <p>There’s no single correct number. 20% is strong, 30%+ is aggressive. Higher savings rates reduce time to FI faster than chasing slightly higher returns.</p>
+      <h3>Is the 4% rule safe?</h3>
+      <p>It’s a historical guideline, not a guarantee. Consider a lower withdrawal rate for conservative planning or if you anticipate higher inflation or variable returns.</p>
+      <h3>Should I invest before paying off debt?</h3>
+      <p>Prioritize an emergency fund and eliminate high‑APR debt first. Then invest steadily in diversified portfolios for long‑term growth.</p>
+    </section>
+
     <!-- Educational Sections -->
     <div class="educational-sections" id="educationalSections" style="display:none;">
       <!-- How to Use Section -->
@@ -104,7 +124,24 @@
         </div>
       </div>
     </div>
+  
+    <!-- Embed this calculator -->
+    <div class="card" style="margin-top:16px;">
+      <h2>Embed this calculator</h2>
+      <p>Copy and paste this snippet into your site or blog:</p>
+      <textarea id="embedCode-savings-rate" readonly style="width:100%; min-height:140px; padding:12px; background:#0f162e; color:var(--text); border:1px solid var(--border); border-radius:10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size:12px;"><iframe src="https://openfinancecalculators.com/calculators/savings-rate/" width="100%" height="700" style="border:1px solid #ddd;border-radius:8px" loading="lazy"></iframe>
+<p style="font:14px system-ui;margin:.5rem 0 0">Powered by <a href="https://openfinancecalculators.com/" rel="noopener">Open Finance Calculators</a></p></textarea>
+      <p class="muted">Please retain attribution. The calculator runs entirely client‑side.</p>
+    </div>
+
   </main>
+
+  <script>
+    (function(){
+      const ta = document.getElementById('embedCode-savings-rate');
+      if (ta) ta.addEventListener('focus', e => e.target.select());
+    })();
+  </script>
 
   <footer class="container">
     <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="../../privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">pixelwave marketing</a> <span id="shareTarget"></span></div>

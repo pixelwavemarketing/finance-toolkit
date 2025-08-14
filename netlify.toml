@@ -5,10 +5,91 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Explicit redirects for clean URLs -> .html (match canonicals and sitemap)
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/about"
+  to = "/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/"
+  to = "/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policy/"
+  to = "/privacy-policy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms/"
+  to = "/terms.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators"
+  to = "/calculators.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculators/"
+  to = "/calculators.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculator"
+  to = "/calculator.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculator/"
+  to = "/calculator.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Ensure favicon is accessible at the conventional root path
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/finance-toolkit-fav/favicon.ico"
   status = 200
+  force = true
 
 [dev]
   command = "python -m http.server 8000"

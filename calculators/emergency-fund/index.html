@@ -60,6 +60,8 @@
       <h1>Emergency Fund Calculator</h1>
       <p>Build your financial safety net with proper planning. Calculate how much you need and how long it will take to reach your emergency fund goal.</p>
     </div>
+    
+    
 
     
     
@@ -81,6 +83,24 @@
       <div id="explainer">Enter your details above to see the results and understand what they mean for your financial planning.</div>
     </section>
     
+    <!-- SEO Content: Overview & FAQs -->
+    <section class="card" style="margin-top:16px;" aria-label="Overview">
+      <h2>Building the right emergency fund</h2>
+      <p>An emergency fund protects you from job loss, medical bills, and unexpected expenses. A common guideline is <strong>3–6 months of expenses</strong>: 3 months for stable dual‑income households, 6 months for variable income, and up to 9–12 months for single‑income or self‑employed households. This calculator sets a target and a realistic monthly plan to reach it.</p>
+      <p>Enter monthly expenses, choose your target months, and include what you’ve already saved. You can add sinking fund categories (like car repairs) to separate long‑term one‑off costs from true emergencies. If you carry high‑interest debt, consider balancing debt payoff with a modest starter fund.</p>
+      <p>Once your baseline safety net is in place, review your plan quarterly and increase savings during higher‑income periods. For investing long‑term surpluses, use the <a href="/calculators/compound-interest/" class="link">Compound Interest</a> calculator.</p>
+    </section>
+    
+    <section class="card" style="margin-top:16px;" aria-label="FAQs">
+      <h2>FAQs</h2>
+      <h3>Where should I keep emergency funds?</h3>
+      <p>High‑yield savings accounts are the most common choice—they’re liquid and typically pay better interest than checking while keeping funds safe and accessible.</p>
+      <h3>Should I invest my emergency fund?</h3>
+      <p>Generally no. Emergency funds should be stable and liquid so they’re available when needed. Invest only money you won’t need for several years.</p>
+      <h3>How do sinking funds differ from emergency funds?</h3>
+      <p>Sinking funds cover expected but irregular costs (car repairs, medical, travel). Emergency funds cover true surprises like job loss or major emergencies.</p>
+    </section>
+
     <!-- Educational Sections -->
     <div class="educational-sections" id="educationalSections" style="display:none;">
       <!-- How to Use Section -->
@@ -104,7 +124,24 @@
         </div>
       </div>
     </div>
+  
+    <!-- Embed this calculator -->
+    <div class="card" style="margin-top:16px;">
+      <h2>Embed this calculator</h2>
+      <p>Copy and paste this snippet into your site or blog:</p>
+      <textarea id="embedCode-emergency-fund" readonly style="width:100%; min-height:140px; padding:12px; background:#0f162e; color:var(--text); border:1px solid var(--border); border-radius:10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size:12px;"><iframe src="https://openfinancecalculators.com/calculators/emergency-fund/" width="100%" height="700" style="border:1px solid #ddd;border-radius:8px" loading="lazy"></iframe>
+<p style="font:14px system-ui;margin:.5rem 0 0">Powered by <a href="https://openfinancecalculators.com/" rel="noopener">Open Finance Calculators</a></p></textarea>
+      <p class="muted">Please retain attribution. The calculator runs entirely client‑side.</p>
+    </div>
+
   </main>
+
+  <script>
+    (function(){
+      const ta = document.getElementById('embedCode-emergency-fund');
+      if (ta) ta.addEventListener('focus', e => e.target.select());
+    })();
+  </script>
 
   <footer class="container">
     <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="../../privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">pixelwave marketing</a> <span id="shareTarget"></span></div>
