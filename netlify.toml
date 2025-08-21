@@ -5,15 +5,9 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Explicit redirects for clean URLs -> .html (match canonicals and sitemap)
+# Clean redirects - one per destination to avoid confusion
 [[redirects]]
   from = "/about"
-  to = "/about.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/about/"
   to = "/about.html"
   status = 301
   force = true
@@ -25,19 +19,7 @@
   force = true
 
 [[redirects]]
-  from = "/contact/"
-  to = "/contact.html"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/privacy-policy"
-  to = "/privacy-policy.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/privacy-policy/"
   to = "/privacy-policy.html"
   status = 301
   force = true
@@ -49,19 +31,7 @@
   force = true
 
 [[redirects]]
-  from = "/terms/"
-  to = "/terms.html"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/calculators"
-  to = "/calculators.html"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/calculators/"
   to = "/calculators.html"
   status = 301
   force = true
@@ -72,19 +42,14 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/calculator/"
-  to = "/calculator.html"
-  status = 301
-  force = true
-
-# Educators page
+# Educators page - keep trailing slash for consistency
 [[redirects]]
   from = "/educators"
   to = "/educators/"
   status = 301
   force = true
 
+# Remove index.html from root
 [[redirects]]
   from = "/index.html"
   to = "/"
