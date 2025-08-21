@@ -3,6 +3,111 @@
   color-scheme: dark; /* Hint browsers to render form controls for dark UI */
 }
 
+/* Accessibility - Skip Link and Focus Styles */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 10000;
+}
+
+.skip:focus {
+  left: 8px;
+  top: 8px;
+  background: #fff;
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+:focus {
+  outline: 2px solid #2b7cff;
+  outline-offset: 2px;
+}
+
+
+
+/* Related Calculators */
+.related-calculators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.calculator-link {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.calculator-link:hover {
+  border-color: var(--accent);
+  background: rgba(96, 165, 250, 0.1);
+}
+
+.calculator-link h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.calculator-link p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Embed Mode Styles */
+.embed header,
+.embed footer,
+.embed nav,
+.embed .breadcrumbs {
+  display: none !important;
+}
+
+.embed .page {
+  margin: 0;
+  padding: 0;
+}
+
+.embed .container {
+  padding: 0;
+}
+
+.embed .card {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+.embed main {
+  padding: 0;
+}
+
+/* Removed duplicate CSS-generated credit - using HTML link instead */
+
+.embed .embed-credit {
+  display: block !important;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 8px;
+  text-decoration: none;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+.embed .embed-credit:hover {
+  color: var(--accent);
+}
+
 html { width: 100%; overflow-x: hidden; }
 
 * { box-sizing:border-box; }

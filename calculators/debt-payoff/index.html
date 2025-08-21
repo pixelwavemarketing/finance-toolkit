@@ -19,11 +19,11 @@
   <link rel="canonical" href="https://openfinancecalculators.com/calculators/debt-payoff/" />
   
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Debt Payoff Calculator - Open Finance Calculators" />
-  <meta property="og:description" content="Choose between snowball and avalanche debt payoff methods. Optimize your debt repayment strategy and see how much you can save on interest." />
+  <meta property="og:title" content="Debt Payoff Planner — Snowball vs Avalanche" />
+  <meta property="og:description" content="Build a month-by-month payoff plan. Add extra payments and compare strategies." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://openfinancecalculators.com/calculators/debt-payoff/" />
-  <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
+  <meta property="og:image" content="https://openfinancecalculators.com/og/debt-payoff.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Open Finance Calculators" />
@@ -31,9 +31,9 @@
   
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Debt Payoff Calculator - Open Finance Calculators" />
-  <meta name="twitter:description" content="Choose between snowball and avalanche debt payoff methods. Optimize your debt repayment strategy and see how much you can save on interest." />
-  <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
+  <meta name="twitter:title" content="Debt Payoff Planner — Snowball vs Avalanche" />
+  <meta name="twitter:description" content="Build a month-by-month payoff plan. Add extra payments and compare strategies." />
+  <meta name="twitter:image" content="https://openfinancecalculators.com/og/debt-payoff.jpg" />
   
   <!-- Additional SEO Meta Tags -->
   <meta name="theme-color" content="#0b1020" />
@@ -47,16 +47,58 @@
   <meta name="msvalidate.01" content="D74B24FADC0EA14BCD046E165FE7ED9B" />
   
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
   <link rel="stylesheet" href="../../css/styles.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
      crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Debt Payoff Planner",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "url":"https://openfinancecalculators.com/calculators/debt-payoff/",
+    "description":"Build a month-by-month payoff plan. Compare snowball vs avalanche and add extra payments."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Snowball or avalanche—Which saves more interest?",
+       "acceptedAnswer":{"@type":"Answer","text":"Avalanche minimizes interest; snowball can improve follow-through. The planner shows both timelines."}},
+      {"@type":"Question","name":"Can I add extra payments?",
+       "acceptedAnswer":{"@type":"Answer","text":"Yes. Set a monthly extra; the schedule updates with a new payoff date and interest saved."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HowTo",
+    "name":"How to choose snowball vs avalanche",
+    "description":"A simple process to select a payoff strategy.",
+    "step":[
+      {"@type":"HowToStep","name":"List your debts","text":"Include balance, APR, and minimum payment."},
+      {"@type":"HowToStep","name":"Pick a priority","text":"Lowest balance (snowball) or highest APR (avalanche)."},
+      {"@type":"HowToStep","name":"Run both in the planner","text":"Compare months to payoff and interest saved; pick the one you'll stick with."}
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to content</a>
   <div data-shared-header></div>
 
-  <main class="container" role="main">
+  <main id="main" class="container" role="main">
     <!-- Calculator Header -->
     <div class="card">
       <h1>Debt Payoff Calculator</h1>
@@ -64,8 +106,7 @@
     </div>
     
 
-    
-    
+
     <div class="grid">
       <section class="card" id="form" aria-label="Calculator Input Form"></section>
       <section class="card" id="results" aria-label="Calculation Results"></section>
@@ -84,12 +125,10 @@
       </script>
     </div>
     
-    
-    
     <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
       <h2>Chart</h2>
       <div class="chart-area">
-        <canvas id="chart" aria-label="debt payoff calculator results chart"></canvas>
+        <canvas id="chart" width="900" height="320" aria-label="debt payoff calculator results chart"></canvas>
       </div>
     </section>
     <section class="card" style="margin-top:16px;" aria-label="Calculator Explanation">
@@ -97,42 +136,42 @@
       <div id="explainer">Enter your details above to see the results and understand what they mean for your financial planning.</div>
     </section>
     
-    <!-- Educational Sections -->
-    <div class="educational-sections" id="educationalSections" style="display:none;">
-      <!-- How to Use Section -->
-      <div class="card" style="margin-top:16px;">
-        <h2>📖 How to Use This Calculator</h2>
-        <div class="how-to-grid" id="howToGrid">
-          <!-- Content will be populated by JavaScript -->
+    <!-- Related Calculators -->
+    <section class="container" style="margin-top: 2rem;">
+      <div class="card">
+        <h2>Related Calculators</h2>
+        <div class="related-calculators">
+          <a href="../debt-to-income/" class="calculator-link">
+            <h3>Debt-to-Income Calculator</h3>
+            <p>Check your debt-to-income ratio for loan applications</p>
+          </a>
+          <a href="../emergency-fund/" class="calculator-link">
+            <h3>Emergency Fund Calculator</h3>
+            <p>Calculate how much emergency savings you need</p>
+          </a>
+          <a href="../compound-interest/" class="calculator-link">
+            <h3>Compound Interest Calculator</h3>
+            <p>See how your savings grow over time</p>
+          </a>
         </div>
       </div>
-      
-      <!-- Math Section -->
-      <div class="card" style="margin-top:16px;">
-        <h2 class="math-toggle" id="mathToggle" style="cursor:pointer; user-select:none;">
-          🧮 Showing the Math
-          <svg class="math-arrow" style="width:16px; height:16px; display:inline; margin-left:8px; transition:transform 0.3s ease;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
-        </h2>
-        <div class="math-content" id="mathContent" style="display:none; margin-top:16px;">
-          <!-- Content will be populated by JavaScript -->
-        </div>
-      </div>
-    </div>
-  
-    <!-- Embed this calculator -->
-    <div class="card" style="margin-top:16px;">
-      <h2>Embed this calculator</h2>
-      <p>Copy and paste this snippet into your site or blog:</p>
-      <textarea id="embedCode-debt-payoff" readonly style="width:100%; min-height:140px; padding:12px; background:#0f162e; color:var(--text); border:1px solid var(--border); border-radius:10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size:12px;"><iframe src="https://openfinancecalculators.com/calculators/debt-payoff/" width="100%" height="700" style="border:1px solid #ddd;border-radius:8px" loading="lazy"></iframe>
-<p style="font:14px system-ui;margin:.5rem 0 0">Powered by <a href="https://openfinancecalculators.com/" rel="noopener">Open Finance Calculators</a></p></textarea>
-      <p class="muted">Please retain attribution. The calculator runs entirely client‑side.</p>
-    </div>
-
+    </section>
+    
+    <!-- Embed Mode Credit (only shows in embed mode) -->
+    <a href="https://openfinancecalculators.com/calculators/debt-payoff/" target="_blank" rel="noopener" class="embed-credit" style="display: none;">
+      Powered by Open Finance Calculators
+    </a>
   </main>
 
   <script>
+    // Embed mode detection
+    const params = new URLSearchParams(location.search);
+    if (params.get('embed') === '1') {
+      document.documentElement.classList.add('embed');
+    }
+    
+
+    
     (function(){
       const ta = document.getElementById('embedCode-debt-payoff');
       if (ta) ta.addEventListener('focus', e => e.target.select());
@@ -205,8 +244,22 @@
   </script>
 
   <!-- Load the modular JavaScript -->
-  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="../../js/header.js"></script>
   <script type="module" src="../../js/app.js"></script>
+  
+  <script type="module">
+    import { renderNav } from '../../js/ui.js';
+    
+    // Initialize navigation on debt-payoff calculator page
+    fetch('../../config/calculators.json')
+      .then(response => response.json())
+      .then(calculators => {
+        renderNav(calculators, 'debt-payoff');
+      })
+      .catch(error => {
+        console.error('Error loading calculators:', error);
+      });
+  </script>
 
   <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
   <script type="application/ld+json">

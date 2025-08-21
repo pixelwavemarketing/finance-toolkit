@@ -11,16 +11,16 @@
   <meta name="apple-mobile-web-app-title" content="FinanceTool" />
   <link rel="manifest" href="../../finance-toolkit-fav/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Refinance Calculator - Open Finance Calculators</title>
-  <meta name="description" content="Evaluate loan refinancing options and breakeven points. Calculate closing costs and see when refinancing makes financial sense." />
-  <meta name="keywords" content="refinance calculator, loan refinance calculator, breakeven calculator, mortgage refinance calculator" />
+  <title>Mortgage Refinance Break-Even Calculator (with Fees)</title>
+  <meta name="description" content="See how many months to break even on a refinance. Compare current vs new rate, term, and closing costs." />
+  <meta name="keywords" content="refinance calculator, break even calculator, mortgage refinance, refinance breakeven, refinance break-even" />
   <meta name="author" content="Open Finance Calculators" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://openfinancecalculators.com/calculators/refinance-breakeven/" />
   
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Refinance Calculator - Open Finance Calculators" />
-  <meta property="og:description" content="Evaluate loan refinancing options and breakeven points. Calculate closing costs and see when refinancing makes financial sense." />
+  <meta property="og:title" content="Refinance Break-Even Calculator - Open Finance Calculators" />
+  <meta property="og:description" content="Calculate when refinancing pays off by comparing closing costs to monthly savings." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://openfinancecalculators.com/calculators/refinance-breakeven/" />
   <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
@@ -31,8 +31,8 @@
   
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Refinance Calculator - Open Finance Calculators" />
-  <meta name="twitter:description" content="Evaluate loan refinancing options and breakeven points. Calculate closing costs and see when refinancing makes financial sense." />
+  <meta name="twitter:title" content="Refinance Break-Even Calculator - Open Finance Calculators" />
+  <meta name="twitter:description" content="Calculate when refinancing pays off by comparing closing costs to monthly savings." />
   <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
   
   <!-- Additional SEO Meta Tags -->
@@ -42,10 +42,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Open Finance Calculators" />
   
-  <!-- Search Console Verification -->
-  <meta name="google-site-verification" content="VVqCTIGRuiSsoa137qyNR19sfFDTVOQJTXKCpTS9K1E" />
-  <meta name="msvalidate.01" content="D74B24FADC0EA14BCD046E165FE7ED9B" />
-  
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
@@ -54,77 +50,96 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to content</a>
   <div data-shared-header></div>
 
-  <main class="container" role="main">
+  <main id="main" class="container" role="main">
     <!-- Calculator Header -->
     <div class="card">
-      <h1>Refinance Calculator</h1>
-      <p>Evaluate loan refinancing options and breakeven points. Calculate closing costs and see when refinancing makes financial sense.</p>
+      <h1>Refinance Break-Even Calculator</h1>
+      <p>See how many months to break even on a refinance. Compare current vs new rate, term, and closing costs.</p>
     </div>
-    
-    <!-- SEO Content: Overview & FAQs -->
-    <section class="card" style="margin-top:16px;" aria-label="Overview">
-      <h2>When does refinancing make sense?</h2>
-      <p>Refinancing replaces your current loan with a new one—ideally at a lower interest rate or better terms. Because refinancing has closing costs, you should know your <strong>break‑even point</strong>: how many months it takes for the lower monthly payment to recoup those costs.</p>
-      <p>Enter your current balance, rate, and remaining term, then model the new rate, term, and closing costs. The calculator shows break‑even months, monthly savings, and lifetime interest saved. If you won’t keep the loan past the break‑even date, refinancing may not be worthwhile.</p>
-      <p>Compare paying extra on your current loan with the <a href="/calculators/extra-payment/" class="link">Extra Payment</a> calculator to see which path provides more value for your situation.</p>
-    </section>
-    
-    <section class="card" style="margin-top:16px;" aria-label="FAQs">
-      <h2>FAQs</h2>
-      <h3>Is a longer term always bad?</h3>
-      <p>Longer terms can lower monthly payments but may increase total interest. If you refinance to a much lower rate and make extra payments, you can still finish early.</p>
-      <h3>Do closing costs include points?</h3>
-      <p>They can. Points are prepaid interest. Compare scenarios with and without points; the lowest APR often wins but consider your time horizon.</p>
-      <h3>How much rate drop is “worth it”?</h3>
-      <p>There’s no single threshold, but many borrowers look for a reduction of ~0.5–1.0 percentage point or more, depending on costs and how long they’ll keep the loan.</p>
-    </section>
 
-    
-    
     <div class="grid">
       <section class="card" id="form" aria-label="Calculator Input Form"></section>
       <section class="card" id="results" aria-label="Calculation Results"></section>
     </div>
     
-    
-    
     <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
-      <h2>Chart</h2>
-      <div class="chart-area">
-        <canvas id="chart" aria-label="refinance calculator results chart"></canvas>
+      <h2>Break-Even Timeline</h2>
+      <div class="chart-container">
+        <canvas id="chart" width="900" height="320"></canvas>
       </div>
-    </section>
-    <section class="card" style="margin-top:16px;" aria-label="Calculator Explanation">
-      <h2>What this means</h2>
-      <div id="explainer">Enter your details above to see the results and understand what they mean for your financial planning.</div>
     </section>
     
-    <!-- Educational Sections -->
-    <div class="educational-sections" id="educationalSections" style="display:none;">
-      <!-- How to Use Section -->
-      <div class="card" style="margin-top:16px;">
-        <h2>📖 How to Use This Calculator</h2>
-        <div class="how-to-grid" id="howToGrid">
-          <!-- Content will be populated by JavaScript -->
-        </div>
-      </div>
+    <!-- Educational Content -->
+    <section class="card">
+      <h2>Understanding Refinance Break-Even</h2>
+      <p>Refinancing replaces your current loan with a new one—ideally at a lower interest rate or better terms. Because refinancing has closing costs, you should know your <strong>break‑even point</strong>: how many months it takes for the lower monthly payment to recoup those costs.</p>
+      <p>Enter your current balance, rate, and remaining term, then model the new rate, term, and closing costs. The calculator shows break‑even months, monthly savings, and lifetime interest saved. If you won't keep the loan past the break‑even date, refinancing may not be worthwhile.</p>
+      <p>Compare paying extra on your current loan with the <a href="/calculators/extra-payment/" class="link">Extra Payment</a> calculator to see which path provides more value for your situation.</p>
+      <p><strong>Not worth it?</strong> If your break-even months exceed the time you plan to stay in the home, refinancing may not make financial sense. Consider alternatives like making extra payments on your current loan.</p>
       
-      <!-- Math Section -->
-      <div class="card" style="margin-top:16px;">
-        <h2 class="math-toggle" id="mathToggle" style="cursor:pointer; user-select:none;">
-          🧮 Showing the Math
-          <svg class="math-arrow" style="width:16px; height:16px; display:inline; margin-left:8px; transition:transform 0.3s ease;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
-        </h2>
-        <div class="math-content" id="mathContent" style="display:none; margin-top:16px;">
-          <!-- Content will be populated by JavaScript -->
-        </div>
-      </div>
-    </div>
-  
+      <h3>What Are Closing Costs?</h3>
+      <p>Closing costs typically include:</p>
+      <ul>
+        <li><strong>Loan Origination:</strong> 0.5% to 1% of loan amount</li>
+        <li><strong>Appraisal:</strong> $300 to $500</li>
+        <li><strong>Title Insurance:</strong> $500 to $1,000</li>
+        <li><strong>Escrow:</strong> Property taxes and insurance</li>
+        <li><strong>Recording Fees:</strong> $50 to $200</li>
+        <li><strong>Credit Report:</strong> $25 to $50</li>
+      </ul>
+      
+      <h3>When Refinancing Makes Sense</h3>
+      <ul>
+        <li><strong>Rate Reduction:</strong> At least 0.5% lower than current rate</li>
+        <li><strong>Short Break-Even:</strong> Less than 24 months to recoup costs</li>
+        <li><strong>Long-Term Plans:</strong> Planning to stay in home past break-even</li>
+        <li><strong>Cash-Out Needs:</strong> Need equity for home improvements or debt consolidation</li>
+        <li><strong>Term Reduction:</strong> Can afford higher payments to pay off faster</li>
+      </ul>
+      
+      <h3>Break-Even Calculation</h3>
+      <p><strong>Break-Even Months = Closing Costs ÷ Monthly Payment Savings</strong></p>
+      <p>Example: $3,000 closing costs ÷ $150 monthly savings = 20 months to break even</p>
+      
+      <h3>Factors That Affect Break-Even</h3>
+      <ul>
+        <li><strong>Rate Difference:</strong> Larger rate drops mean faster break-even</li>
+        <li><strong>Loan Amount:</strong> Higher balances show bigger monthly savings</li>
+        <li><strong>Closing Costs:</strong> Lower costs mean faster break-even</li>
+        <li><strong>Loan Term:</strong> Shorter terms may increase monthly payments</li>
+        <li><strong>Points:</strong> Paying points reduces rate but increases costs</li>
+      </ul>
+      
+      <h3>Alternative Strategies</h3>
+      <ul>
+        <li><strong>Rate and Term Refinance:</strong> Lower rate, same or shorter term</li>
+        <li><strong>Cash-Out Refinance:</strong> Access equity for other purposes</li>
+        <li><strong>Streamline Refinance:</strong> Simplified process for existing FHA/VA loans</li>
+        <li><strong>Extra Payments:</strong> Pay additional principal on current loan</li>
+        <li><strong>Recast:</strong> Lump sum payment to reduce monthly payment</li>
+      </ul>
+    </section>
+
+    <!-- SEO Content: Overview & FAQs -->
+    <section class="card" style="margin-top:16px;" aria-label="Overview">
+      <h2>Refinance break-even analysis</h2>
+      <p>Refinancing can save money, but closing costs mean you need time to recoup the investment. This calculator shows your break‑even timeline by comparing current vs. new loan terms and costs.</p>
+      <p>Lower rates and longer terms reduce monthly payments but may increase total interest. Higher rates with shorter terms increase monthly payments but reduce total interest. The key is finding the sweet spot for your timeline and goals.</p>
+    </section>
+
+    <section class="card" style="margin-top:16px;" aria-label="FAQs">
+      <h2>FAQs</h2>
+      <h3>What's a good break-even timeline?</h3>
+      <p>Generally under 24 months. If you plan to move or refinance again soon, shorter is better.</p>
+      <h3>Do points change the calculation?</h3>
+      <p>Yes. Points are prepaid interest that reduce your rate but increase closing costs.</p>
+      <h3>Should I refinance to a shorter term?</h3>
+      <p>Only if you can afford higher payments. Shorter terms save interest but increase monthly costs.</p>
+    </section>
+
     <!-- Embed this calculator -->
     <div class="card" style="margin-top:16px;">
       <h2>Embed this calculator</h2>
@@ -137,116 +152,99 @@
   </main>
 
   <script>
+    // Embed mode detection
+    const params = new URLSearchParams(location.search);
+    if (params.get('embed') === '1') {
+      document.documentElement.classList.add('embed');
+    }
+    
     (function(){
       const ta = document.getElementById('embedCode-refinance-breakeven');
       if (ta) ta.addEventListener('focus', e => e.target.select());
     })();
   </script>
 
+  <!-- Enhanced Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Refinance Break-Even Calculator",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "url":"https://openfinancecalculators.com/calculators/refinance-breakeven/",
+    "description":"Calculate when refinancing pays off by comparing closing costs to monthly savings."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Do points/fees change break-even?",
+       "acceptedAnswer":{"@type":"Answer","text":"Yes, closing costs including points directly affect your break-even timeline. Higher costs mean more months to recoup the investment."}},
+      {"@type":"Question","name":"What if I shorten the term?",
+       "acceptedAnswer":{"@type":"Answer","text":"Shorter terms may increase monthly payments but reduce total interest. Compare both scenarios to see which saves more money."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Calculators","item":"https://openfinancecalculators.com/calculators/"},
+      {"@type":"ListItem","position":2,"name":"Refinance Break-Even Calculator","item":"https://openfinancecalculators.com/calculators/refinance-breakeven/"}
+    ]
+  }
+  </script>
+
   <footer class="container">
-    <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="../../privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">pixelwave marketing</a> <span id="shareTarget"></span></div>
+    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="../../privacy-policy.html" class="link">Privacy Policy</a> | <a href="../../terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
-  <!-- Calculator-specific initialization -->
+  <!-- Calculator Configuration -->
   <script>
-    // Set the calculator ID for this page
-    window.calculatorId = 'refinance-breakeven';
-
-    // Add calculator config directly to avoid path issues
     window.calculatorConfig = {
       "id": "refinance-breakeven",
       "title": "Refinance Break-Even",
       "description": "Calculate when refinancing pays off by comparing closing costs to monthly savings.",
-      "explainer": "This calculator shows how long it takes to break even on refinancing costs and your total interest savings over the loan term. Consider refinancing when you'll stay in the loan longer than the break-even period.",
+      "explainer": "Refinancing has upfront costs. This tool shows how many months of lower payments it takes to recoup those costs. If you won't stay in the home past break-even, refinancing may not make sense.",
       "inputs": [
-        { 
-          "name": "currentBalance", 
-          "label": "Current Loan Balance", 
-          "type": "currency", 
-          "min": 0, 
-          "step": 1000, 
-          "default": 250000 
-        },
-        { 
-          "name": "currentAPR", 
-          "label": "Current APR (%)", 
-          "type": "percent", 
-          "min": 0, 
-          "max": 30, 
-          "step": 0.01, 
-          "default": 6.5 
-        },
-        { 
-          "name": "currentTermMonths", 
-          "label": "Remaining Months", 
-          "type": "number", 
-          "min": 1, 
-          "max": 480, 
-          "step": 1, 
-          "default": 300 
-        },
-        { 
-          "name": "newAPR", 
-          "label": "New APR (%)", 
-          "type": "percent", 
-          "min": 0, 
-          "max": 30, 
-          "step": 0.01, 
-          "default": 5.25 
-        },
-        { 
-          "name": "newTermMonths", 
-          "label": "New Term (months)", 
-          "type": "number", 
-          "min": 1, 
-          "max": 480, 
-          "step": 1, 
-          "default": 360 
-        },
-        { 
-          "name": "closingCosts", 
-          "label": "Closing Costs & Fees", 
-          "type": "currency", 
-          "min": 0, 
-          "step": 100, 
-          "default": 3500 
-        }
+        { "name": "currentBalance", "label": "Current Loan Balance", "type": "currency", "min": 0, "step": 1000, "default": 250000 },
+        { "name": "currentRate", "label": "Current Interest Rate (%)", "type": "percent", "min": 0, "max": 20, "step": 0.125, "default": 4.5 },
+        { "name": "currentTerm", "label": "Remaining Term (years)", "type": "integer", "min": 1, "max": 50, "step": 1, "default": 25 },
+        { "name": "newRate", "label": "New Interest Rate (%)", "type": "percent", "min": 0, "max": 20, "step": 0.125, "default": 3.5 },
+        { "name": "newTerm", "label": "New Term (years)", "type": "integer", "min": 1, "max": 50, "step": 1, "default": 30 },
+        { "name": "closingCosts", "label": "Closing Costs", "type": "currency", "min": 0, "step": 100, "default": 3000 }
       ],
       "compute": "computeRefinanceBreakeven",
       "outputs": [
-        { "name": "breakevenMonths", "label": "Break-Even (months)", "format": "number" },
-        { "name": "monthlySavings", "label": "Monthly Savings", "format": "currency" },
-        { "name": "lifetimeInterestSaved", "label": "Lifetime Interest Saved", "format": "currency" },
-        { "name": "netBenefit", "label": "Net Benefit", "format": "currency" }
+        { "name": "breakEvenMonths", "label": "Break-Even Months", "format": "number" },
+        { "name": "monthlySavings", "label": "Monthly Payment Savings", "format": "currency" },
+        { "name": "totalInterestSaved", "label": "Total Interest Saved", "format": "currency" },
+        { "name": "recommendation", "label": "Recommendation", "format": "text" }
       ],
-      "chart": { 
-        "x": "month", 
-        "series": [{"key": "cumulativeSavings", "label": "Cumulative Savings"}] 
-      }
+      "chart": { "x": "month", "series": [{"key": "cumulativeSavings", "label": "Cumulative Savings"}] }
     };
   </script>
 
-  <!-- Load the modular JavaScript -->
-  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="../../js/header.js"></script>
   <script type="module" src="../../js/app.js"></script>
-
-  <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Refinance Calculator",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web Browser",
-      "url": "https://openfinancecalculators.com/calculators/refinance-breakeven/",
-      "description": "Evaluate loan refinancing options and breakeven points. Calculate closing costs and see when refinancing makes financial sense.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "featureList": ["Cost analysis","Breakeven calculation","Savings projection","Refinance evaluation"]
-    }
+  
+  <script type="module">
+    import { renderNav } from '../../js/ui.js';
+    
+    // Initialize navigation on refinance-breakeven calculator page
+    fetch('../../config/calculators.json')
+      .then(response => response.json())
+      .then(calculators => {
+        renderNav(calculators, 'refinance-breakeven');
+      })
+      .catch(error => {
+        console.error('Error loading calculators:', error);
+      });
   </script>
 </body>
 </html>

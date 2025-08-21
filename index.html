@@ -24,7 +24,7 @@
   <meta property="og:description" content="Best free, privacy-first financial calculators with clear explanations. Model compound interest, debt payoff, emergency funds, savings rate, and more." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://openfinancecalculators.com/" />
-  <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
+  <meta property="og:image" content="https://openfinancecalculators.com/og/home.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Open Finance Calculators" />
@@ -34,7 +34,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Best Free Financial Calculators | Open Finance" />
   <meta name="twitter:description" content="Best free, privacy-first financial calculators with clear explanations. Model compound interest, debt payoff, emergency funds, savings rate, and more." />
-  <meta name="twitter:image" content="https://openfinancecalculators.com/images/open-finance-calculators-twitter.png" />
+  <meta name="twitter:image" content="https://openfinancecalculators.com/og/home.jpg" />
   <meta name="twitter:creator" content="@OpenFinanceCalc" />
   
   <!-- Additional SEO Meta Tags -->
@@ -54,6 +54,36 @@
   <link rel="stylesheet" href="./css/styles.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
      crossorigin="anonymous"></script>
+  
+  <!-- Enhanced Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Open Finance Calculators",
+    "url": "https://openfinancecalculators.com",
+    "logo": "https://openfinancecalculators.com/finance-toolkit-fav/favicon.svg",
+    "description": "Free, privacy-first financial calculators for personal finance education and planning",
+    "sameAs": [
+      "https://openfinancecalculators.com/about.html",
+      "https://openfinancecalculators.com/contact.html"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Open Finance Calculators",
+    "url": "https://openfinancecalculators.com",
+    "description": "Professional-grade financial calculators with educational content",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://openfinancecalculators.com/calculators.html",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body>
   <div data-shared-header></div>
@@ -83,7 +113,7 @@
       <ul>
         <li><a href="./calculators/compound-interest/" class="link">Compound Interest Calculator</a>: see how recurring contributions and compounding frequency affect long‑term growth.</li>
         <li><a href="./calculators/debt-payoff/" class="link">Debt Payoff Planner</a>: compare snowball vs. avalanche strategies with a month‑by‑month payoff timeline.</li>
-        <li><a href="./calculators/emergency-fund/" class="link">Emergency Fund Calculator</a>: estimate the right reserve size based on expenses and job stability.</li>
+        <li><a href="./calculators/emergency-fund/" class="link">Emergency Fund Calculator (3/6/12 months)</a>: estimate the right reserve size based on expenses and job stability.</li>
         <li><a href="./calculators/savings-rate/" class="link">Savings Rate Calculator</a>: explore how savings rate and returns impact time to financial independence.</li>
         <li><a href="./calculators/refinance-breakeven/" class="link">Refinance Break‑even</a>: calculate when closing costs pay back through a lower monthly payment.</li>
       </ul>
@@ -144,7 +174,7 @@
   </main>
 
   <footer class="container">
-    <div>© 2024 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
   <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
@@ -258,6 +288,21 @@
       ]
     }
   </script>
+  
+  <!-- Educators Section -->
+  <div class="card" style="background: linear-gradient(135deg, var(--card) 0%, #1a2333 100%); border: 2px solid var(--accent);">
+    <h2>For Educators & Organizations</h2>
+    <p>Use our calculators in classrooms, libraries, and community programs. All tools are free to embed and include accessibility features.</p>
+    <div style="margin: 20px 0;">
+      <a href="./educators/" class="btn" style="background: var(--accent-2); color: var(--bg); margin-right: 12px;">
+        Educator Resources
+      </a>
+      <a href="./calculators/debt-payoff/?embed=1" class="btn" style="background: transparent; border: 2px solid var(--accent);">
+        Try Embed Mode
+      </a>
+    </div>
+    <p class="muted">Perfect for financial literacy programs, workshops, and online courses. No accounts required, no data collection.</p>
+  </div>
   
   <script type="application/ld+json">
     {

@@ -56,6 +56,14 @@
     <priority>0.4</priority>
   </url>
   
+  <!-- Educators Resources -->
+  <url>
+    <loc>https://openfinancecalculators.com/educators/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- Individual Calculator Pages -->
   <url>
     <loc>https://openfinancecalculators.com/calculators/compound-interest/</loc>

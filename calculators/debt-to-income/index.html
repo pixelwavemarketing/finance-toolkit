@@ -11,8 +11,8 @@
   <meta name="apple-mobile-web-app-title" content="FinanceTool" />
   <link rel="manifest" href="../../finance-toolkit-fav/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Debt-to-Income Ratio Calculator - Open Finance Calculators</title>
-  <meta name="description" content="Calculate your debt-to-income ratio to assess your financial health and borrowing capacity." />
+  <title>Debt-to-Income (DTI) Ratio Calculator — Monthly & Annual</title>
+  <meta name="description" content="Find your DTI in seconds. Enter monthly debt payments and income to see your DTI category with tips to improve." />
   <meta name="keywords" content="debt to income ratio calculator, DTI calculator, financial health calculator, borrowing capacity calculator" />
   <meta name="author" content="Open Finance Calculators" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -50,35 +50,32 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
+  <a href="#main" class="skip">Skip to content</a>
   <div data-shared-header></div>
 
-  <main class="container" role="main">
+  <main id="main" class="container" role="main">
     <!-- Calculator Header -->
     <div class="card">
-      <h1>Debt-to-Income Ratio Calculator</h1>
-      <p>Calculate your debt-to-income ratio to assess your financial health and borrowing capacity.</p>
+      <h1>Debt-to-Income Ratio (DTI) Calculator</h1>
+      <p>Find your DTI in seconds. Enter monthly debt payments and income to see your DTI category with tips to improve.</p>
     </div>
 
-    
-    
     <div class="grid">
       <section class="card" id="form" aria-label="Calculator Input Form"></section>
       <section class="card" id="results" aria-label="Calculation Results"></section>
     </div>
     
-    
-    
     <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
       <h2>Debt Breakdown</h2>
       <div class="chart-container">
-        <canvas id="chart" width="400" height="200"></canvas>
+        <canvas id="chart" width="900" height="320"></canvas>
       </div>
     </section>
     
     <!-- Educational Content -->
     <section class="card">
       <h2>Understanding Debt-to-Income Ratio</h2>
-      <p>Your debt-to-income (DTI) ratio is one of the most important metrics lenders use to evaluate your creditworthiness. It measures how much of your monthly income goes toward debt payments.</p>
+      <p>Your debt-to-income (DTI) ratio is one of the most important metrics lenders use to evaluate your creditworthiness. It measures how much of your monthly income goes toward debt payments. The debt to income ratio calculation helps lenders assess your ability to manage additional debt.</p>
       
       <h3>How DTI is Calculated</h3>
       <p>DTI = (Total Monthly Debt Payments ÷ Gross Monthly Income) × 100</p>
@@ -99,10 +96,10 @@
         <li><strong>Credit Cards:</strong> Minimum monthly payments</li>
         <li><strong>Student Loans:</strong> Monthly payments</li>
         <li><strong>Personal Loans:</strong> Monthly payments</li>
-        <li><strong>Other Debts:</strong> Any recurring debt obligations</li>
+        <li><strong>Other Debts:</strong> Any monthly payment obligations</li>
       </ul>
       
-      <h3>Improving Your DTI Ratio</h3>
+      <h3>How to Improve Your DTI</h3>
       <ul>
         <li><strong>Increase Income:</strong> Ask for raises, take on side gigs, or find higher-paying jobs.</li>
         <li><strong>Reduce Debt:</strong> Pay off high-interest debt first, consolidate loans, or negotiate lower rates.</li>
@@ -120,24 +117,38 @@
       </ul>
     </section>
 
-  <!-- SEO Content: Overview & FAQs -->
-  <section class="card" style="margin-top:16px;" aria-label="Overview">
-    <h2>Make sense of your DTI</h2>
-    <p>Debt‑to‑income (DTI) ratio measures how much of your gross monthly income goes to debt. Lenders use it to assess risk and set terms. This tool calculates total DTI and housing DTI so you can gauge where you stand and how much room you have for new loans.</p>
-    <p>Lower DTI improves approval odds and interest rates. To lower DTI, increase income, pay down revolving balances, or refinance to better terms. Track progress monthly and celebrate milestones as categories shrink.</p>
-  </section>
+    <!-- What is a good DTI Section -->
+    <section class="card" style="margin-top:16px;">
+      <h2>What is a good DTI?</h2>
+      <p>Generally, a debt-to-income ratio of 36% or lower is considered healthy and will help you qualify for the best loan terms. Many lenders prefer to see DTI below 43%, though some may approve loans with higher ratios depending on other factors like credit score and down payment.</p>
+      <p><em>Note: This information is for educational purposes only. Specific requirements vary by lender and loan type.</em></p>
+    </section>
 
-  <section class="card" style="margin-top:16px;" aria-label="FAQs">
-    <h2>FAQs</h2>
-    <h3>What’s a good DTI?</h3>
-    <p>Many lenders like to see total DTI under 36–41%, with housing DTI under ~28%. Lower is better.</p>
-    <h3>Do lenders use net or gross income?</h3>
-    <p>Most mortgage and consumer lenders use gross income for DTI calculations, not after‑tax income.</p>
-    <h3>Do minimum credit card payments count?</h3>
-    <p>Yes. Use the minimum required monthly payment amounts—not current balances—when estimating DTI.</p>
-  </section>
+    <!-- Monthly vs Annual Section -->
+    <section class="card" style="margin-top:16px;">
+      <h2>Monthly vs Annual</h2>
+      <p>This calculator shows both monthly and annual debt-to-income ratios. Monthly DTI is what most lenders use for qualification, but annual DTI can help you see the bigger picture of your debt burden over time.</p>
+      <p>Use monthly figures for loan applications and annual figures for long-term financial planning and goal setting.</p>
+    </section>
 
-  <!-- Embed this calculator -->
+    <!-- SEO Content: Overview & FAQs -->
+    <section class="card" style="margin-top:16px;" aria-label="Overview">
+      <h2>Make sense of your DTI</h2>
+      <p>Debt‑to‑income (DTI) ratio measures how much of your gross monthly income goes to debt. Lenders use it to assess risk and set terms. This tool calculates total DTI and housing DTI so you can gauge where you stand and how much room you have for new loans.</p>
+      <p>Lower DTI improves approval odds and interest rates. To lower DTI, increase income, pay down revolving balances, or refinance to better terms. Track progress monthly and celebrate milestones as categories shrink.</p>
+    </section>
+
+    <section class="card" style="margin-top:16px;" aria-label="FAQs">
+      <h2>FAQs</h2>
+      <h3>What's a good DTI?</h3>
+      <p>Many lenders like to see total DTI under 36–41%, with housing DTI under ~28%. Lower is better.</p>
+      <h3>Do lenders use net or gross income?</h3>
+      <p>Most mortgage and consumer lenders use gross income for DTI calculations, not after‑tax income.</p>
+      <h3>Do minimum credit card payments count?</h3>
+      <p>Yes. Use the minimum required monthly payment amounts—not current balances—when estimating DTI.</p>
+    </section>
+
+    <!-- Embed this calculator -->
     <div class="card" style="margin-top:16px;">
       <h2>Embed this calculator</h2>
       <p>Copy and paste this snippet into your site or blog:</p>
@@ -149,14 +160,56 @@
   </main>
 
   <script>
+    // Embed mode detection
+    const params = new URLSearchParams(location.search);
+    if (params.get('embed') === '1') {
+      document.documentElement.classList.add('embed');
+    }
+    
     (function(){
       const ta = document.getElementById('embedCode-debt-to-income');
       if (ta) ta.addEventListener('focus', e => e.target.select());
     })();
   </script>
 
+  <!-- Enhanced Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Debt-to-Income Ratio Calculator",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "url":"https://openfinancecalculators.com/calculators/debt-to-income/",
+    "description":"Calculate your debt-to-income ratio to assess financial health and borrowing capacity."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What counts as debt?",
+       "acceptedAnswer":{"@type":"Answer","text":"Monthly payments on mortgages, car loans, credit cards, student loans, and other installment debts count toward your DTI calculation."}},
+      {"@type":"Question","name":"What's a good DTI?",
+       "acceptedAnswer":{"@type":"Answer","text":"A DTI below 36% is excellent, 36-43% is acceptable, and above 43% may limit your borrowing options."}}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Calculators","item":"https://openfinancecalculators.com/calculators/"},
+      {"@type":"ListItem","position":2,"name":"Debt-to-Income Ratio Calculator","item":"https://openfinancecalculators.com/calculators/debt-to-income/"}
+    ]
+  }
+  </script>
+
   <footer class="container">
-    <div>© 2024 Open Finance Calculators. All rights reserved. <a href="../../privacy-policy.html" class="link">Privacy Policy</a> | <a href="../../terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="../../privacy-policy.html" class="link">Privacy Policy</a> | <a href="../../terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
   <!-- Calculator Configuration -->
@@ -185,14 +238,14 @@
     };
   </script>
 
-  <script type="module" src="/js/header.js"></script>
-  <script type="module" src="/js/app.js"></script>
+  <script type="module" src="../../js/header.js"></script>
+  <script type="module" src="../../js/app.js"></script>
   
   <script type="module">
-    import { renderNav } from '/js/ui.js';
+    import { renderNav } from '../../js/ui.js';
     
     // Initialize navigation on debt-to-income calculator page
-    fetch('/config/calculators.json')
+    fetch('../../config/calculators.json')
       .then(response => response.json())
       .then(calculators => {
         renderNav(calculators, 'debt-to-income');

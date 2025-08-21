@@ -1,8 +1,12 @@
 // Injects the shared header into the page
 export async function injectHeader() {
   try {
-    const res = await fetch('/partials/header.html', { cache: 'no-store' });
-    if (!res.ok) throw new Error('Failed to load header');
+    // Try relative path first (for calculator pages), then absolute path (for root pages)
+    let res = await fetch('../../partials/header.html', { cache: 'no-store' });
+    if (!res.ok) {
+      res = await fetch('/partials/header.html', { cache: 'no-store' });
+      if (!res.ok) throw new Error('Failed to load header');
+    }
     const html = await res.text();
     const placeholder = document.querySelector('[data-shared-header]');
     if (!placeholder) return;

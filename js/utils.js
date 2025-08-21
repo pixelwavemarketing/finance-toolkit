@@ -14,6 +14,31 @@ export const toNum = (v) => {
   return Number(String(v).replace(/[^0-9.-]/g,'')) || 0;
 };
 
+// Enhanced error-proofing utilities
+export const safeNum = (v) => Number(String(v).replace(/[^0-9.-]/g,'')) || 0;
+export const safePercent = (v) => clamp(safeNum(v), 0, 100);
+export const safeYears = (v) => clamp(safeNum(v), 1, 120);
+export const safeCurrency = (v) => Math.max(0, safeNum(v));
+export const safeInteger = (v) => Math.max(0, Math.floor(safeNum(v)));
+
+// Input validation helpers
+export const validateInput = (value, type, options = {}) => {
+  const num = safeNum(value);
+  
+  switch (type) {
+    case 'percent':
+      return clamp(num, options.min || 0, options.max || 100);
+    case 'years':
+      return safeYears(num);
+    case 'currency':
+      return safeCurrency(num);
+    case 'integer':
+      return safeInteger(num);
+    default:
+      return num;
+  }
+};
+
 export const monthAdd = (date, m) => { 
   const d = new Date(date); 
   d.setMonth(d.getMonth() + m); 
