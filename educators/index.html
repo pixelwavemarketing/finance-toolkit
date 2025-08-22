@@ -17,6 +17,8 @@
   <link rel="icon" type="image/svg+xml" href="../finance-toolkit-fav/favicon.svg" />
   <link rel="shortcut icon" href="../finance-toolkit-fav/favicon.ico" />
   
+  <link rel="stylesheet" href="../css/styles.css">
+  
   <style>
     :root { --bg:#0b1020; --card:#121a35; --text:#e2e8f0; --muted:#94a3b8; --border:#1f2a4a; --accent:#60a5fa; }
     *{box-sizing:border-box}
@@ -45,7 +47,9 @@
   </script>
 </head>
 <body>
-  <main class="container">
+  <div data-shared-header></div>
+
+  <main class="container" role="main">
     <header>
       <h1>Educator Resources</h1>
       <p class="muted">Free, privacy‑first calculators for classrooms, libraries, and community programs. No accounts. No data collection. Accessible and mobile‑friendly.</p>
@@ -98,5 +102,7 @@
 
     <footer class="muted" style="margin-top:12px">© 2025 Open Finance Calculators</footer>
   </main>
+  
+  <script type="module" src="../js/header.js"></script>
 </body>
 </html>

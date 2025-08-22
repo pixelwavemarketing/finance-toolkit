@@ -51,36 +51,7 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <div class="container brand">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <div class="site-title">Open Finance Calculators</div>
-    </div>
-    <div class="container">
-      <nav class="site-nav">
-        <a href="./">Home</a>
-        <a href="./calculators.html">Calculators</a>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
-        <a href="./privacy-policy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
-      </nav>
-    </div>
-    <div class="container">
-      <nav id="nav"></nav>
-      <div class="nav-mobile" id="navMobile">
-        <div class="nav-toggle" id="navToggle">
-          <span id="navCurrent">All Calculators</span>
-          <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
-        </div>
-        <div class="nav-dropdown" id="navDropdown"></div>
-      </div>
-    </div>
-  </header>
+  <div data-shared-header></div>
 
   <main class="container" role="main">
     <div class="card" style="max-width: 800px; margin: 0 auto;">
@@ -158,6 +129,7 @@
     <div>© 2025 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
   
+  <script type="module" src="./js/header.js"></script>
   <script type="module">
     import { renderNav } from './js/ui.js';
     
