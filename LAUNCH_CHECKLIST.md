@@ -99,7 +99,7 @@ Create and upload these images:
 - Mobile-responsive design
 - Professional UI/UX
 - Educational content for each calculator
-- Privacy-focused (client-side calculations)
+- Privacy-friendly (client-side calculations)
 
 ### **⚠️ Needs Attention**
 - Search console verification codes

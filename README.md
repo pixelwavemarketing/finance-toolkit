@@ -4,7 +4,7 @@ A comprehensive suite of free, professional-grade financial calculators with edu
 
 ## 🚀 Features
 
-- **Privacy First**: All calculations run locally in your browser
+- **Privacy Friendly**: All calculations run locally in your browser
 - **Professional Quality**: Built with industry-standard financial formulas
 - **Educational Content**: Learn the math behind each calculation
 - **Mobile Optimized**: Responsive design that works on all devices
