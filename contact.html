@@ -79,12 +79,8 @@
     <!-- Contact Form -->
     <div class="card">
       <h2>Send us a Message</h2>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-success.html" class="message-form" autocomplete="on">
+      <form name="contact" method="POST" data-netlify="true" action="/contact-success.html" class="message-form" autocomplete="on">
         <input type="hidden" name="form-name" value="contact" />
-        <div class="hidden" aria-hidden="true">
-          <label for="bot-field">Don’t fill this out if you’re human</label>
-          <input id="bot-field" name="bot-field" type="text" tabindex="-1" />
-        </div>
 
         <div class="mf-row">
           <div class="mf-group">
