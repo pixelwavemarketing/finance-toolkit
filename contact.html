@@ -165,6 +165,16 @@
                 <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
   </footer>
   
+  <!-- Hidden form for Netlify detection -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <select name="subject">
+      <option value="general">General Question</option>
+    </select>
+    <textarea name="message"></textarea>
+  </form>
+  
     <script type="module">
     import { injectHeader } from './js/header.js';
     await injectHeader();
