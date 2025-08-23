@@ -68,8 +68,8 @@
     </section>
 
     <section class="card">
-      <h2>Embed a calculator (copy &amp; paste)</h2>
-      <p class="muted">Use the lightweight iframe. Add <code>?embed=1</code> to hide header/footer.</p>
+          <h2>Embed a calculator (copy &amp; paste)</h2>
+    <p class="muted">Use the lightweight iframe. Add <code>?embed=1</code> to hide header/footer.</p>
       <pre><code>&lt;iframe
   src="https://openfinancecalculators.com/calculators/debt-payoff/?embed=1"
   width="100%" height="700" style="border:1px solid #d3d7e3;border-radius:10px" allow="clipboard-write"&gt;&lt;/iframe&gt;</code></pre>
@@ -77,9 +77,9 @@
     </section>
 
     <section class="card">
-      <h2>Accessibility &amp; privacy</h2>
-      <ul>
-        <li><strong>Privacy:</strong> Calculations run client‑side; we don't store inputs or require logins.</li>
+          <h2>Accessibility &amp; privacy</h2>
+    <ul>
+      <li><strong>Privacy:</strong> Calculations run client‑side; we don't store inputs or require logins.</li>
         <li><strong>Accessibility:</strong> Inputs are labeled; results regions announce updates with <code>aria-live</code>.</li>
         <li><strong>Ads:</strong> Embeds are clean; if ads are present on the host page, they won't interfere with calculators.</li>
       </ul>
@@ -96,13 +96,27 @@
     </section>
 
     <section class="card">
-      <h2>Contact</h2>
-      <p>Email us at <a href="mailto:contact@openfinancecalculators.com">contact@openfinancecalculators.com</a> for questions or to request a custom embed.</p>
+          <h2>Contact</h2>
+    <p>Email us at <a href="mailto:contact@openfinancecalculators.com">contact@openfinancecalculators.com</a> for questions or to request a custom embed.</p>
     </section>
 
-    <footer class="muted" style="margin-top:12px">© 2025 Open Finance Calculators</footer>
+    <footer class="muted" style="margin-top:12px"><span>© 2025 Open Finance Calculators</span></footer>
   </main>
   
-  <script type="module" src="../js/header.js"></script>
+  <script type="module">
+    import { injectHeader } from '../js/header.js';
+    await injectHeader();
+    import { renderNav } from '../js/ui.js';
+    
+    // Initialize navigation on educators page
+    fetch('../config/calculators.json')
+      .then(response => response.json())
+      .then(calculators => {
+        renderNav(calculators);
+      })
+      .catch(error => {
+        console.error('Error loading calculators:', error);
+      });
+  </script>
 </body>
 </html>

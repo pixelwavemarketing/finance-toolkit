@@ -42,6 +42,31 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
   <link rel="stylesheet" href="./css/styles.css">
+  
+  <!-- Google Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    // Default: deny in EEA/UK/CH until the CMP updates to granted
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'region': ['AT','BE','BG','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GR','HR','HU','IE','IS','IT','LI','LT','LU','LV','MT','NL','NO','PL','PT','RO','SE','SI','SK','UK']
+    });
+
+    // Your Google tag(s) after defaults:
+    gtag('js', new Date());
+    // gtag('config','G-XXXX'); // GA4 if you add it
+  </script>
+  
+  <!-- Non-personalized ads support -->
+  <script>
+    // Set non-personalized ads when user declines or consent is pending
+    (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
+  </script>
 </head>
 <body>
   <div data-shared-header></div>
@@ -98,6 +123,7 @@
 
   <!-- Load the modular JavaScript -->
   <script type="module" src="/js/header.js"></script>
+
   <script type="module" src="./js/app.js"></script>
 
   <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->

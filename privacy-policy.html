@@ -55,8 +55,8 @@
 
   <main class="container" role="main">
     <div class="card" style="max-width: 800px; margin: 0 auto;">
-      <h1>Privacy Policy</h1>
-      <p class="muted">Last updated: January 2024</p>
+              <h1>Privacy Policy</h1>
+        <p class="muted">Last updated: January 2025</p>
 
       <h2>Privacy-First Financial Calculators</h2>
       <p>Open Finance Calculators provides <strong>privacy-friendly</strong> financial tools that run entirely in your browser. Your financial data never leaves your device—we don't store your calculations, require accounts, or collect personal information.</p>
@@ -68,6 +68,46 @@
         <li><strong>Financial data:</strong> Your investment amounts, debts, and scenarios stay private</li>
       </ul>
 
+      <h2>Consent Management & Privacy Choices</h2>
+      <p>We use Google-certified Consent Management Platform (CMP) and Google Consent Mode v2 to ensure compliance with privacy regulations in the European Economic Area (EEA), United Kingdom, and Switzerland.</p>
+      
+      <h3>Default Consent Settings</h3>
+      <p>For users in EEA/UK/CH regions, we default to denying all data collection until you provide explicit consent:</p>
+      <ul>
+        <li><strong>Ad Storage:</strong> Denied by default</li>
+        <li><strong>Ad User Data:</strong> Denied by default</li>
+        <li><strong>Ad Personalization:</strong> Denied by default</li>
+        <li><strong>Analytics Storage:</strong> Denied by default</li>
+      </ul>
+      
+      <h3>Your Privacy Choices</h3>
+      <p>You can manage your privacy preferences through our consent management system. We honor Global Privacy Control (GPC) signals and provide options to:</p>
+      <ul>
+        <li>Accept or decline personalized advertising</li>
+        <li>Control analytics and tracking</li>
+        <li>Opt-out of data sharing</li>
+        <li>Request deletion of any stored data</li>
+      </ul>
+      
+      <h3>US Privacy Rights (CPRA)</h3>
+      <p>California residents have additional rights under the California Privacy Rights Act (CPRA):</p>
+      <ul>
+        <li><strong>Do Not Sell or Share:</strong> You can opt-out of the sale or sharing of your personal information</li>
+        <li><strong>Right to Know:</strong> Request information about data collection and usage</li>
+        <li><strong>Right to Delete:</strong> Request deletion of your personal information</li>
+        <li><strong>Right to Correct:</strong> Request correction of inaccurate information</li>
+      </ul>
+      <p>To exercise these rights, contact us at <a href="mailto:contact@openfinancecalculators.com">contact@openfinancecalculators.com</a> or use our <a href="#choices">Privacy Choices</a> section below.</p>
+      
+      <h2 id="choices">Privacy Choices & Opt-Out</h2>
+      <p>We provide multiple ways to manage your privacy:</p>
+      <ul>
+        <li><strong>Cookie Settings:</strong> Control cookies through your browser preferences</li>
+        <li><strong>Ad Personalization:</strong> Opt-out of personalized advertising</li>
+        <li><strong>Data Sharing:</strong> Control how your data is shared with partners</li>
+        <li><strong>Global Privacy Control:</strong> We honor GPC signals from your browser</li>
+      </ul>
+      
       <h2>Third-Party Data Collection</h2>
       <p><strong>Important:</strong> While our calculators are completely private, third-party services we use may collect some data to provide their services.</p>
       
@@ -80,6 +120,9 @@
         <li>Ad interaction data</li>
       </ul>
       <p>Google uses cookies and similar technologies. You can control ad personalization in your <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="link">Google Ads Settings</a>.</p>
+      
+      <h3>Non-Personalized Ads</h3>
+      <p>When you decline personalization or we're waiting for consent, we serve non-personalized ads to prevent blank spaces while maintaining compliance.</p>
 
       <h3>Analytics (if applicable)</h3>
       <p>We may use Google Analytics to understand site usage:</p>
@@ -128,11 +171,13 @@
   </main>
 
   <footer class="container">
-    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+          <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
   </footer>
   
-  <script type="module" src="./js/header.js"></script>
   <script type="module">
+    import { injectHeader } from './js/header.js';
+    await injectHeader();
     import { renderNav } from './js/ui.js';
     
     // Initialize navigation on privacy policy page

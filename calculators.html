@@ -50,6 +50,25 @@
   <link rel="stylesheet" href="./css/styles.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
      crossorigin="anonymous"></script>
+  
+  <!-- Google Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    // Default: deny in EEA/UK/CH until the CMP updates to granted
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'region': ['AT','BE','BG','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GR','HR','HU','IE','IS','IT','LI','LT','LU','LV','MT','NL','NO','PL','PT','RO','SE','SI','SK','UK']
+    });
+
+    // Your Google tag(s) after defaults:
+    gtag('js', new Date());
+    // gtag('config','G-XXXX'); // GA4 if you add it
+  </script>
 </head>
 <body>
   <div data-shared-header></div>
@@ -71,10 +90,10 @@
       <p>Use our calculators in classrooms, libraries, and community programs. All tools are free to embed and include accessibility features.</p>
       <div style="margin: 20px 0;">
         <a href="./educators/" class="btn" style="background: var(--accent-2); color: var(--bg); margin-right: 12px;">
-          Educator Resources
+          <span>Educator Resources</span>
         </a>
         <a href="./calculators/debt-payoff/?embed=1" class="btn" style="background: transparent; border: 2px solid var(--accent);">
-          Try Embed Mode
+          <span>Try Embed Mode</span>
         </a>
       </div>
       <p class="muted">Perfect for financial literacy programs, workshops, and online courses. No accounts required, no data collection.</p>
@@ -82,7 +101,8 @@
   </main>
 
   <footer class="container">
-    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+            <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+    <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
   </footer>
 
   <script type="module">

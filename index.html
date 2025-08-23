@@ -55,6 +55,25 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
      crossorigin="anonymous"></script>
   
+  <!-- Google Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    // Default: deny in EEA/UK/CH until the CMP updates to granted
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'region': ['AT','BE','BG','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GR','HR','HU','IE','IS','IT','LI','LT','LU','LV','MT','NL','NO','PL','PT','RO','SE','SI','SK','UK']
+    });
+
+    // Your Google tag(s) after defaults:
+    gtag('js', new Date());
+    // gtag('config','G-XXXX'); // GA4 if you add it
+  </script>
+  
   <!-- Enhanced Structured Data -->
   <script type="application/ld+json">
   {
@@ -96,7 +115,7 @@
       
       <div style="text-align: center; margin: 30px 0;">
         <a href="./calculators.html" class="btn" style="font-size: 18px; padding: 16px 24px;">
-          Explore Our Calculators
+          <span>Explore Our Calculators</span>
         </a>
       </div>
     </div>
@@ -109,15 +128,15 @@
     </div>
 
     <div class="card">
-      <h2>Popular Calculators</h2>
-      <ul>
-        <li><a href="./calculators/compound-interest/" class="link">Compound Interest Calculator</a>: see how recurring contributions and compounding frequency affect long‑term growth.</li>
-        <li><a href="./calculators/debt-payoff/" class="link">Debt Payoff Planner</a>: compare snowball vs. avalanche strategies with a month‑by‑month payoff timeline.</li>
-        <li><a href="./calculators/emergency-fund/" class="link">Emergency Fund Calculator (3/6/12 months)</a>: estimate the right reserve size based on expenses and job stability.</li>
-        <li><a href="./calculators/savings-rate/" class="link">Savings Rate Calculator</a>: explore how savings rate and returns impact time to financial independence.</li>
-        <li><a href="./calculators/refinance-breakeven/" class="link">Refinance Break‑even</a>: calculate when closing costs pay back through a lower monthly payment.</li>
-      </ul>
-      <p>Browse the full catalog on our <a href="./calculators.html" class="link">Calculators page</a>. Each tool includes defaults you can tweak, plus shareable links that preserve your inputs for later.</p>
+          <h2>Popular Calculators</h2>
+    <ul>
+      <li><a href="./calculators/compound-interest/" class="link">Compound Interest Calculator</a>: <span>see how recurring contributions and compounding frequency affect long‑term growth.</span></li>
+      <li><a href="./calculators/debt-payoff/" class="link">Debt Payoff Planner</a>: <span>compare snowball vs. avalanche strategies with a month‑by‑month payoff timeline.</span></li>
+      <li><a href="./calculators/emergency-fund/" class="link">Emergency Fund Calculator (3/6/12 months)</a>: <span>estimate the right reserve size based on expenses and job stability.</span></li>
+      <li><a href="./calculators/savings-rate/" class="link">Savings Rate Calculator</a>: <span>explore how savings rate and returns impact time to financial independence.</span></li>
+      <li><a href="./calculators/refinance-breakeven/" class="link">Refinance Break‑even</a>: <span>calculate when closing costs pay back through a lower monthly payment.</span></li>
+    </ul>
+    <p>Browse the full catalog on our <a href="./calculators.html" class="link">Calculators page</a>. Each tool includes defaults you can tweak, plus shareable links that preserve your inputs for later.</p>
     </div>
 
     <div class="card">
@@ -135,27 +154,24 @@
       <h2>Why Choose Open Finance Calculators?</h2>
       <div class="features-grid">
         <div class="feature">
-          <h3>🔒 Privacy Friendly</h3>
+          <h3>🔒 <span>Privacy Friendly</span></h3>
           <p>All calculations run in your browser. We never see your financial data.</p>
         </div>
         <div class="feature">
-          <h3>📚 Educational Content</h3>
+          <h3>📚 <span>Educational Content</span></h3>
           <p>Learn the math behind each calculation with detailed explanations.</p>
         </div>
         <div class="feature">
-          <h3>⚡ Instant Results</h3>
+          <h3>⚡ <span>Instant Results</span></h3>
           <p>Get professional-grade calculations instantly with real-time updates.</p>
         </div>
         <div class="feature">
-          <h3>📱 Mobile Optimized</h3>
+          <h3>📱 <span>Mobile Optimized</span></h3>
           <p>Works perfectly on all devices with responsive design.</p>
         </div>
+
         <div class="feature">
-          <h3>💾 Offline Capable</h3>
-          <p>Use calculators offline after the first visit.</p>
-        </div>
-        <div class="feature">
-          <h3>🎯 Professional Quality</h3>
+          <h3>🎯 <span>Professional Quality</span></h3>
           <p>Built with the same standards used by financial professionals.</p>
         </div>
       </div>
@@ -167,14 +183,15 @@
       <p>Choose any calculator to begin your financial planning journey. All tools are completely free with no signup required.</p>
       <div style="text-align: center; margin: 20px 0;">
         <a href="./calculators.html" class="btn" style="font-size: 18px; padding: 16px 24px;">
-          Start Using Our Calculators
+          <span>Start Using Our Calculators</span>
         </a>
       </div>
     </div>
   </main>
 
   <footer class="container">
-    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+            <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+    <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
   </footer>
 
   <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
@@ -291,17 +308,17 @@
   
   <!-- Educators Section -->
   <div class="card" style="background: linear-gradient(135deg, var(--card) 0%, #1a2333 100%); border: 2px solid var(--accent);">
-    <h2>For Educators & Organizations</h2>
-    <p>Use our calculators in classrooms, libraries, and community programs. All tools are free to embed and include accessibility features.</p>
-    <div style="margin: 20px 0;">
-      <a href="./educators/" class="btn" style="background: var(--accent-2); color: var(--bg); margin-right: 12px;">
-        Educator Resources
-      </a>
-      <a href="./calculators/debt-payoff/?embed=1" class="btn" style="background: transparent; border: 2px solid var(--accent);">
-        Try Embed Mode
-      </a>
-    </div>
-    <p class="muted">Perfect for financial literacy programs, workshops, and online courses. No accounts required, no data collection.</p>
+         <h2>For Educators & Organizations</h2>
+     <p>Use our calculators in classrooms, libraries, and community programs. All tools are free to embed and include accessibility features.</p>
+     <div style="margin: 20px 0;">
+       <a href="./educators/" class="btn" style="background: var(--accent-2); color: var(--bg); margin-right: 12px;">
+         <span>Educator Resources</span>
+       </a>
+       <a href="./calculators/debt-payoff/?embed=1" class="btn" style="background: transparent; border: 2px solid var(--accent);">
+         <span>Try Embed Mode</span>
+       </a>
+     </div>
+     <p class="muted">Perfect for financial literacy programs, workshops, and online courses. No accounts required, no data collection.</p>
   </div>
   
   <script type="application/ld+json">

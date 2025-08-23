@@ -11,6 +11,8 @@ export async function injectHeader() {
     const placeholder = document.querySelector('[data-shared-header]');
     if (!placeholder) return;
     placeholder.outerHTML = html;
+    
+
   } catch (e) {
     console.error('Header injection failed:', e);
   }
