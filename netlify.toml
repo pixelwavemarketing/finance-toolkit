@@ -51,6 +51,13 @@
   status = 301
   force = true
 
+# Contact form success page
+[[redirects]]
+  from = "/contact-success"
+  to = "/contact-success.html"
+  status = 301
+  force = true
+
 # Ensure favicon is accessible at the conventional root path
 [[redirects]]
   from = "/favicon.ico"

@@ -15,22 +15,7 @@
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container brand">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <div class="site-title">Open Finance Calculators</div>
-    </div>
-    <div class="container">
-      <nav class="site-nav">
-        <a href="./">Home</a>
-        <a href="./calculators.html">Calculators</a>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div data-shared-header></div>
 
   <main class="container" role="main">
     <div class="card" style="text-align: center; max-width: 600px; margin: 4rem auto;">
@@ -79,7 +64,13 @@
   </main>
 
   <footer class="container">
-    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+    <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
   </footer>
+  
+  <script type="module">
+    import { injectHeader } from './js/header.js';
+    await injectHeader();
+  </script>
 </body>
 </html>

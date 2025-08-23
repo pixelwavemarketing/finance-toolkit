@@ -7,9 +7,7 @@
   <link rel="icon" type="image/png" href="./finance-toolkit-fav/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="./finance-toolkit-fav/favicon.svg" />
   <link rel="shortcut icon" href="./finance-toolkit-fav/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./finance-toolkit-fav/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="FinanceTool" />
-  <link rel="manifest" href="./finance-toolkit-fav/site.webmanifest" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact - Open Finance Calculators</title>
   <meta name="description" content="Get in touch with Open Finance Calculators. We're here to help with questions, feedback, or calculator suggestions." />
@@ -39,9 +37,7 @@
   <!-- Additional SEO Meta Tags -->
   <meta name="theme-color" content="#0b1020" />
   <meta name="msapplication-TileColor" content="#0b1020" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Open Finance Calculators" />
+
   
   <!-- Search Console Verification -->
   <meta name="google-site-verification" content="VVqCTIGRuiSsoa137qyNR19sfFDTVOQJTXKCpTS9K1E" />
@@ -83,7 +79,7 @@
     <!-- Contact Form -->
     <div class="card">
       <h2>Send us a Message</h2>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="message-form" autocomplete="on">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-success.html" class="message-form" autocomplete="on">
         <input type="hidden" name="form-name" value="contact" />
         <div class="hidden" aria-hidden="true">
           <label for="bot-field">Don’t fill this out if you’re human</label>
@@ -173,13 +169,13 @@
                 <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
   </footer>
   
-  <script type="module">
+    <script type="module">
     import { injectHeader } from './js/header.js';
     await injectHeader();
     import { renderNav } from './js/ui.js';
     
     // Initialize navigation on contact page
-          fetch('./config/calculators.json')
+    fetch('./config/calculators.json')
       .then(response => response.json())
       .then(calculators => {
         renderNav(calculators);
@@ -187,6 +183,19 @@
       .catch(error => {
         console.error('Error loading calculators:', error);
       });
+    
+    // Enhanced form handling
+    const form = document.querySelector('form[name="contact"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    form.addEventListener('submit', function(e) {
+      // Show loading state
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Form will submit normally to Netlify
+      // The action="/contact-success.html" will redirect after successful submission
+    });
   </script>
 </body>
 </html>
