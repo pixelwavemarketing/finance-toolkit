@@ -16,6 +16,7 @@
   <meta name="keywords" content="credit card minimum calculator, minimum payment calculator, credit card payoff calculator, interest cost calculator" />
   <meta name="author" content="Open Finance Calculators" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://openfinancecalculators.com/calculators/credit-card-minimum/" />
   
   <!-- Open Graph Meta Tags -->
@@ -50,8 +51,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
   <link rel="stylesheet" href="../../css/styles.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
-     crossorigin="anonymous"></script>
 </head>
 <body>
   <div data-shared-header></div>
@@ -84,10 +83,14 @@
     
     
     <div class="grid">
-      <section class="card" id="form" aria-label="Calculator Input Form"></section>
+      <section class="card" id="form" aria-label="Calculator Input Form">
+        <!-- Calculator form will be populated by JavaScript -->
+      </section>
       <section class="card" id="results" aria-label="Calculation Results"></section>
     </div>
     
+    <!-- Calculator Description -->
+    <div id="explainer">Enter your details above to see the results and understand what they mean for your financial planning.</div>
     
     
     <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
@@ -144,15 +147,11 @@
   </script>
 
   <footer class="container">
-    <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="../../privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">pixelwave marketing</a> <span id="shareTarget"></span></div>
+    <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="../../privacy-policy" class="link">Privacy Policy</a> | <a href="../../terms" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
-  <!-- Calculator-specific initialization -->
+  <!-- Calculator Configuration -->
   <script>
-    // Set the calculator ID for this page
-    window.calculatorId = 'credit-card-minimum';
-
-    // Add calculator config directly to avoid path issues
     window.calculatorConfig = {
       "id": "credit-card-minimum",
       "title": "Credit Card Minimum Cost",
@@ -219,186 +218,31 @@
   </script>
 
   <!-- Load the modular JavaScript -->
-  <script type="module" src="/js/header.js"></script>
+  <script type="module" src="../../js/header.js"></script>
   <script type="module" src="../../js/app.js"></script>
+  <script type="module" src="../../js/ui.js"></script>
 
+  <!-- Calculator-specific initialization -->
+  <script>
+    // Set the calculator ID for this page
+    window.calculatorId = 'credit-card-minimum';
+  </script>
 
-  <!-- Educational Content Section -->
-  <section class="card educational-content">
-    <h2>The Hidden Dangers of Credit Card Minimum Payments: Understanding the True Cost</h2>
+  <!-- Static Calculator Preview for SEO -->
+  <section class="card" style="margin-top:16px;" aria-label="Calculator Preview">
+    <h2>Try the Credit Card Minimum Calculator</h2>
+    <p>Use this interactive calculator to see exactly how minimum payments affect your debt payoff timeline and total costs.</p>
     
-    <div class="content-grid">
-      <div class="content-block">
-        <h3>What are Credit Card Minimum Payments?</h3>
-        <p>Credit card minimum payments are the smallest amount you must pay each month to keep your account in good standing. While they may seem manageable, they're designed to maximize bank profits by keeping you in debt for decades.</p>
-        
-        <h4>How Minimum Payments Are Calculated:</h4>
-        <ul>
-          <li><strong>Percentage-Based:</strong> Usually 2-3% of your current balance</li>
-          <li><strong>Fixed Amount:</strong> Often $25 or $35 minimum regardless of balance</li>
-          <li><strong>Interest + Fees:</strong> Plus any interest charges and late fees</li>
-          <li><strong>Whichever is Higher:</strong> The greater of percentage or fixed amount</li>
-        </ul>
-        
-        <h4>Why They're Problematic:</h4>
-        <ul>
-          <li>Extend payoff timeline to decades</li>
-          <li>Maximize total interest paid to banks</li>
-          <li>Provide false sense of affordability</li>
-          <li>Prevent meaningful debt reduction</li>
-        </ul>
-      </div>
-      
-      <div class="content-block">
-        <h3>Real-World Examples of Minimum Payment Traps</h3>
-        
-        <h4>Example 1: $5,000 Balance at 19.99% APR</h4>
-        <p><strong>Minimum Payment:</strong> 2% = $100 initially<br>
-        <strong>Time to Pay Off:</strong> 18+ years<br>
-        <strong>Total Interest:</strong> $7,000+<br>
-        <strong>Total Paid:</strong> $12,000+</p>
-        
-        <h4>Example 2: $10,000 Balance at 24.99% APR</h4>
-        <p><strong>Minimum Payment:</strong> 2% = $200 initially<br>
-        <strong>Time to Pay Off:</strong> 25+ years<br>
-        <strong>Total Interest:</strong> $18,000+<br>
-        <strong>Total Paid:</strong> $28,000+</p>
-        
-        <h4>Example 3: $2,000 Balance at 15.99% APR</h4>
-        <p><strong>Minimum Payment:</strong> $25 fixed<br>
-        <strong>Time to Pay Off:</strong> 12+ years<br>
-        <strong>Total Interest:</strong> $2,500+<br>
-        <strong>Total Paid:</strong> $4,500+</p>
-      </div>
-    </div>
-    
-    <div class="content-block">
-      <h3>The Mathematics Behind Minimum Payment Traps</h3>
-      
-      <h4>Why Minimum Payments Don't Work:</h4>
-      <p>When you pay only the minimum, most of your payment goes toward interest, leaving very little to reduce your principal balance. This creates a cycle where your debt barely decreases month after month.</p>
-      
-      <h4>Interest Calculation Example:</h4>
-      <p>On a $5,000 balance at 19.99% APR:<br>
-      <strong>Monthly Interest:</strong> $5,000 × 19.99% ÷ 12 = $83.29<br>
-      <strong>Minimum Payment (2%):</strong> $100<br>
-      <strong>Principal Reduction:</strong> $100 - $83.29 = $16.71<br>
-      <strong>New Balance:</strong> $4,983.29</p>
-      
-      <h4>The Snowball Effect:</h4>
-      <p>As your balance decreases slightly, your minimum payment also decreases, but the interest continues to compound, making it even harder to make meaningful progress.</p>
-    </div>
-    
-    <div class="content-block">
-      <h3>Breaking Free from Minimum Payment Cycles</h3>
-      
-      <h4>Strategy 1: Pay More Than Minimum</h4>
-      <p>Even small increases above the minimum can dramatically reduce your payoff time and total interest costs.</p>
-      
-      <h4>Strategy 2: Target Highest APR First</h4>
-      <p>Focus extra payments on cards with the highest interest rates to maximize interest savings.</p>
-      
-      <h4>Strategy 3: Debt Consolidation</h4>
-      <p>Consider transferring balances to lower-rate cards or consolidating into a personal loan with better terms.</p>
-      
-      <h4>Strategy 4: Balance Transfer Cards</h4>
-      <p>Use 0% introductory APR offers to pause interest while you pay down principal aggressively.</p>
-    </div>
-    
-    <div class="content-block">
-      <h3>Understanding Credit Card APR and Interest</h3>
-      
-      <h4>What is APR?</h4>
-      <p>APR (Annual Percentage Rate) represents the yearly cost of borrowing money, including interest and fees. Credit card APRs typically range from 12% to 30%.</p>
-      
-      <h4>How Interest Compounds:</h4>
+    <div class="calculator-preview">
+      <h3>Example Calculation</h3>
+      <p><strong>Scenario:</strong> $5,000 credit card balance at 19.99% APR with 2% minimum payment</p>
       <ul>
-        <li><strong>Daily Compounding:</strong> Interest is calculated daily and added monthly</li>
-        <li><strong>Grace Period:</strong> No interest if you pay the full balance by the due date</li>
-        <li><strong>Carrying Balance:</strong> Interest starts accruing immediately on unpaid amounts</li>
-        <li><strong>Variable Rates:</strong> APRs can change based on market conditions or your credit score</li>
+        <li><strong>Monthly Payment:</strong> $100 (2% of balance)</li>
+        <li><strong>Time to Pay Off:</strong> 18+ years</li>
+        <li><strong>Total Interest:</strong> $7,000+</li>
+        <li><strong>Total Amount Paid:</strong> $12,000+</li>
       </ul>
-      
-      <h4>Factors Affecting Your APR:</h4>
-      <ul>
-        <li>Credit score and credit history</li>
-        <li>Type of credit card (rewards, student, secured)</li>
-        <li>Current market interest rates</li>
-        <li>Your relationship with the bank</li>
-        <li>Promotional offers and introductory rates</li>
-      </ul>
-    </div>
-    
-    <div class="content-block">
-      <h3>Alternative Payment Strategies</h3>
-      
-      <h4>The Avalanche Method:</h4>
-      <p>Pay minimums on all cards, then put extra money toward the highest APR card. This saves the most money on interest.</p>
-      
-      <h4>The Snowball Method:</h4>
-      <p>Pay minimums on all cards, then put extra money toward the smallest balance. This provides psychological wins and motivation.</p>
-      
-      <h4>Debt Consolidation Loans:</h4>
-      <p>Combine multiple credit card balances into a single loan with a lower interest rate and fixed monthly payment.</p>
-      
-      <h4>Balance Transfer Cards:</h4>
-      <p>Move high-interest balances to cards offering 0% APR for 12-18 months on balance transfers.</p>
-    </div>
-    
-    <div class="content-block">
-      <h3>Warning Signs You're Trapped in Minimum Payments</h3>
-      
-      <h4>Red Flags to Watch For:</h4>
-      <ul>
-        <li>Paying only the minimum month after month</li>
-        <li>Credit card balances not decreasing significantly</li>
-        <li>Total debt increasing over time</li>
-        <li>Using credit cards for daily expenses</li>
-        <li>Multiple credit cards with high balances</li>
-        <li>Credit score declining due to high utilization</li>
-        <li>Feeling overwhelmed by debt</li>
-      </ul>
-      
-      <h4>When to Seek Help:</h4>
-      <ul>
-        <li>Credit card payments exceed 20% of your income</li>
-        <li>You're using credit cards to pay other bills</li>
-        <li>You're considering bankruptcy</li>
-        <li>Debt is causing significant stress or anxiety</li>
-        <li>You've missed payments or are at risk of default</li>
-      </ul>
-    </div>
-    
-    <div class="content-block">
-      <h3>Building Better Credit Card Habits</h3>
-      
-      <h4>Use Credit Cards Wisely:</h4>
-      <ul>
-        <li>Only charge what you can pay off in full each month</li>
-        <li>Set up automatic payments for the full balance</li>
-        <li>Monitor your spending and credit utilization</li>
-        <li>Review statements monthly for errors or fraud</li>
-        <li>Keep credit utilization below 30% of your limit</li>
-      </ul>
-      
-      <h4>Emergency Fund Strategy:</h4>
-      <p>Build a 3-6 month emergency fund to avoid using credit cards for unexpected expenses. This prevents falling back into minimum payment cycles.</p>
-      
-      <h4>Regular Financial Reviews:</h4>
-      <p>Review your credit card usage monthly and adjust your budget to ensure you're not accumulating new debt while paying off old balances.</p>
-    </div>
-    
-    <div class="content-block">
-      <h3>When to Use This Calculator</h3>
-      <ul>
-        <li>Understanding the true cost of minimum payments</li>
-        <li>Planning debt payoff strategies</li>
-        <li>Comparing different payment amounts</li>
-        <li>Motivating yourself to pay more than minimum</li>
-        <li>Teaching financial literacy about credit card debt</li>
-        <li>Planning debt consolidation strategies</li>
-        <li>Setting realistic debt payoff timelines</li>
-      </ul>
+      <p><em>This example shows why paying more than the minimum is crucial for financial health.</em></p>
     </div>
   </section>
 

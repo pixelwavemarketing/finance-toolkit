@@ -49,7 +49,13 @@
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
   <link rel="stylesheet" href="./css/styles.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
-     crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   
   <!-- Google Consent Mode v2 -->
   <script>
@@ -94,7 +100,7 @@
     "description": "Professional-grade financial calculators with educational content",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://openfinancecalculators.com/calculators.html",
+      "target": "https://openfinancecalculators.com/calculators",
       "query-input": "required name=search_term_string"
     }
   }
@@ -110,7 +116,7 @@
       <p>Your complete resource for professional-grade financial calculators and educational content. All tools run in your browser for complete privacy - we never see your financial data.</p>
       
       <div style="text-align: center; margin: 30px 0;">
-        <a href="./calculators.html" class="btn" style="font-size: 18px; padding: 16px 24px;">
+        <a href="./calculators" class="btn" style="font-size: 18px; padding: 16px 24px;">
           <span>Explore Our Calculators</span>
         </a>
       </div>
@@ -132,7 +138,7 @@
       <li><a href="./calculators/savings-rate/" class="link">Savings Rate Calculator</a>: <span>explore how savings rate and returns impact time to financial independence.</span></li>
       <li><a href="./calculators/refinance-breakeven/" class="link">Refinance Break‑even</a>: <span>calculate when closing costs pay back through a lower monthly payment.</span></li>
     </ul>
-    <p>Browse the full catalog on our <a href="./calculators.html" class="link">Calculators page</a>. Each tool includes defaults you can tweak, plus shareable links that preserve your inputs for later.</p>
+    <p>Browse the full catalog on our <a href="./calculators" class="link">Calculators page</a>. Each tool includes defaults you can tweak, plus shareable links that preserve your inputs for later.</p>
     </div>
 
     <div class="card">
@@ -178,7 +184,7 @@
       <h2>Ready to Get Started?</h2>
       <p>Choose any calculator to begin your financial planning journey. All tools are completely free with no signup required.</p>
       <div style="text-align: center; margin: 20px 0;">
-        <a href="./calculators.html" class="btn" style="font-size: 18px; padding: 16px 24px;">
+        <a href="./calculators" class="btn" style="font-size: 18px; padding: 16px 24px;">
           <span>Start Using Our Calculators</span>
         </a>
       </div>
@@ -186,8 +192,7 @@
   </main>
 
   <footer class="container">
-            <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
-    <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
+    <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
   <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
@@ -266,7 +271,7 @@
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://openfinancecalculators.com/calculators.html?q={search_term_string}"
+          "urlTemplate": "https://openfinancecalculators.com/calculators?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       },

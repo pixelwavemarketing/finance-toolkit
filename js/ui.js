@@ -19,7 +19,13 @@ export function renderNav(calculators, active){
     // Use absolute path from root to avoid relative path issues
     const href = `/calculators/${c.id}/`;
     console.log(`Generating desktop link for ${c.id}: ${href}`);
-    return `<a href="${href}" data-calc-id="${c.id}">${c.title}</a>`;
+    
+    // Add active class and styling if this is the current calculator
+    const isActive = active && c.id === active;
+    const activeClass = isActive ? 'active' : '';
+    const activeStyle = isActive ? 'style="background: var(--accent); color: white; border-radius: 8px; padding: 8px 12px;"' : '';
+    
+    return `<a href="${href}" data-calc-id="${c.id}" class="${activeClass}" ${activeStyle}>${c.title}</a>`;
   }).join('');
   
   navEl.innerHTML = desktopLinks;

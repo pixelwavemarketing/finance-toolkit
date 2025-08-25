@@ -14,7 +14,7 @@
   <meta name="keywords" content="contact, support, feedback, financial calculators, help" />
   <meta name="author" content="Open Finance Calculators" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <link rel="canonical" href="https://openfinancecalculators.com/contact.html" />
+  <link rel="canonical" href="https://openfinancecalculators.com/contact" />
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Contact - Open Finance Calculators" />
@@ -43,9 +43,8 @@
   <meta name="google-site-verification" content="VVqCTIGRuiSsoa137qyNR19sfFDTVOQJTXKCpTS9K1E" />
   <meta name="msvalidate.01" content="D74B24FADC0EA14BCD046E165FE7ED9B" />
   
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
   <link rel="stylesheet" href="./css/styles.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
-     crossorigin="anonymous"></script>
   
   <!-- Google Consent Mode v2 -->
   <script>
@@ -79,21 +78,21 @@
     <!-- Contact Form -->
     <div class="card">
       <h2>Send us a Message</h2>
-      <form name="contact" method="POST" data-netlify="true" action="/contact-success.html" class="message-form" autocomplete="on">
+      <form name="contact" method="POST" data-netlify="true" action="/contact-success.html" autocomplete="on">
         <input type="hidden" name="form-name" value="contact" />
 
-        <div class="mf-row">
-          <div class="mf-group">
+        <div class="row">
+          <div class="field">
             <label for="name">Name *</label>
             <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name" />
           </div>
-          <div class="mf-group">
+          <div class="field">
             <label for="email">Email *</label>
             <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
           </div>
         </div>
 
-        <div class="mf-group">
+        <div class="field">
           <label for="subject">Subject *</label>
           <select id="subject" name="subject" required>
             <option value="" disabled selected>Select a subject</option>
@@ -106,12 +105,12 @@
           </select>
         </div>
 
-        <div class="mf-group">
+        <div class="field">
           <label for="message">Message *</label>
           <textarea id="message" name="message" required rows="6" placeholder="Please describe your question, issue, or suggestion in detail..."></textarea>
         </div>
 
-        <div class="mf-actions">
+        <div class="field">
           <button type="submit" class="btn">Send Message</button>
         </div>
       </form>
@@ -161,8 +160,7 @@
   </main>
 
   <footer class="container">
-            <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
-                <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
+    <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
   
   <!-- Hidden form for Netlify detection -->
@@ -203,5 +201,8 @@
       // The action="/contact-success.html" will redirect after successful submission
     });
   </script>
+  
+  <!-- Load app.js for calculator navigation -->
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /config/
 
 Sitemap: https://openfinancecalculators.com/sitemap.xml

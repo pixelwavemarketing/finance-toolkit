@@ -6,39 +6,68 @@
   NODE_VERSION = "18"
 
 # Clean redirects - one per destination to avoid confusion
+
+# Force HTTPS - redirect all HTTP traffic to HTTPS
 [[redirects]]
-  from = "/about"
-  to = "/about.html"
+  from = "http://openfinancecalculators.com/*"
+  to = "https://openfinancecalculators.com/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/contact"
-  to = "/contact.html"
+  from = "http://www.openfinancecalculators.com/*"
+  to = "https://www.openfinancecalculators.com/:splat"
+  status = 301
+  force = true
+
+# Remove www redirects to canonical domain
+[[redirects]]
+  from = "https://www.openfinancecalculators.com/*"
+  to = "https://openfinancecalculators.com/:splat"
+  status = 301
+  force = true
+
+# Canonical domain redirect
+[[redirects]]
+  from = "https://www.openfinancecalculators.com/"
+  to = "https://openfinancecalculators.com/"
+  status = 301
+  force = true
+
+# Redirect .html files to clean URLs (canonical)
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/privacy-policy"
-  to = "/privacy-policy.html"
+  from = "/contact.html"
+  to = "/contact"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/terms"
-  to = "/terms.html"
+  from = "/privacy-policy.html"
+  to = "/privacy-policy"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/calculators"
-  to = "/calculators.html"
+  from = "/terms.html"
+  to = "/terms"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/calculator"
-  to = "/calculator.html"
+  from = "/calculators.html"
+  to = "/calculators"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculator.html"
+  to = "/calculator"
   status = 301
   force = true
 
@@ -53,8 +82,8 @@
 
 # Contact form success page
 [[redirects]]
-  from = "/contact-success"
-  to = "/contact-success.html"
+  from = "/contact-success.html"
+  to = "/contact-success"
   status = 301
   force = true
 
@@ -112,6 +141,13 @@
   to = "/404.html"
   status = 404
 
+# Block access to config directory
+[[redirects]]
+  from = "/config/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
 [dev]
   command = "python -m http.server 8000"
   port = 8000
@@ -124,6 +160,7 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net;"
 
 [[headers]]

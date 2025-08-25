@@ -8,7 +8,7 @@
   <meta name="keywords" content="financial calculator, compound interest calculator, debt payoff calculator, emergency fund calculator, savings rate calculator, financial independence calculator, budget calculator, refinance calculator" />
   <meta name="author" content="Finance Toolkit" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <link rel="canonical" href="https://openfinancecalculators.com/calculator.html" />
+  <link rel="canonical" href="https://openfinancecalculators.com/calculator" />
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Financial Calculators - Finance Toolkit" />
@@ -58,12 +58,6 @@
     // Your Google tag(s) after defaults:
     gtag('js', new Date());
     // gtag('config','G-XXXX'); // GA4 if you add it
-  </script>
-  
-  <!-- Non-personalized ads support -->
-  <script>
-    // Set non-personalized ads when user declines or consent is pending
-    (adsbygoogle = window.adsbygoogle || []).requestNonPersonalizedAds = 1;
   </script>
 </head>
 <body>
@@ -116,13 +110,27 @@
   </main>
 
   <footer class="container">
-            <div>Calculations run in your browser. We don't store your data or require accounts. Third-party ads may collect data—see <a href="./privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">pixelwave marketing</a> <span id="shareTarget"></span></div>
+    <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
   <!-- Load the modular JavaScript -->
-  <script type="module" src="/js/header.js"></script>
+  <script type="module">
+    import { injectHeader } from './js/header.js';
+    await injectHeader();
+    import { renderNav } from './js/ui.js';
+    
+    // Initialize navigation on calculator page
+    fetch('./config/calculators.json')
+      .then(response => response.json())
+      .then(calculators => {
+        renderNav(calculators);
+      })
+      .catch(error => {
+        console.error('Error loading calculators:', error);
+      });
+  </script>
 
-  <script type="module" src="./js/app.js"></script>
+  <script type="module" src="/js/app.js"></script>
 
   <!-- Comprehensive JSON-LD Structured Data for SEO & AI Search -->
   <script type="application/ld+json">
@@ -200,7 +208,7 @@
         "@type": "SearchAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://openfinancecalculators.com/calculators.html?q={search_term_string}"
+          "urlTemplate": "https://openfinancecalculators.com/calculators?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
       },

@@ -50,8 +50,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
   <link rel="stylesheet" href="../../css/styles.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
-     crossorigin="anonymous"></script>
 </head>
 <body>
   <div data-shared-header></div>
@@ -145,7 +143,7 @@
   </script>
 
   <footer class="container">
-    <div>Calculations run in your browser. We don't store your data or require accounts. Ads may collect data—see <a href="../../privacy-policy.html" class="link">Privacy Policy</a>. Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a> <span id="shareTarget"></span></div>
+    <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="../../privacy-policy" class="link">Privacy Policy</a> | <a href="../../terms" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
   <!-- Calculator-specific initialization -->
@@ -184,13 +182,13 @@
   </script>
 
   <!-- Load the modular JavaScript -->
-  <script type="module" src="/js/header.js"></script>
-
-  <script type="module" src="/js/app.js"></script>
+  <script type="module" src="../../js/header.js"></script>
+  <script type="module" src="../../js/app.js"></script>
+  <script type="module" src="../../js/ui.js"></script>
   
   <!-- Navigation initialization -->
   <script type="module">
-    import { renderNav } from '/js/ui.js';
+    import { renderNav } from '../../js/ui.js';
     
     // Initialize navigation on budget splitter page
     fetch('/config/calculators.json')

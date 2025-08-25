@@ -14,13 +14,13 @@
   <meta name="keywords" content="financial calculator, compound interest calculator, debt payoff calculator, emergency fund calculator, savings rate calculator, budget calculator, refinance calculator" />
   <meta name="author" content="Open Finance Calculators" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <link rel="canonical" href="https://openfinancecalculators.com/calculators.html" />
+  <link rel="canonical" href="https://openfinancecalculators.com/calculators" />
   
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Financial Calculators - Open Finance Calculators" />
   <meta property="og:description" content="Free financial calculators for compound interest, debt payoff, emergency fund, savings rate, budget planning, and more. Professional-grade tools with educational content." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://openfinancecalculators.com/calculators.html" />
+  <meta property="og:url" content="https://openfinancecalculators.com/calculators" />
   <meta property="og:image" content="https://openfinancecalculators.com/images/open-finance-calculators-og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -43,9 +43,10 @@
   <meta name="google-site-verification" content="VVqCTIGRuiSsoa137qyNR19sfFDTVOQJTXKCpTS9K1E" />
   <meta name="msvalidate.01" content="D74B24FADC0EA14BCD046E165FE7ED9B" />
   
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
   <link rel="stylesheet" href="./css/styles.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
-     crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>
   
   <!-- Google Consent Mode v2 -->
   <script>
@@ -77,7 +78,106 @@
     </div>
 
     <div id="calculators-grid" class="calculators-grid">
-      <!-- Calculators will be populated by JavaScript -->
+      <!-- Pre-generated calculator cards for SEO -->
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Compound Interest Calculator</h3>
+          <p>See how your investments grow over time with recurring contributions and compounding. Perfect for retirement planning, college savings, or any long-term financial goal.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/compound-interest/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Debt Payoff Planner</h3>
+          <p>Build a month-by-month plan using snowball or avalanche strategies. Add extra payments and see exactly when you'll be debt-free.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/debt-payoff/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Emergency Fund Planner</h3>
+          <p>Calculate your ideal emergency fund target and timeline based on monthly expenses and risk tolerance. Includes sinking fund planning.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/emergency-fund/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Savings Rate & FI Date</h3>
+          <p>Calculate your savings rate and estimate when you can achieve financial independence. Uses the 4% rule and proven principles.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/savings-rate/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Goal Timeline Planner</h3>
+          <p>Plan when you'll reach your savings goal with regular contributions and optional step-ups. Perfect for short and medium-term goals.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/goal-timeline/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Refinance Break-Even</h3>
+          <p>Calculate when refinancing pays off by comparing closing costs to monthly savings. Essential for mortgage and loan refinancing decisions.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/refinance-breakeven/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Budget Splitter</h3>
+          <p>Split your take-home pay using the popular 50/30/20 rule or create custom budget percentages. Includes different pay frequency options.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/budget-splitter/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Extra Payment Impact</h3>
+          <p>See how extra payments can dramatically reduce your loan term and interest costs. Compare different payment strategies.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/extra-payment/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Credit Card Minimum Cost</h3>
+          <p>See the true cost of paying only minimum payments on credit card debt. Understand payoff timeline and total interest costs.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/credit-card-minimum/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calculator-card">
+        <div class="calculator-content">
+          <h3>Debt-to-Income Ratio</h3>
+          <p>Calculate your debt-to-income ratio to understand your financial health and borrowing capacity. Essential for loan applications.</p>
+          <div class="calculator-actions">
+            <a href="./calculators/debt-to-income/" class="btn">Use Calculator</a>
+          </div>
+        </div>
+      </div>
     </div>
     
     <!-- Educators Section -->
@@ -97,8 +197,7 @@
   </main>
 
   <footer class="container">
-            <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
-    <p class="muted" style="margin-top: 8px; font-size: 14px;">Calculations run in your browser. We don't store your inputs or require accounts. Ads from partners may use cookies/identifiers per your consent and region—see <a href="./privacy-policy.html" class="link">Privacy</a> / <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a>.</p>
+    <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="./privacy-policy.html" class="link">Privacy Policy</a> | <a href="./terms.html" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
   <script type="module">
@@ -106,36 +205,19 @@
     await injectHeader();
     import { renderNav } from './js/ui.js';
     
-    // Function to render calculators grid
-    function renderCalculatorsGrid(calculators) {
-      const grid = document.getElementById('calculators-grid');
-      if (!grid) return;
-      
-      const calculatorCards = Object.values(calculators).map(calc => `
-        <div class="calculator-card">
-          <div class="calculator-content">
-            <h3>${calc.title}</h3>
-            <p>${calc.description}</p>
-            <div class="calculator-actions">
-              <a href="./calculators/${calc.id}/" class="btn">Use Calculator</a>
-            </div>
-          </div>
-        </div>
-      `).join('');
-      
-      grid.innerHTML = calculatorCards;
-    }
-    
-    // Initialize navigation and calculators grid
+    // Initialize navigation only (calculator grid is now pre-generated)
     fetch('./config/calculators.json')
       .then(response => response.json())
       .then(calculators => {
         renderNav(calculators);
-        renderCalculatorsGrid(calculators);
+        // Calculator grid is now pre-generated HTML for better SEO
       })
       .catch(error => {
         console.error('Error loading calculators:', error);
       });
   </script>
+  
+  <!-- Load app.js for calculator navigation -->
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>

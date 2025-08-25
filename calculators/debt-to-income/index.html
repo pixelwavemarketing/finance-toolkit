@@ -46,8 +46,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js" defer></script>
   <link rel="stylesheet" href="../../css/styles.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2268896758971689"
-     crossorigin="anonymous"></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -64,6 +62,9 @@
       <section class="card" id="form" aria-label="Calculator Input Form"></section>
       <section class="card" id="results" aria-label="Calculation Results"></section>
     </div>
+    
+    <!-- Calculator Description -->
+    <div id="explainer">Enter your details above to see the results and understand what they mean for your financial planning.</div>
     
     <section class="card" style="margin-top:16px;" aria-label="Data Visualization">
       <h2>Debt Breakdown</h2>
@@ -209,50 +210,103 @@
   </script>
 
   <footer class="container">
-    <div>© 2025 Open Finance Calculators. All rights reserved. <a href="../../privacy-policy.html" class="link">Privacy Policy</a> | <a href="../../terms.html" class="link">Terms of Service</a> | Website built by <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
+    <div><span>© 2025 Open Finance Calculators. All rights reserved.</span> <a href="../../privacy-policy" class="link">Privacy Policy</a> | <a href="../../terms" class="link">Terms of Service</a> | <a href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" class="link">Privacy & Cookie Settings</a> | <span>Website built by</span> <a href="https://usepixelwave.com" target="_blank" rel="noopener" class="link">PixelWave Marketing</a></div>
   </footer>
 
   <!-- Calculator Configuration -->
   <script>
     window.calculatorConfig = {
       "id": "debt-to-income",
-      "title": "Debt-to-Income Ratio",
-      "description": "Calculate your debt-to-income ratio to understand your financial health and borrowing capacity.",
-      "explainer": "DTI is a key metric lenders use. Total DTI includes all monthly debt payments ÷ gross monthly income. Good: <36%, Acceptable: 36-41%, High risk: >41%. Housing alone should be <28%.",
+      "title": "Debt-to-Income Ratio Calculator",
+      "description": "Calculate your debt-to-income ratio to assess your financial health and loan eligibility.",
+      "explainer": "Your debt-to-income ratio compares monthly debt payments to gross monthly income. Lenders use this to evaluate loan applications and determine interest rates.",
       "inputs": [
-        { "name": "grossIncome", "label": "Monthly Gross Income", "type": "currency", "min": 0, "step": 100, "default": 6000 },
-        { "name": "housingPayment", "label": "Housing Payment (rent/mortgage)", "type": "currency", "min": 0, "step": 50, "default": 1500 },
-        { "name": "carPayments", "label": "Car Payments", "type": "currency", "min": 0, "step": 25, "default": 400 },
-        { "name": "creditCards", "label": "Credit Card Minimums", "type": "currency", "min": 0, "step": 25, "default": 150 },
-        { "name": "studentLoans", "label": "Student Loan Payments", "type": "currency", "min": 0, "step": 25, "default": 200 },
-        { "name": "otherDebts", "label": "Other Monthly Debt Payments", "type": "currency", "min": 0, "step": 25, "default": 0 }
+        {
+          "name": "grossIncome",
+          "label": "Gross Monthly Income ($)",
+          "type": "currency",
+          "min": 0,
+          "step": 100,
+          "default": 5000
+        },
+        {
+          "name": "housingPayment",
+          "label": "Monthly Housing Payment ($)",
+          "type": "currency",
+          "min": 0,
+          "step": 50,
+          "default": 1200
+        },
+        {
+          "name": "carPayments",
+          "label": "Monthly Auto Payment ($)",
+          "type": "currency",
+          "min": 0,
+          "step": 25,
+          "default": 400
+        },
+        {
+          "name": "creditCards",
+          "label": "Monthly Credit Card Payment ($)",
+          "type": "currency",
+          "min": 0,
+          "step": 25,
+          "default": 200
+        },
+        {
+          "name": "studentLoans",
+          "label": "Monthly Student Loan Payment ($)",
+          "type": "currency",
+          "min": 0,
+          "step": 25,
+          "default": 300
+        },
+        {
+          "name": "otherDebts",
+          "label": "Other Monthly Debt Payments ($)",
+          "type": "currency",
+          "min": 0,
+          "step": 25,
+          "default": 100
+        }
       ],
       "compute": "computeDebtToIncome",
       "outputs": [
-        { "name": "totalDTI", "label": "Total Debt-to-Income", "format": "percent" },
-        { "name": "housingDTI", "label": "Housing DTI", "format": "percent" },
+        { "name": "totalDTI", "label": "Total Debt-to-Income Ratio", "format": "percent" },
+        { "name": "housingDTI", "label": "Housing DTI Ratio", "format": "percent" },
         { "name": "riskLevel", "label": "Risk Assessment", "format": "text" },
         { "name": "maxAdditionalDebt", "label": "Max Additional Monthly Debt", "format": "currency" }
       ],
-      "chart": { "x": "category", "series": [{"key": "amount", "label": "Monthly Payment"}] }
+      "chart": { 
+        "x": "category", 
+        "series": [{"key": "amount", "label": "Monthly Payment"}] 
+      }
     };
   </script>
 
   <script type="module" src="../../js/header.js"></script>
   <script type="module" src="../../js/app.js"></script>
+  <script type="module" src="../../js/ui.js"></script>
 
-  
+  <!-- Calculator-specific initialization -->
+  <script>
+    // Set the calculator ID for this page
+    window.calculatorId = 'debt-to-income';
+  </script>
+
+  <!-- Manual navigation initialization -->
   <script type="module">
+    // Import the renderNav function
     import { renderNav } from '../../js/ui.js';
     
-    // Initialize navigation on debt-to-income calculator page
+    // Load calculators and render navigation
     fetch('../../config/calculators.json')
       .then(response => response.json())
       .then(calculators => {
         renderNav(calculators, 'debt-to-income');
       })
       .catch(error => {
-        console.error('Error loading calculators:', error);
+        console.error('Error loading calculators for navigation:', error);
       });
   </script>
 
