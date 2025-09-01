@@ -1,5 +1,18 @@
 User-agent: *
 Allow: /
+
+# Block configuration files and template URLs
 Disallow: /config/
+Disallow: /*${calc.id}*
+Disallow: /*?q=*
+Disallow: /*search_term_string*
+
+# Allow specific calculator pages
+Allow: /calculators/
+Allow: /about/
+Allow: /contact/
+Allow: /privacy-policy/
+Allow: /terms/
+Allow: /educators/
 
 Sitemap: https://openfinancecalculators.com/sitemap.xml

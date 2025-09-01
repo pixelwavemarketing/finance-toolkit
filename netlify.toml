@@ -34,6 +34,25 @@
   status = 301
   force = true
 
+# Block template literal URLs and search queries
+[[redirects]]
+  from = "/*${calc.id}*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*?q=*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*search_term_string*"
+  to = "/404.html"
+  status = 404
+  force = true
+
 # Redirect .html files to clean URLs (canonical)
 [[redirects]]
   from = "/about.html"
@@ -135,18 +154,18 @@
   to = "/calculators/savings-rate/"
   status = 301
 
-# 404 page
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
-
-# Block access to config directory
+# Block access to config directory and template URLs
 [[redirects]]
   from = "/config/*"
   to = "/404.html"
   status = 404
   force = true
+
+# 404 page - must be last
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
 
 [dev]
   command = "python -m http.server 8000"

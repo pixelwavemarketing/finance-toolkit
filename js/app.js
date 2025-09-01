@@ -28,8 +28,6 @@ async function loadCalculators() {
   // Try per-page local config, then merge in global registries so nav shows all
   const candidates = [
     './calculator.json',
-    '/config/calculators.json',
-    '../../config/calculators.json',
     './config/calculators.json'
   ];
   const merged = {};
