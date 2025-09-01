@@ -161,6 +161,13 @@
   status = 404
   force = true
 
+# Ensure ads.txt is accessible (must come before wildcard redirect)
+[[redirects]]
+  from = "/ads.txt"
+  to = "/ads.txt"
+  status = 200
+  force = true
+
 # 404 page - must be last
 [[redirects]]
   from = "/*"

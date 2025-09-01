@@ -15,4 +15,7 @@ Allow: /privacy-policy/
 Allow: /terms/
 Allow: /educators/
 
+# Ensure ads.txt is crawlable
+Allow: /ads.txt
+
 Sitemap: https://openfinancecalculators.com/sitemap.xml
