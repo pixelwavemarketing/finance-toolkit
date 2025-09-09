@@ -53,6 +53,26 @@
   status = 404
   force = true
 
+# Block specific problematic URLs that Google is trying to crawl
+[[redirects]]
+  from = "/calculators/${calc.id}/config/calculators.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/calculators/${calc.id}/"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Redirect calculators search queries to clean URL
+[[redirects]]
+  from = "/calculators?q=*"
+  to = "/calculators"
+  status = 301
+  force = true
+
 # Redirect .html files to clean URLs (canonical)
 [[redirects]]
   from = "/about.html"

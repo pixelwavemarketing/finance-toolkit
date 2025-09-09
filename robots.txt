@@ -3,9 +3,12 @@ Allow: /
 
 # Block configuration files and template URLs
 Disallow: /config/
+Allow: /config/calculators.json
 Disallow: /*${calc.id}*
 Disallow: /*?q=*
 Disallow: /*search_term_string*
+Disallow: /calculators/${calc.id}/
+Disallow: /calculators/${calc.id}/config/
 
 # Allow specific calculator pages
 Allow: /calculators/
